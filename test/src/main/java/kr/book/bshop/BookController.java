@@ -19,12 +19,10 @@ public class BookController {
 	private BookMapper BookMapper;
 	// http://127.0.0.1:8081/controller
 
-	@RequestMapping("/bookList.do")
+	@RequestMapping("/login.do")
 	public String bookList(Model model) {
-		List<BookVO> list =BookMapper.bookList();
-		model.addAttribute("list",list);
-		
-		return "bookList"; // WEB-INF/views/bookList.jsp
+
+		return "login"; // WEB-INF/views/bookList.jsp
 	}
 	@RequestMapping("/bookListAjax.do")
 		public @ResponseBody List<BookVO> bookListAjax(){
