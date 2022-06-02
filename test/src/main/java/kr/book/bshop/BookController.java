@@ -24,7 +24,7 @@ public class BookController {
 		List<BookVO> list =BookMapper.bookList();
 		model.addAttribute("list",list);
 		
-		return "bookList"; // WEB-INF/views/bookList.jsp
+		return "login"; // WEB-INF/views/bookList.jsp
 	}
 	@RequestMapping("/bookListAjax.do")
 		public @ResponseBody List<BookVO> bookListAjax(){
