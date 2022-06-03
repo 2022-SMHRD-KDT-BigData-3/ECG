@@ -22,7 +22,7 @@ create sequence user_seq
  nocache
  
 
-
+select * from member;
 
 -- 운동정보 테이블
 create table exercise(
