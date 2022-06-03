@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,6 +8,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="resources/assets/css/main.css" />
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<noscript><link rel="stylesheet" href="resources/assets/css/noscript.css" /></noscript>
 	</head>
 <body class="is-preload">
@@ -38,7 +40,7 @@
 						<!-- Featured Post -->
 							<article class="post featured">
 						<section>
-							<form method="post" action="#">
+							<form action="memberinsert.do" method="post" >
 								<div class="fields">
 									<div class="field">
 										<label for="id">ID를 입력하세요</label>
@@ -48,13 +50,13 @@
 								<div class="fields">
 									<div class="field">
 										<label for="name">NickName을 입력하세요</label>
-										<input type="text" name="name" id="name" />
+										<input type="text" name="nick" id="name" />
 									</div>
 								</div>
 								<div class="fields">
 									<div class="field">
 										<label for="password">PassWord를 입력하세요</label>
-										<input type="text" name="password" id="password" />
+										<input type="text" name="pw" id="password" />
 									</div>
 								</div>
 								<div class="fields">
@@ -77,16 +79,16 @@
 								</div>
 											<!-- Break -->
 											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
+												<input type="checkbox" id="demo-priority-low" name="strong" value="1" checked>
+												<label for="demo-priority-low">저강도</label>
 											</div>
 											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-normal" name="demo-priority">
-												<label for="demo-priority-normal">Normal</label>
+												<input type="checkbox" id="demo-priority-normal" name="strong" value="2">
+												<label for="demo-priority-normal">중강도</label>
 											</div>
 											<div class="col-4 col-12-small">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
+												<input type="checkbox" id="demo-priority-high" name="strong" value="3">
+												<label for="demo-priority-high">고강도</label>
 											</div>
 										</div>
 								<hr>

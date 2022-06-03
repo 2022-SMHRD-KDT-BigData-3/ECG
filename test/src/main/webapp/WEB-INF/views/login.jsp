@@ -59,7 +59,7 @@
 									<span class="date"></span>
 								</header>
 								<ul class="actions special">
-									<li><a href="#" class="button large">회원가입</a></li>
+									<li><a href="register.do" class="button large">회원가입</a></li>
 								</ul>
 							</article>
 							</form>
