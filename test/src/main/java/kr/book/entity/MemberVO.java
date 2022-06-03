@@ -8,9 +8,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MemberVO {
-	private int num ;
-	private String userId;
-	private String userPwd;
-	private String userName;
+	private int seq ;
+	private String Id;
+	private String Pw;
+	private String nick;
+	private String height;
+	private String weight;
+	private String strong;
 }
 
