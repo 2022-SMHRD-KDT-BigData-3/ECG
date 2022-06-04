@@ -1,4 +1,4 @@
-package kr.book.entity;
+package kr.two.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MemberVO {
 	private int seq ;
-	private String Id;
-	private String Pw;
+	private String id;
+	private String pw;
 	private String nick;
 	private String height;
 	private String weight;

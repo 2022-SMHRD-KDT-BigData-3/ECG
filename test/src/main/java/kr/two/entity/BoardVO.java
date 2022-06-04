@@ -1,4 +1,4 @@
-package kr.book.entity;
+package kr.two.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

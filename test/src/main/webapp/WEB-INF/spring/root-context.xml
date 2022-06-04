@@ -23,6 +23,6 @@
        <property name="dataSource" ref="hikariDataSource"/>
    </bean>   
    <!-- Mapper를 scan하여 메로리에 올리는 작업 -->
-   <mybatis-spring:scan base-package="kr.book.mapper"/>
+   <mybatis-spring:scan base-package="kr.two.mapper"/>
    
 </beans>
