@@ -37,7 +37,7 @@
 						<!-- Featured Post -->
 							<article class="post featured">
 						<section>
-							<form method="post" action="#">
+							<form method="post" action="loginservice.do">
 								<div class="fields">
 									<div class="field">
 										<label for="name">ID를 입력하세요</label>
@@ -46,12 +46,12 @@
 								
 									<div class="field">
 										<label for="email">PassWord를 입력하세요</label>
-										<input type="text" name="password" id="password" />
+										<input type="text" name="pw" id="password" />
 									</div>
 
 								</div>
 								<ul class="actions special">
-									<li><input type="submit" value="확인" /></li>
+									<li><input type="submit" value="로그인" /></li>
 								</ul>
 							<article class="post featured">
 								<header class="major">

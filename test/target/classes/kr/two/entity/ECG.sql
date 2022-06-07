@@ -11,6 +11,7 @@ constraint user_seq primary key(seq),
 constraint id unique(id),
 constraint nick unique(nick));
 	
+select * from member;
 SELECT * FROM user_seq;
 DROP SEQUENCE user_seq;
 -- 회원번호시퀀스
