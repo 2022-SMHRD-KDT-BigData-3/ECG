@@ -30,7 +30,7 @@ e_sequence number(38) not null,
 constraint exer_ename primary key(e_name)
 );
 select * from member;
-select * from Upexercise
+select * from exercise
 -- 상체운동       
 create table Upexercise(
 e_name varchar2(100),

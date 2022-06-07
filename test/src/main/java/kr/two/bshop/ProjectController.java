@@ -1,12 +1,15 @@
 package kr.two.bshop;
 
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -52,15 +55,26 @@ public class ProjectController {
 	public String loginservice(Model model,MemberVO vo) {
 	vo = projectMapper.login(vo);
 	model.addAttribute("vo", vo);
-	return "main";
+	return "watch1";
 	}
-	@PostMapping("/listpick.do")
+	@GetMapping("/listpick.do")
 	public String listpick(Model model, int chocie) {
-		System.out.println("chocie : "+chocie);
-		List<ExerVO> mvo = projectMapper.exerlist(chocie);
-		System.out.println("운동이름"+mvo.get(0).getE_name());
-		model.addAttribute("mvo", mvo);
-		System.out.println();
+		Random r = new Random();
+		System.out.println("chocie : "+ chocie);
+		int i =1;
+		List<ExerVO> mvo1 = projectMapper.exerlist(chocie,i);
+		i=2;
+		List<ExerVO> mvo2 = projectMapper.exerlist(chocie,i);
+		i=3;
+		List<ExerVO> mvo3 = projectMapper.exerlist(chocie,i);
+
+		r.nextInt(mvo1.size());
+		String lis1t = mvo1.get(1).getE_name();
+			model.addAttribute("mvo1", mvo1);
+			model.addAttribute("mvo2", mvo2);
+			model.addAttribute("mvo3", mvo3);
+
+		
 		return "main";
 	}
 		}
