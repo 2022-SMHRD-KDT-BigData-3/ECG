@@ -9,15 +9,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BoardVO {
-	
-	private int idx;
-	private String userId;
-	private String title;
-	private String content;
-	private String writer;
-	private String indate;
-	private int count;
+public class ExerVO {
+	private String e_name;
+	private String e_number;
+	private int e_kind;
+	private int e_seq;
 
 
 }

@@ -23,9 +23,8 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="active"><a href="login.jsp">Login Page</a></li>
-							<li><a href="register.jsp">Register Page</a></li>
-							<li><a href="edit.jsp">Edit Page</a></li>
+							<li class="active"><a href="login.jsp">로그인</a></li>
+							<li><a href="register.jsp">회원가입</a></li>
 						</ul>
 						<ul class="icons">
 						</ul>
@@ -40,13 +39,13 @@
 							<form method="post" action="loginservice.do">
 								<div class="fields">
 									<div class="field">
-										<label for="name">ID를 입력하세요</label>
+										<label for="name">아이디를 입력하세요</label>
 										<input type="text" name="id" id="id" />
 									</div>
 								
 									<div class="field">
-										<label for="email">PassWord를 입력하세요</label>
-										<input type="text" name="pw" id="password" />
+										<label for="email">비밀번호를 입력하세요</label>
+										<input type="password" name="pw" id="password" />
 									</div>
 
 								</div>
