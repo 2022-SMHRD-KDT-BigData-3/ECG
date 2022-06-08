@@ -10,9 +10,9 @@
    <!-- API(HikariCP-히카리CP) -->   
    <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-       <property name="jdbcUrl" value="jdbc:oracle:thin:@127.0.0.1:1521:XE"/>
-       <property name="username" value="hr"/>
-       <property name="password" value="hr"/>       
+       <property name="jdbcUrl" value="jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe"/>
+       <property name="username" value="minji"/>
+       <property name="password" value="minji"/>       
    </bean>
    <bean id="hikariDataSource" class="com.zaxxer.hikari.HikariDataSource">
        <constructor-arg ref="hikariConfig"/>
@@ -23,6 +23,6 @@
        <property name="dataSource" ref="hikariDataSource"/>
    </bean>   
    <!-- Mapper를 scan하여 메로리에 올리는 작업 -->
-   <mybatis-spring:scan base-package="kr.book.mapper"/>
+   <mybatis-spring:scan base-package="kr.two.mapper"/>
    
 </beans>

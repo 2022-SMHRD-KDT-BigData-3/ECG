@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="kr.board.controller">
+	<logger name="kr.two.controller">
 		<level value="info" />
 	</logger>
 	
