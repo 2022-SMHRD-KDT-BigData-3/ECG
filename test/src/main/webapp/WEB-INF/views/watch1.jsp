@@ -4,8 +4,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>watch1</title>
 <style type="text/css">
+
+
+   @font-face {
+    font-family: 'EliceDigitalBaeum';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_elice@1.0/EliceDigitalBaeum.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+    
+
    * {margin:0;padding:0;}
    .section {}
    .section input[id*="slide"] {display:none;}
@@ -37,7 +47,7 @@
    /*아이콘 시작 */
 
 .slidelist{
-	background-color: black;
+   background-color: black;
 }
 .wrap {
   display: flex;
@@ -90,8 +100,8 @@
   opacity: 0;
 }
 #danger{
-	font-color : white;
-	margin-top: 200px;
+   font-color : white;
+   margin-top: 200px;
 }
 
 
@@ -117,7 +127,7 @@
   margin: 0; padding: 0;
 }
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'EliceDigitalBaeum';
   color: rgb(85,75,85);
   background-color: rgb(255,255,255);
 }
@@ -247,13 +257,13 @@ h1 {
          <li>
             <a>
                   <div>
-	                	<div class="wrap">
-  							<div class="circle"></div>
-  					    </div>
+                      <div class="wrap">
+                       <div class="circle"></div>
+                     </div>
                   </div>
                <label for="slide02" class="right"></label>
                <div class="textbox">
-               	<h3 id="danger">50%</h3>
+                  <h3 id="danger">50%</h3>
                </div>
             </a>
          </li>
@@ -265,30 +275,30 @@ h1 {
                   <h3>운동을 해볼까요?</h3>
                  
                   <div class="btn-holder">
-  				 	
-	  				 	<button class="btn btn-1 hover-filled-slide-down">
-	   						<div class="back">
-	   						 <a href="listpick.do?Choose=1&num=3&type=1"> <span>상체</span></a>
-	   						</div>
-	  					</button>
-  					 
-  					
-  					
-	  				 	<button class="btn btn-1 hover-filled-slide-down">
-	   						 <div class="back">
-	   						 	 <a href="listpick.do?Choose=2&num=2&type=2"> <span>하체</span></a>
-	   						 </div>
-	  					</button>
-  					
-  					
-  					
-	  				 	<button class="btn btn-1 hover-filled-slide-down">
-	   						 <div class="back">
-	   						 	 <a href="listpick.do?Choosee=3&num=2&type=2"> <span>전신</span></a>
-	   						 </div>
-	  					</button>
-  					 
-  					
+                  
+                     <button class="btn btn-1 hover-filled-slide-down">
+                        <div class="back">
+                         <a href="listpick.do?Choose=1&num=3&type=1"> <span>상체</span></a>
+                        </div>
+                    </button>
+                  
+                 
+                 
+                     <button class="btn btn-1 hover-filled-slide-down">
+                         <div class="back">
+                             <a href="listpick.do?Choose=2&num=2&type=2"> <span>하체</span></a>
+                         </div>
+                    </button>
+                 
+                 
+                 
+                     <button class="btn btn-1 hover-filled-slide-down">
+                         <div class="back">
+                             <a href="listpick.do?Choosee=3&num=2&type=2"> <span>전신</span></a>
+                         </div>
+                    </button>
+                  
+                 
                </div>
                <img src="">
                
