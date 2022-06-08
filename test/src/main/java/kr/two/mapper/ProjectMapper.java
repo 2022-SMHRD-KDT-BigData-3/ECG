@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import kr.two.entity.ExerVO;
@@ -17,10 +18,14 @@ public interface ProjectMapper { // new BoardMapper();
 	
 	@Select("select * from member where id =#{id}")
 	public MemberVO edit(MemberVO vo);
+	
 	@Select("select * from member where id =#{id} and pw =#{pw}")
 	public MemberVO login(MemberVO vo);
+	
 	@Insert("insert into member values(user_seq.nextval,#{id},#{pw},#{nick},#{height},#{weight},#{strong})")
 	public void memberinsert(MemberVO vo);
-	@Select("select * from exercise where e_kind=#{chocie}")
-	public List<ExerVO> exerlist(int chocie);
+	
+	@Select("select * from exercise where e_kind=#{chocie} and e_number=#{i}")
+	public List<ExerVO> exerlist(@Param("chocie")int chocie,@Param("i")int i);
+
 }
