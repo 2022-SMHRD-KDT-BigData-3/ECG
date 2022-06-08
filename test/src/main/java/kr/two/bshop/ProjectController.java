@@ -1,5 +1,6 @@
 package kr.two.bshop;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -27,56 +28,52 @@ public class ProjectController {
 
 	@RequestMapping("/login.do")
 	public String login(Model model) {
-		return "login"; 
+		return "login";
 	}
-	@RequestMapping("/register.do")
-	public String register(MemberVO vo){
 
-	return "register";
+	@RequestMapping("/register.do")
+	public String register(MemberVO vo) {
+
+		return "register";
 	}
-	
+
 	@PostMapping("/memberinsert.do")
 	public String memberInsert(MemberVO vo) { // title, content, writer -> 파라메터수집
-	projectMapper.memberinsert(vo); // 등록
-	System.out.println("회원가입성공");
-	return "redirect:/login.do";
-	   }
-	
+		projectMapper.memberinsert(vo); // 등록
+		System.out.println("회원가입성공");
+		return "redirect:/login.do";
+	}
+
 	@RequestMapping("/edit.do")
-	public String edit(Model model,MemberVO vo) {
+	public String edit(Model model, MemberVO vo) {
 		System.out.println("컨트럴로넘어옴");
-	vo = projectMapper.edit(vo);
-	model.addAttribute("vo", vo);
-	System.out.println("넘어감");
-	return "edit";
+		vo = projectMapper.edit(vo);
+		model.addAttribute("vo", vo);
+		System.out.println("넘어감");
+		return "edit";
 	}
-	
+
 	@PostMapping("/loginservice.do")
-	public String loginservice(Model model,MemberVO vo) {
-	vo = projectMapper.login(vo);
-	model.addAttribute("vo", vo);
-	return "watch1";
+	public String loginservice(Model model, MemberVO vo) {
+		vo = projectMapper.login(vo);
+		model.addAttribute("vo", vo);
+		return "watch1";
 	}
+
 	@GetMapping("/listpick.do")
-	public String listpick(Model model, int chocie) {
-		Random r = new Random();
-		System.out.println("chocie : "+ chocie);
-		int i =1;
-		List<ExerVO> mvo1 = projectMapper.exerlist(chocie,i);
-		i=2;
-		List<ExerVO> mvo2 = projectMapper.exerlist(chocie,i);
-		i=3;
-		List<ExerVO> mvo3 = projectMapper.exerlist(chocie,i);
+	public String listpick(Model model, int Choose, int num, int type) {
+		List<String> mvo = new ArrayList<String>();
 
-		r.nextInt(mvo1.size());
-		String lis1t = mvo1.get(1).getE_name();
-			model.addAttribute("mvo1", mvo1);
-			model.addAttribute("mvo2", mvo2);
-			model.addAttribute("mvo3", mvo3);
-
-		
+		// Choose = 선택한 운동종류 , num = 셀렉트할 횟수, type 운동종류
+		for (int i = 0; i < num; i++) {
+			List<String> data = projectMapper.exerlist(Choose, i + 1, type);
+			// data 크기만큼 mvo에 넣어준다
+			for (int a = 0; a < data.size(); a++) {
+				mvo.add(data.get(a));
+			}
+		}
+		model.addAttribute("mvo", mvo);
 		return "main";
 	}
-		}
 
-
+}
