@@ -268,7 +268,7 @@ h1 {
   				 	
 	  				 	<button class="btn btn-1 hover-filled-slide-down">
 	   						<div class="back">
-	   						 <a href="listpick.do?chocie=1"> <span>상체</span></a>
+	   						 <a href="listpick.do?Choose=1&num=3&type=1"> <span>상체</span></a>
 	   						</div>
 	  					</button>
   					 
@@ -276,7 +276,7 @@ h1 {
   					
 	  				 	<button class="btn btn-1 hover-filled-slide-down">
 	   						 <div class="back">
-	   						 	 <a href="listpick.do?chocie=2"> <span>하체</span></a>
+	   						 	 <a href="listpick.do?Choose=2&num=2&type=2"> <span>하체</span></a>
 	   						 </div>
 	  					</button>
   					
@@ -284,7 +284,7 @@ h1 {
   					
 	  				 	<button class="btn btn-1 hover-filled-slide-down">
 	   						 <div class="back">
-	   						 	 <a href="listpick.do?chocie=3"> <span>전신</span></a>
+	   						 	 <a href="listpick.do?Choosee=3&num=2&type=2"> <span>전신</span></a>
 	   						 </div>
 	  					</button>
   					 

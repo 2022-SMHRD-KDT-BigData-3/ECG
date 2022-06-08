@@ -25,7 +25,8 @@ public interface ProjectMapper { // new BoardMapper();
 	@Insert("insert into member values(user_seq.nextval,#{id},#{pw},#{nick},#{height},#{weight},#{strong})")
 	public void memberinsert(MemberVO vo);
 	
-	@Select("select * from exercise where e_kind=#{chocie} and e_number=#{i}")
-	public List<ExerVO> exerlist(@Param("chocie")int chocie,@Param("i")int i);
+	@Select("select e_name from (select * from exercise order by dbms_random.value) where e_kind=#{chocie} and e_number=#{i} and rownum<=#{type}")
+	public List<String> exerlist(@Param("chocie")int chocie,@Param("i")int i, @Param("type")int type);
 
+	
 }

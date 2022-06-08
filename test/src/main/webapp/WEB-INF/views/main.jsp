@@ -15,7 +15,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 <a href="edit.do?id=${vo.id}"><h1>${vo.id}</h1></a>
 <h1>${vo.pw}</h1>
 <h1>${vo.nick}</h1>
@@ -23,8 +22,15 @@
 <h1>${vo.height}</h1>
 <h1>${vo.weight}</h1>
 <h1>${vo.strong}</h1>
-<h1>${mvo1.get(1).getE_name()}</h1>
 
-<h1>나오라고${ran}</h1>
+<!-- 반복문 돌려서 for i=0;i<=mvo.길이 i ++ 한다음 태그랑 생성 -->
+<!-- 세트수 반복횟수 목표심박수 
+       5    10     -->
+
+<h1>${mvo.get(0)}</h1>
+
+<h1>${mvo.get(1)}</h1>
+
+<h1>${mvo.get(2)}</h1>
 </body>
 </html>
