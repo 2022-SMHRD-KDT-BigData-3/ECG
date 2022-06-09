@@ -333,6 +333,7 @@ button {
 			오늘 운동 내역은
 			<div class="modalbox">
 				<div id="box1">
+			
 					<!-- jstl로 반복문 사용 -> mvo 출력 -->
 					<c:forEach var="name" items="${mvo}">
 						<h3>${name}</h3>
@@ -340,7 +341,8 @@ button {
 				</div>
 				<div id="box2">
 					<h3>시간</h3>
-					<h3>칼로리</h3>
+				
+					<h3 name="cal">칼로리</h3>
 					<h3>최대심박수</h3>
 				</div>
 				<div id="box2">
@@ -350,6 +352,7 @@ button {
 				</div>
 			</div>
 			저장하시겠습니까 ? <a href="exerInsert.do"><button>저장하기</button></a>
+		
 		</div>
 	</div>
 
@@ -424,7 +427,7 @@ $(function(){
 
 						<div class="btnBox">
 							 <button id="restart" class="fa fa-play" aria-hidden="true" style="display: none">다시시작</button>
-							<button id="pausebtn" class="fa fa-pause" aria-hidden="true">일시정지</button>
+							<button id="pausebtn" class="fa fa-pause " aria-hidden="true">일시정지</button>
 							<button id="stopbtn" class="fa fa-stop" aria-hidden="true">종료하기</button>
 						</div>
 		</div>

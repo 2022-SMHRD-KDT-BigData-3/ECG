@@ -72,11 +72,14 @@ public class ProjectController {
 				mvo.add(data.get(a));
 			}
 		}
-		System.out.println("mvo 사이즈 : "+mvo.size());
-		System.out.println("mvo : "+mvo.get(0));
-		System.out.println("찐 mvo"+mvo);
+
 		model.addAttribute("mvo", mvo);
 		return "watch2";
 	}
 
+	@GetMapping("/diaryinsert.do")
+	public String diaryinsert() {
+
+		return "watch";
+	}
 }

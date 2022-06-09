@@ -16,7 +16,9 @@ function buttonEvt(){
 
   // start btn
   $("#startbtn").click(function(){
-
+ $("#slide02").prop("checked",true);
+  $("#pausebtn").css('display','inline');		
+  $("#restart").css('display','none');
     if(starFlag){
 
       starFlag = false;
@@ -48,6 +50,7 @@ function buttonEvt(){
 
         document.getElementById("time").innerHTML = th + ":" + tm + ":" + ts;
         document.getElementById("cal").innerHTML = 21*60*0.005*timerdd;
+        
       }, 1000);
     }
   });
@@ -84,8 +87,9 @@ $("#restart").click(function(){
         ts = "0" + sec;
         }
 
-        document.getElementById("time").innerHTML = th + ":" + tm + ":" + ts;
+        document.getElementBy("time").innerHTML = th + ":" + tm + ":" + ts;
         document.getElementById("cal").innerHTML = 21*60*0.005*timerdd;
+
       }, 1000);
     }
   });
