@@ -79,7 +79,7 @@ public class ProjectController {
 
 	@GetMapping("/diaryinsert.do")
 	public String diaryinsert() {
-
+		
 		return "watch";
 	}
 }
