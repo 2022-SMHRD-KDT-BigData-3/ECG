@@ -400,11 +400,11 @@ $(function(){
 									<div class="frame" style="margin-top: 50%">
 
 
-										<button class="custom-btn btn-1" id="modaldd2">시작하기</button>
-
+										<button class="custom-btn btn-1" id="startbtn" aria-hidden="true">시작하기</button>
+										
 										<button class="custom-btn btn-2" id="modaldd">끝내기</button>
 									</div>
-								</div>
+								</div>	
 							</div>
 						</table>
 
@@ -413,7 +413,7 @@ $(function(){
 						<div class="textbox" style="height: fit-content;">
 							<h3>시간 :</h3>
 							<div id='timerBox' class="timerBox">
-								<div id="time" class="time">00:00:00</div>
+								<h3 id="time" class="time" name="time">00:00:00</h3>
 							</div>
 							<h3>칼로리 :</h3>
 							<h3 id="cal" class="cal" name="cal"></h3>
@@ -423,9 +423,9 @@ $(function(){
 						</div>
 
 						<div class="btnBox">
-							<i id="startbtn" class="fa fa-play" aria-hidden="true"></i> <i
-								id="pausebtn" class="fa fa-pause" aria-hidden="true"></i> <i
-								id="stopbtn" class="fa fa-stop" aria-hidden="true"></i>
+							 <button id="restart" class="fa fa-play" aria-hidden="true" style="display: none">다시시작</button>
+							<button id="pausebtn" class="fa fa-pause" aria-hidden="true">일시정지</button>
+							<button id="stopbtn" class="fa fa-stop" aria-hidden="true">종료하기</button>
 						</div>
 		</div>
 
@@ -438,7 +438,7 @@ $(function(){
 	</div>
 	</div>
 
-	<script src="resources/assets/js/time.js"></script>
+	<script src="resources/assets/js/stopwatch.js"></script>
 
 </body>
 </html>

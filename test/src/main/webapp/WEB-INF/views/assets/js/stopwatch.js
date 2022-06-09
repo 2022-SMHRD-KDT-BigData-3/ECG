@@ -1,4 +1,3 @@
-
 var time = 0;
 var starFlag = true;
 $(document).ready(function(){
@@ -19,8 +18,7 @@ function buttonEvt(){
   $("#startbtn").click(function(){
 
     if(starFlag){
-      $(".fa").css("color","#FAED7D")
-      this.style.color = "#4C4C4C";
+
       starFlag = false;
 
       if(time == 0){
@@ -34,7 +32,7 @@ function buttonEvt(){
         hour = Math.floor(min/60);
         sec = time%60;
         min = min%60;
-
+		timerdd = (hour*60)+min;
         var th = hour;
         var tm = min;
         var ts = sec;
@@ -49,6 +47,7 @@ function buttonEvt(){
         }
 
         document.getElementById("time").innerHTML = th + ":" + tm + ":" + ts;
+        document.getElementById("cal").innerHTML = 21*60*0.005*timerdd;
       }, 1000);
     }
   });
@@ -56,8 +55,7 @@ function buttonEvt(){
   // pause btn
   $("#pausebtn").click(function(){
     if(time != 0){
-      $(".fa").css("color","#FAED7D")
-      this.style.color = "#4C4C4C";
+
       clearInterval(timer);
       starFlag = true;
     }
@@ -66,8 +64,7 @@ function buttonEvt(){
   // stop btn
   $("#stopbtn").click(function(){
     if(time != 0){
-      $(".fa").css("color","#FAED7D")
-      this.style.color = "#4C4C4C";
+
       clearInterval(timer);
       starFlag = true;
       time = 0;
