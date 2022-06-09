@@ -72,12 +72,18 @@ public class ProjectController {
 				mvo.add(data.get(a));
 			}
 		}
+
 		model.addAttribute("mvo", mvo);
-		return "main";
+		return "watch2";
 	}
 	@RequestMapping("/watch.do")
 	public String watch() {
 		return "watch1";
 	}
 
+	@GetMapping("/diaryinsert.do")
+	public String diaryinsert() {
+		
+		return "watch";
+	}
 }
