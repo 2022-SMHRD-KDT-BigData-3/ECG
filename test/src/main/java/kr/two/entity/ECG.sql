@@ -21,7 +21,19 @@ create sequence user_seq
  maxvalue 999999
  nocycle 
  nocache
- 
+
+ create table diary(
+id varchar2(100),
+time date,
+list varchar2(100) not null,
+strong number(10),
+weight number(10),
+height number(10),
+danger number(10),
+max number(10),
+mean number(10),
+constraint diary_id_fk foreign key(id) references member(id)
+);
 select * from member;
 select * from exercise;
 
