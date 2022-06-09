@@ -68,21 +68,30 @@ let currDate = new Date()
 
 let curr_month = {value: currDate.getMonth()}
 let curr_year = {value: currDate.getFullYear()}
-let curr_day = {value: currDate.getDay()}
 
-generateCalendar(curr_month.value, curr_year.value, curr_day.value)
-
-
+generateCalendar(curr_month.value, curr_year.value)
 
 document.querySelector('#prev-year').onclick = () => {
-
-    --curr_month.value
-    generateCalendar(curr_month.value, curr_year.value, curr_day.value);
+       
+    if(curr_month.value<=0){
+        curr_month.value=11;
+        curr_year.value--
+    }else  if(curr_month.value>=0){
+        curr_month.value--
+    }
+    console.log(curr_month.value);
+    generateCalendar(curr_month.value, curr_year.value)
 }
 
 document.querySelector('#next-year').onclick = () => {
-    ++curr_month.value
-    generateCalendar(curr_month.value, curr_year.value, curr_day.value);
+    if(curr_month.value>=11){
+        curr_month.value=0;
+        curr_year.value++
+    }else if(curr_month.value<=11){
+        curr_month.value++
+    }
+    console.log(curr_month.value);
+    generateCalendar(curr_month.value, curr_year.value)
 }
 
 let dark_mode_toggle = document.querySelector('.dark-mode-switch')
