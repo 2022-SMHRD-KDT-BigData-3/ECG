@@ -57,7 +57,7 @@ public class ProjectController {
 	public String loginservice(Model model, MemberVO vo) {
 		vo = projectMapper.login(vo);
 		model.addAttribute("vo", vo);
-		return "watch1";
+		return "calendar";
 	}
 
 	@GetMapping("/listpick.do")
@@ -74,6 +74,10 @@ public class ProjectController {
 		}
 		model.addAttribute("mvo", mvo);
 		return "main";
+	}
+	@RequestMapping("/watch.do")
+	public String watch() {
+		return "watch1";
 	}
 
 }

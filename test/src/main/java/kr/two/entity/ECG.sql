@@ -159,3 +159,16 @@ insert into exercise values('슈퍼맨 플랭크',3,2,core_seq.nextval);
 insert into exercise values('엘보우 플랭크',3,2,core_seq.nextval);
 insert into exercise values('사이드 플랭크',3,2,core_seq.nextval);
 
+create table diary(
+id varchar2(100) not null,
+checkdate date default sysdate,
+extime varchar2(10) not null,
+list varchar2(100),
+strong number(10),
+weight number(10),
+height number(10),
+danger number(10),
+max number(10) not null,
+mean number(10) not null,
+constraint diary_id_fk foreign key(id) references member(id)
+);
