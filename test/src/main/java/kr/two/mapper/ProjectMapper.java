@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import kr.two.entity.DiaryVO;
 import kr.two.entity.ExerVO;
 import kr.two.entity.MemberVO;
             //BoardDAO  // BoardDAO dao = new BoardDAO();
@@ -31,4 +32,6 @@ public interface ProjectMapper { // new BoardMapper();
 	@Insert("insert into diary() values()")
 	public void diaryinsert();
 	
+	@Select("select * from diary where id=#{id} and checkdate=#{checkdate} and rownum =1 order by 1 desc")
+	public DiaryVO diaryselect(@Param("id")String id,@Param("checkdate")String checkdate);
 }

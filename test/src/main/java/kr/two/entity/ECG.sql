@@ -22,18 +22,6 @@ create sequence user_seq
  nocycle 
  nocache
 
- create table diary(
-id varchar2(100),
-time date,
-list varchar2(100) not null,
-strong number(10),
-weight number(10),
-height number(10),
-danger number(10),
-max number(10),
-mean number(10),
-constraint diary_id_fk foreign key(id) references member(id)
-);
 select * from member;
 select * from exercise;
 
@@ -184,3 +172,9 @@ max number(10) not null,
 mean number(10) not null,
 constraint diary_id_fk foreign key(id) references member(id)
 );
+delete from DIARY where id='a';
+select checkdate from DIARY where  '';
+select * from diary where id='a'and checkdate='20220610' and rownum =1 order by 1 desc ;
+delete DIARY 
+insert into DIARY values('a',TO_CHAR(sysdate,'yyyy-mm-dd'),'00:00:05','sss',2,22,333,22,33,2222);
+select * from diary;

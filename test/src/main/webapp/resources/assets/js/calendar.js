@@ -37,7 +37,20 @@ generateCalendar = (month, year) => {
         let day = document.createElement('div')
         if (i >= first_day.getDay()) {
             day.classList.add('calendar-day-hover')
-            day.innerHTML = `<div onclick="${year}-${month+1}-${i - first_day.getDay() + 1}">${i - first_day.getDay() + 1}</div>`
+            if(i - first_day.getDay() + 1 < 10){
+                if(month+1<10){
+                day.innerHTML = `<div onclick="diary_select(${year}${0}${month+1}${0}${i - first_day.getDay() + 1})">${i - first_day.getDay() + 1}</div>`
+                } else {
+                    day.innerHTML = `<div onclick="diary_select(${year}${month+1}${0}${i - first_day.getDay() + 1})">${i - first_day.getDay() + 1}</div>`
+                }
+            } else {
+                if(month+1<10){
+                    day.innerHTML = `<div onclick="diary_select(${year}${0}${month+1}${i - first_day.getDay() + 1})">${i - first_day.getDay() + 1}</div>`
+                } else {
+                    day.innerHTML = `<div onclick="diary_select(${year}${month+1}${i - first_day.getDay() + 1})">${i - first_day.getDay() + 1}</div>`
+                }
+            
+            }
             day.innerHTML += `<span></span>
                             <span></span>
                             <span></span>
@@ -101,4 +114,12 @@ dark_mode_toggle.onclick = () => {
     document.querySelector('body').classList.toggle('dark')
 }
 
+function diary_select(checkdate) {
 
+    console.log("click diary_select");
+    console.log("확인"+checkdate);
+    let id = document.getElementById('idvo').innerText;
+    console.log("id값 :"+id);
+    location.href="diaryslect.do?id="+id+"&checkdate="+checkdate; 
+ }
+ 
