@@ -74,7 +74,7 @@ body {
 						<tr>
 						<td id="idvo" style="display: none" >${vo.id}</td>
 							<td>시간</td>
-							<td>${dvo.getTime()}</td>
+							<td>${dvo.getExtime()}</td>
 								
 						</tr>
 						<tr>

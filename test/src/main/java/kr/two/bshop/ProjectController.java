@@ -56,9 +56,9 @@ public class ProjectController {
 	}
 
 	@PostMapping("/loginservice.do")
-	public String loginservice(Model model, MemberVO vo) {
+	public String loginservice(HttpSession session, MemberVO vo) {
 		vo = projectMapper.login(vo);
-		model.addAttribute("vo", vo);
+		session.setAttribute("vo", vo);
 		System.out.println("vo"+vo.getId());
 		return "calendar";
 	}

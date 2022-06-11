@@ -174,7 +174,7 @@ constraint diary_id_fk foreign key(id) references member(id)
 );
 delete from DIARY where id='a';
 select checkdate from DIARY where  '';
-select * from diary where id='a'and checkdate='20220610' and rownum =1 order by 1 desc ;
+select * from diary where id='a'and checkdate='20220607' and rownum =1 order by 1 desc ;
 delete DIARY 
-insert into DIARY values('a',TO_CHAR(sysdate,'yyyy-mm-dd'),'00:00:05','sss',2,22,333,22,33,2222);
+insert into DIARY values('a','20220607','00:50:05','sss',2,8,23,8,30,87);
 select * from diary;
