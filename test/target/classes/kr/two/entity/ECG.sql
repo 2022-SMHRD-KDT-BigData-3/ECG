@@ -4,16 +4,19 @@ seq number(10),
 id varchar2(100),
 pw varchar2(100) not null,
 nick varchar2(100) not null,
+age number(10) not null,
 height number(10) not null,
 weight number(10) not null,
 strong number(10) not null,
 constraint user_seq primary key(seq),
 constraint id unique(id),
 constraint nick unique(nick));
-	
+
+insert into member values(user_seq.nextval,'a','a','a',29,175,77,3);
+
 select * from member;
 SELECT * FROM user_seq;
-DROP table exercise;
+DROP table diary;
 -- 회원번호시퀀스
 create sequence user_seq
  start with 1
@@ -24,20 +27,22 @@ create sequence user_seq
 
  create table diary(
 id varchar2(100),
+checkdate sysdate
 time date,
 list varchar2(100) not null,
 strong number(10),
-weight number(10),
-height number(10),
 danger number(10),
 max number(10),
-mean number(10),
+min number(10),
+exernumber number(10),
 constraint diary_id_fk foreign key(id) references member(id)
 );
 select * from member;
 select * from exercise;
 
 select * from exercise
+
+-- 운동 테이블
 create table exercise(
 e_name varchar2(100),
 e_kind number(1) not null,
@@ -45,7 +50,12 @@ e_number number(38) not null,
 e_sequence number(38) not null,
 constraint exer_ename primary key(e_name)
 );
-
+create sequence exernumber_seq
+ start with 1
+ increment by 1
+ maxvalue 999999
+ nocycle 
+ nocache
 -- 등운동 시퀀스
 create sequence back_seq
  start with 1
@@ -171,3 +181,4 @@ insert into exercise values('슈퍼맨 플랭크',3,2,core_seq.nextval);
 insert into exercise values('엘보우 플랭크',3,2,core_seq.nextval);
 insert into exercise values('사이드 플랭크',3,2,core_seq.nextval);
 
+select * from diary;

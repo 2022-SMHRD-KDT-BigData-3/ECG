@@ -16,7 +16,7 @@
 <body>
 
 <script type="text/javascript">
-  var 
+ 
 </script>
 
 <!-- 반복문 돌려서 for i=0;i<=mvo.길이 i ++ 한다음 태그랑 생성 -->

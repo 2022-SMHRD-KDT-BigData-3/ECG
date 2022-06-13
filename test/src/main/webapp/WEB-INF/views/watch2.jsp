@@ -13,35 +13,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-$(document).ready(()=>{
-    // jquery에 만들어져 있는 함수 ==> $. 비동기식 함수
-    // $.ajax({ })-> 초기화list
-    console.log("되냐?");
-    a();
-    console.log("됫냐고?");
-  });
-function a() {
-	// maxHeart = 최대심박수 ,min = 최소목표심박수, max = 최대목표심박수 
-	let maxHeart = 220-29-60
-	let min= 0;
-	let max = 0;
-	let pre = 60;
-	
-	if(pre>50){
-	min = maxHeart*0.60+60
-	max = maxHeart*0.70+60
-	// parseInt() 형변환
-	min = parseInt(min)
-	max = parseInt(max)
-	}else { 
-	min = maxHeart*0.70+60
-	max = maxHeart*0.80+60
-	min = parseInt(min)
-	max = parseInt(max)
-	}
-	// j쿼리로 id값 heart의 내용을 바꿔준다
-	 $("#heart").text("목표심박수는"+min+"~"+max+"입니다")
-}
+
 
 </script>
 <style>
@@ -327,39 +299,46 @@ button {
 
 	<!-- 종료 모달창 -->
 	<div class="modal">
-		<button id="modalc">X</button>
-		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 
-			오늘 운동 내역은
-			<div class="modalbox">
-				<div id="box1">
-			
-					<!-- jstl로 반복문 사용 -> mvo 출력 -->
-					<c:forEach var="name" items="${mvo}">
-						<h3>${name}</h3>
-					</c:forEach>
+		<button id="modalc">X</button>
+		<form action="exerInsert.do">
+			<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+
+				오늘 운동 내역은
+				<div class="modalbox">
+					<div id="box1">
+
+						<!-- jstl로 반복문 사용 -> mvo 출력 -->
+						<c:forEach var="name" items="${mvo}">
+							<h3>${name}</h3>
+						</c:forEach>
+					</div>
+					<div id="box2">
+						<h3>시간</h3>
+						<h3>칼로리</h3>
+						<h3>최대/평균심박수</h3>
+					</div>
+					
+					<div id="box2">
+						<div id="exerlist" name="list" style="display: none"></div>
+						<h3 id="time2" name="time2"></h3>
+						<h3 id="cal2" name="cal2"></h3>
+						<div> <h3 id="maxHeart" name="maxHeart"></h3> / <h3 id="minHeart" name="min"></h3>BPM </div>> 
+						<h3 id="strong" name="strong"></h3>
+						<h3 id="age" style="display: none">29</h3>
+						<h3 name="danger" style="display: none">${danger}</h3>
+					</div>
 				</div>
-				<div id="box2">
-					<h3>시간</h3>
-				
-					<h3 name="cal">칼로리</h3>
-					<h3>최대심박수</h3>
-				</div>
-				<div id="box2">
-					<h3>시간</h3>
-					<h3>칼로리</h3>
-					<h3>최대심박수</h3>
-				</div>
-			</div>
-			저장하시겠습니까 ? <a href="exerInsert.do"><button>저장하기</button></a>
-		
-		</div>
+				저장하시겠습니까 ?
+				<button type="submit">저장하기</button>
+		</form>
+	</div>
 	</div>
 
 	<script type="text/javascript">
 $(function(){ 
 	// 모달창 보이기
-	  $("#modaldd").click(function(){
+	  $("#stopbtn").click(function(){
 	    $(".modal").fadeIn();
 	    $(".textbox").css('display', 'none');
 	   
@@ -387,8 +366,8 @@ $(function(){
 									<div class="textbox">
 										<div id="box1">
 											<!-- jstl로 반복문 사용 -> mvo 출력 -->
-											<c:forEach var="name" items="${mvo}">
-												<h3>${name}</h3>
+											<c:forEach var="name" items="${mvo}" varStatus="status">
+												<h3 id="list${status.count}">${name}</h3>
 											</c:forEach>
 
 										</div>
@@ -396,18 +375,20 @@ $(function(){
 										<div id="box2">
 											<h3>10회씩</h3>
 											<h3>5세트</h3>
-											<h3 id="heart">목표심박수</h3>
+											<h3>목표심박수</h3>
+											<h3 id="targetHeart"></h3>
 										</div>
 									</div>
 
 									<div class="frame" style="margin-top: 50%">
 
 
-										<button class="custom-btn btn-1" id="startbtn" aria-hidden="true">시작하기</button>
-										
-										<button class="custom-btn btn-2" id="modaldd">끝내기</button>
+										<button class="custom-btn btn-1" id="startbtn"
+											aria-hidden="true">시작하기</button>
+
+										<button class="custom-btn btn-2" id="stopbtn">끝내기</button>
 									</div>
-								</div>	
+								</div>
 							</div>
 						</table>
 
@@ -420,13 +401,14 @@ $(function(){
 							</div>
 							<h3>칼로리 :</h3>
 							<h3 id="cal" class="cal" name="cal"></h3>
-							<h3 id="weight" class="weight" name="weight"></h3>
 							<h3>현재 심박수 :</h3>
+							<h3 id="todayHeart"></h3>
 							<h3>최대 심박수 :</h3>
 						</div>
 
 						<div class="btnBox">
-							 <button id="restart" class="fa fa-play" aria-hidden="true" style="display: none">다시시작</button>
+							<button id="medle" class="fa fa-play" aria-hidden="true"
+								style="display: none">시작하기</button>
 							<button id="pausebtn" class="fa fa-pause " aria-hidden="true">일시정지</button>
 							<button id="stopbtn" class="fa fa-stop" aria-hidden="true">종료하기</button>
 						</div>

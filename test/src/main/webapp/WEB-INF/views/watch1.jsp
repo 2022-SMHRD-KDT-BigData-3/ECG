@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>watch1</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <style type="text/css">
 
 
@@ -263,7 +264,7 @@ h1 {
                   </div>
                <label for="slide02" class="right"></label>
                <div class="textbox">
-                  <h3 id="danger">50%</h3>
+                  <h3 id="danger" name="danger"></h3>
                </div>
             </a>
          </li>
@@ -273,12 +274,12 @@ h1 {
                <div class="textbox">
                   <h3>오늘은 어디</h3>
                   <h3>운동을 해볼까요?</h3>
-                 
+              
                   <div class="btn-holder">
                   
                      <button class="btn btn-1 hover-filled-slide-down">
                         <div class="back">
-                         <a href="listpick.do?Choose=1&num=3&type=1"> <span>상체</span></a>
+                         <a class="a_link" href=""> <span>상체</span></a>
                         </div>
                     </button>
                   
@@ -286,7 +287,7 @@ h1 {
                  
                      <button class="btn btn-1 hover-filled-slide-down">
                          <div class="back">
-                             <a href="listpick.do?Choose=2&num=2&type=2"> <span>하체</span></a>
+                             <a class="a_link" href=""> <span>하체</span></a>
                          </div>
                     </button>
                  
@@ -294,10 +295,10 @@ h1 {
                  
                      <button class="btn btn-1 hover-filled-slide-down">
                          <div class="back">
-                             <a href="listpick.do?Choosee=3&num=2&type=2"> <span>전신</span></a>
+                             <a class="a_link" href=""> <span>전신</span></a>
                          </div>
                     </button>
-                  
+                     </div>
                  
                </div>
                <img src="">
@@ -308,6 +309,34 @@ h1 {
       </ul>
    </div>
 </div>
+<script type="text/javascript">
 
+$(document).ready(()=>{
+    // jquery에 만들어져 있는 함수 ==> $. 비동기식 함수
+    // $.ajax({ })-> 초기화list
+
+      getData();
+
+  });
+function getData(){
+	// 통신 code
+	
+	// 파싱 code
+	var result = 30;
+	
+
+	var a_tags = $("a.a_link");
+	console.log("length : "+a_tags.length)
+	a_tags.eq(0).attr("href","listpick.do?Choose=1&num=3&type=1&danger="+result);
+	a_tags.eq(1).attr("href","listpick.do?Choose=2&num=2&type=2&danger="+result);
+	a_tags.eq(2).attr("href","listpick.do?Choose=2&num=2&type=2&danger="+result);
+	
+	var h3_tag = $("#danger");
+	
+	document.getElementById("danger").innerHTML = result+"%";
+
+}
+
+</script>
 </body>
 </html>

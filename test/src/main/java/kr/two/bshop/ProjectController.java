@@ -55,15 +55,17 @@ public class ProjectController {
 
 	@PostMapping("/loginservice.do")
 	public String loginservice(Model model, MemberVO vo) {
+		System.out.println("너냐?");
 		vo = projectMapper.login(vo);
 		model.addAttribute("vo", vo);
+		
 		return "watch1";
 	}
 
-	@GetMapping("/listpick.do")
-	public String listpick(Model model, int Choose, int num, int type) {
+	@RequestMapping("/listpick.do")
+	public String listpick(Model model, int Choose, int num, int type ,String danger) {
 		List<String> mvo = new ArrayList<String>();
-
+		System.out.println("ddddd"+danger);
 		// Choose = 선택한 운동종류 , num = 셀렉트할 횟수, type 운동종류
 		for (int i = 0; i < num; i++) {
 			List<String> data = projectMapper.exerlist(Choose, i + 1, type);
@@ -72,7 +74,7 @@ public class ProjectController {
 				mvo.add(data.get(a));
 			}
 		}
-
+		model.addAttribute("danger", danger);
 		model.addAttribute("mvo", mvo);
 		return "watch2";
 	}

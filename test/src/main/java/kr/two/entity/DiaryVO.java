@@ -6,10 +6,9 @@ public class DiaryVO {
 	private String time;
 	private String list;
 	private int strong;
-	private int weight;
-	private int height;
 	private int danger;
 	private int max;
-	private int mean;
+	private int min;
+	private int exernumber;
 
 }
