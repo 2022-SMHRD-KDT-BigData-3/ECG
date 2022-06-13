@@ -25,18 +25,6 @@ create sequence user_seq
  nocycle 
  nocache
 
- create table diary(
-id varchar2(100),
-checkdate sysdate
-time date,
-list varchar2(100) not null,
-strong number(10),
-danger number(10),
-max number(10),
-min number(10),
-exernumber number(10),
-constraint diary_id_fk foreign key(id) references member(id)
-);
 select * from member;
 select * from exercise;
 
@@ -181,4 +169,25 @@ insert into exercise values('슈퍼맨 플랭크',3,2,core_seq.nextval);
 insert into exercise values('엘보우 플랭크',3,2,core_seq.nextval);
 insert into exercise values('사이드 플랭크',3,2,core_seq.nextval);
 
+
 select * from diary;
+
+create table diary(
+id varchar2(100) not null,
+checkdate date default sysdate,
+extime varchar2(10) not null,
+list varchar2(100),
+strong number(10),
+danger number(10),
+max number(10) not null,
+min number(10) not null,
+exernumber number(10),
+constraint diary_id_fk foreign key(id) references member(id)
+);
+delete from DIARY where id='a';
+select checkdate from DIARY where  '';
+select * from diary where id='a'and checkdate='20220607' and rownum =1 order by 1 desc ;
+delete DIARY 
+insert into DIARY values('a','20220607','00:50:05','sss',2,8,23,8,30,87);
+select * from diary;
+

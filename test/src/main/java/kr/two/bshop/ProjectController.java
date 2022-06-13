@@ -16,12 +16,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.two.entity.BookVO;
+import kr.two.entity.DiaryVO;
 import kr.two.entity.ExerVO;
 import kr.two.entity.MemberVO;
 import kr.two.mapper.ProjectMapper;
 
 @Controller
 public class ProjectController {
+	
 	@Autowired
 	private ProjectMapper projectMapper;
 	// http://127.0.0.1:8081/controller
@@ -56,10 +58,12 @@ public class ProjectController {
 	@PostMapping("/loginservice.do")
 	public String loginservice(Model model, MemberVO vo) {
 		System.out.println("너냐?");
+
 		vo = projectMapper.login(vo);
 		model.addAttribute("vo", vo);
 		
-		return "watch1";
+		return "calendar";
+
 	}
 
 	@RequestMapping("/listpick.do")
@@ -78,10 +82,29 @@ public class ProjectController {
 		model.addAttribute("mvo", mvo);
 		return "watch2";
 	}
+	@RequestMapping("/watch.do")
+	public String watch() {
+		return "watch1";
+	}
 
 	@GetMapping("/diaryinsert.do")
 	public String diaryinsert() {
 		
 		return "watch";
 	}
+	
+	@GetMapping("/diaryslect.do")
+	public String diaryselect(Model model, String id, String checkdate) {
+		System.out.println("확인2"+id);
+		System.out.println("확인3"+checkdate);
+		
+		DiaryVO vo = projectMapper.diaryselect(id,checkdate);
+		System.out.println(vo);
+		model.addAttribute("dvo", vo);
+		
+		return "calendar";
+	}
+	
+	
+	
 }
