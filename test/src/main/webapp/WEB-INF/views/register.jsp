@@ -74,6 +74,12 @@
 								<hr>
 								<div class="fields">
 									<div class="field">
+										<label for="weight">나이를 입력하세요</label>
+										<input type="number" name="age" id="age" />
+									</div>
+								</div>
+								<div class="fields">
+									<div class="field">
 										<label for="height">키를 입력하세요</label>
 										<input type="number" name="height" id="height" />
 									</div>
@@ -84,12 +90,7 @@
 										<input type="number" name="weight" id="weight" />
 									</div>
 								</div>
-								<div class="fields">
-									<div class="field">
-										<label for="weight">나이를 입력하세요</label>
-										<input type="number" name="age" id="age" />
-									</div>
-								</div>
+
 								<hr>
 								<ul class="actions special">
 									<li><input type="submit" value="확인" /></li>
