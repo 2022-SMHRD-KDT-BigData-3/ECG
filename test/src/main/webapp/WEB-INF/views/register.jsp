@@ -32,7 +32,6 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="" class="logo">Register Page</a>
 					</header>
 
 				<!-- Nav -->
@@ -72,6 +71,7 @@
 										<input type="password" name="pw" id="password" />
 									</div>
 								</div>
+								<hr>
 								<div class="fields">
 									<div class="field">
 										<label for="height">키를 입력하세요</label>
@@ -83,27 +83,13 @@
 										<label for="weight">몸무게를 입력하세요</label>
 										<input type="number" name="weight" id="weight" />
 									</div>
-									
 								</div>
-								<hr>
-								<div class="row gtr-uniform">
-								<div class="col-12">
-								<label>운동강도를 선택해 주세요</label>
+								<div class="fields">
+									<div class="field">
+										<label for="weight">나이를 입력하세요</label>
+										<input type="number" name="age" id="age" />
+									</div>
 								</div>
-											<!-- Break -->
-											<div class="col-4 col-12-small">
-												<input type="checkbox" id="demo-priority-low" name="strong" value="1" checked onclick="checkOnlyOne(this)">
-												<label for="demo-priority-low">저강도</label>
-											</div>
-											<div class="col-4 col-12-small">
-												<input type="checkbox" id="demo-priority-normal" name="strong" value="2" onclick="checkOnlyOne(this)">
-												<label for="demo-priority-normal">중강도</label>
-											</div>
-											<div class="col-4 col-12-small">
-												<input type="checkbox" id="demo-priority-high" name="strong" value="3" onclick="checkOnlyOne(this)">
-												<label for="demo-priority-high">고강도</label>
-											</div>
-										</div>
 								<hr>
 								<ul class="actions special">
 									<li><input type="submit" value="확인" /></li>
@@ -113,11 +99,6 @@
 							</article>
 							
 
-					</div>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; soul heart</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
 					</div>
 
 			</div>

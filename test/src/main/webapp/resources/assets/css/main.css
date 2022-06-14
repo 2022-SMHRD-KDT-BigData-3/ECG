@@ -3515,8 +3515,8 @@ input, select, textarea {
 		-webkit-user-select: none;
 		-ms-user-select: none;
 		user-select: none;
-		height: 20rem;
-		padding-bottom: 8rem;
+		height: 4rem;
+		padding-bottom: 4rem;
 		position: relative;
 		text-align: center;
 		z-index: 2;
@@ -3584,8 +3584,8 @@ input, select, textarea {
 		@media screen and (max-width: 980px) {
 
 			#header {
-				height: 14rem;
-				padding-bottom: 4rem;
+				height: 0rem;
+				padding-bottom: 0rem;
 			}
 
 		}
