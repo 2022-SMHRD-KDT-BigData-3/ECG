@@ -14,7 +14,7 @@
 		$main = $('#main'),
 		$navPanelToggle, $navPanel, $navPanelInner;
 
-	// Breakpoints.
+	// Breakpoints
 		breakpoints({
 			default:   ['1681px',   null       ],
 			xlarge:    ['1281px',   '1680px'   ],
