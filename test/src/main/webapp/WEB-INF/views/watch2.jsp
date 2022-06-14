@@ -323,7 +323,7 @@ button {
 						<div id="exerlist" name="list" style="display: none"></div>
 						<h3 id="time2" name="time2"></h3>
 						<h3 id="cal2" name="cal2"></h3>
-						<div> <h3 id="maxHeart" name="maxHeart"></h3> / <h3 id="minHeart" name="min"></h3>BPM </div>> 
+						<div> <h3 id="maxHeart" name="maxHeart"></h3> / <h3 id="minHeart" name="min"></h3>BPM </div> 
 						<h3 id="strong" name="strong"></h3>
 						<h3 id="age" style="display: none">29</h3>
 						<h3 name="danger" style="display: none">${danger}</h3>

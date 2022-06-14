@@ -5,37 +5,11 @@ var stabilityHeart =0; // 안정시 심박수
 var maxHeart = 0;   // 운동하기전 최대심박수
 var mhr = 0;   // 220-나이에 들어갈 최대심박수
 var maxHeart2 =0; // 운동했을때 목표심박수
+
 $(document).ready(function(){
   buttonEvt();
-   targetHeart();
+ 
 });
-
-// 목표심박수 구하는 펑션
-function targetHeart() {
-	// maxHeart = 최대심박수 ,min = 최소목표심박수, max = 최대목표심박수  수정해야함 !!
-	let maxHeart = 220-21+60 ;
-	let min= 0;
-	let max = 0;
-	let pre = 60;
-	let ter = 220-21;
-	if(pre>50){
-	min = maxHeart*0.60+60
-	max = maxHeart*0.70+60
-	// parseInt() 형변환
-	min = parseInt(min)
-	max = parseInt(max)
-	}else { 
-	min = maxHeart*0.70+60
-	max = maxHeart*0.80+60
-	min = parseInt(min)
-	max = parseInt(max)
-	}
-	// j쿼리로 id값 heart의 내용을 바꿔준다
-		// 목표심박수
-	  document.getElementById("targetHeart").innerHTML = min+"~"+max;
-	  // 공식의 최소목표심박수
-	   document.getElementById("minHeart").innerHTML = min;
-}
 
 
 function init(){
@@ -48,6 +22,35 @@ function buttonEvt(){
   var sec = 0;
   var timer;
 
+	// maxHeart = 최대심박수 ,min = 최소목표심박수, max = 최대목표심박수  수정해야함 !!
+	// 
+	let maxHeart = 220-21-60 ;
+	let min= 0;
+	let max = 0;
+	let pre = 60;
+	let ter = 220-21;
+	
+	// 예측 위험도가 50프로 미만이라면 운동강도를 이만큼한다.
+	if(pre>50){
+	min = maxHeart*0.60+60
+	max = maxHeart*0.70+60
+	// parseInt() 형변환
+	min = parseInt(min)
+	max = parseInt(max)
+	
+	// 아니라면 운동강도를 이만큼한다.
+	}else { 
+	min = maxHeart*0.70+60
+	max = maxHeart*0.80+60
+	min = parseInt(min)
+	max = parseInt(max)
+	}
+	// j쿼리로 id값 heart의 내용을 바꿔준다
+		// 목표심박수
+	  document.getElementById("targetHeart").innerHTML = min+"~"+max;
+	  // 공식의 최소목표심박수
+	   document.getElementById("minHeart").innerHTML = min;
+	
   // start btn
   $("#startbtn").click(function(){
  $("#slide02").prop("checked",true);
