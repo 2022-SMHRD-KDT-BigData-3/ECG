@@ -7,6 +7,8 @@
 <title>watch1</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <style type="text/css">
+
+
    @font-face {
     font-family: 'EliceDigitalBaeum';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_elice@1.0/EliceDigitalBaeum.woff2') format('woff2');
@@ -14,9 +16,11 @@
     font-style: normal;
 	}
     
+
    * {margin:0;padding:0;}
    .section {}
    .section input[id*="slide"] {display:none;}
+
    .section .slide-wrap {max-width:1200px;margin:0 auto;}
    .section .slidelist {white-space:nowrap;font-size:0;overflow:hidden;}
    .section .slidelist > li {display:inline-block;vertical-align:middle;width:100%;transition:all .5s;}
@@ -25,20 +29,24 @@
    .section .slidelist label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
    .section .slidelist .left {left:30px;background:url('./img/left.png') center center / 100% no-repeat;}
    .section .slidelist .right {right:30px;background:url('./img/right.png') center center / 100% no-repeat;}
-   .section .slidelist .textbox {position:absolute;z-index:1;top:50%;left:51%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
+   .section .slidelist .textbox {position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
    
-   .section .slidelist .textbox h3 {font-size:84px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
+   .section .slidelist .textbox h3 {font-size:50px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
    .section .slidelist .textbox p {font-size:24px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
+
    .section input[id="slide01"]:checked ~ .slide-wrap .slidelist > li {transform:translateX(0%);}
    .section input[id="slide02"]:checked ~ .slide-wrap .slidelist > li {transform:translateX(-100%);}
    .section input[id="slide03"]:checked ~ .slide-wrap .slidelist > li {transform:translateX(-200%);}
+
    .section input[id="slide01"]:checked ~ .slide-wrap li:nth-child(1) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
    .section input[id="slide01"]:checked ~ .slide-wrap li:nth-child(1) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
    .section input[id="slide02"]:checked ~ .slide-wrap li:nth-child(2) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
    .section input[id="slide02"]:checked ~ .slide-wrap li:nth-child(2) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
    .section input[id="slide03"]:checked ~ .slide-wrap li:nth-child(3) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
    .section input[id="slide03"]:checked ~ .slide-wrap li:nth-child(3) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
+
    /*아이콘 시작 */
+
 .slidelist{
    background-color: black;
 }
@@ -49,14 +57,14 @@
   align-items: center;
   height: 700px;
 }
+
 .circle {
   border: 4px solid white;
   border-radius: 80%;
-  width: 220%;
-  height: 220%;
-  max-width: 350px;
-  max-height: 350px;
-  margin-bottom: 14%;
+  width: 100%;
+  height: 100%;
+  max-width: 100px;
+  max-height: 100px;
   position: relative;
 }
 .circle:before {
@@ -94,8 +102,10 @@
 }
 #danger{
    font-color : white;
-   margin-top: 360px;
+   margin-top: 200px;
 }
+
+
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -137,7 +147,9 @@ h1 {
   position: absolute;
   content: "";
 }
+
 .btn-holder {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1000px;
@@ -150,14 +162,13 @@ h1 {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  margin: 35px 155px -95px -95px;
+  margin: 0px 25px 15px;
   min-width: 150px;
-  left: 6rem;
 }
   .btn span {         
     position: relative;
     display: inline-block;
-    font-size: 30px;
+    font-size: 14px;
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -166,11 +177,13 @@ h1 {
     padding: 15px 20px;
     transition: 0.3s;
   }
+
 /*--- btn-1 ---*/
 .back{
   background-color : white;
   width: 130%;
 }
+
 .btn-1::before {
   background-color: rgb(28, 31, 30);
   transition: 0.3s ease-out;
@@ -184,6 +197,7 @@ h1 {
   color: rgb(28, 31, 30);
   transition: 0.2s 0.1s;
 }
+
 /* 1.hover-filled-slide-down */
 .btn.hover-filled-slide-down::before {
   bottom: 0; left: 0; right: 0; 
@@ -192,6 +206,7 @@ h1 {
 .btn.hover-filled-slide-down:hover::before {
   height: 0%;
 }
+
 /* 2.hover-filled-slide-up */
 .btn.hover-filled-slide-up::before {
   top: 0; left: 0; right: 0;
@@ -200,14 +215,17 @@ h1 {
 .btn.hover-filled-slide-up:hover::before {
   height: 0%;
 }
+
 /* 3.hover-filled-slide-left */
 .btn.hover-filled-slide-left::before {
   top: 0; bottom: 0; left: 0;
   height: 100%; width: 100%;
 }
+
 .btn.hover-filled-slide-left:hover::before {
   width: 0%;
 }
+
 /* 4. hover-filled-slide-right */
 .btn.hover-filled-slide-right::before {
   top:0; bottom: 0; right: 0;
@@ -216,6 +234,7 @@ h1 {
 .btn.hover-filled-slide-right:hover::before {
   width: 0%;
 }
+
 /* 5. hover-filled-opacity */
 .btn.hover-filled-opacity::before {
   top:0; bottom: 0; right: 0;
@@ -229,6 +248,8 @@ h1 {
 </style>
 </head>
 <body>
+
+<div id="age" style="display:None">${vo.getAge()}</div>   
 
 <div class="section">
    <input type="radio" name="slide" id="slide01" checked>
@@ -291,27 +312,49 @@ h1 {
    </div>
 </div>
 <script type="text/javascript">
+
 $(document).ready(()=>{
     // jquery에 만들어져 있는 함수 ==> $. 비동기식 함수
     // $.ajax({ })-> 초기화list
       getData();
   });
+
 function getData(){
 	// 통신 code
+	document.getElementById("danger").innerHTML = "<MARQUEE direction='up' height='60' truespeed='1'> 1%<br>2%<br>3%<br>" +
+	"4%<br>5%<br>6%<br>7%<br>8%<br>9%<br> </MARQUEE>";
+
+	$.ajax({
+		url : "http://localhost:9000/flask",
+		type : "GET",		
+		success : function(data) {
+			console.log(data);
+			var result = data*100;			
+			
+			document.getElementById("danger").innerHTML = result+"%";
+			
+			if(result >= 70)
+				document.getElementById("danger").style.color="red";
+			else if(result >= 30)
+				document.getElementById("danger").style.color="orange";
+			else
+				document.getElementById("danger").style.color="green";
+						
+			var a_tags = $("a.a_link");
+			console.log("length : "+a_tags.length)
+			a_tags.eq(0).attr("href","listpick.do?Choose=1&num=3&type=1&danger="+result+"&age="+${vo.getAge()});
+			a_tags.eq(1).attr("href","listpick.do?Choose=2&num=2&type=2&danger="+result+"&age="+${vo.getAge()});
+			a_tags.eq(2).attr("href","listpick.do?Choose=2&num=2&type=2&danger="+result+"&age="+${vo.getAge()});
+			
+			var h3_tag = $("#danger");
+		}		
+	});
 	
+
 	// 파싱 code
-	var result = 30;
-	
-	var a_tags = $("a.a_link");
-	console.log("length : "+a_tags.length)
-	a_tags.eq(0).attr("href","listpick.do?Choose=1&num=3&type=1&danger="+result);
-	a_tags.eq(1).attr("href","listpick.do?Choose=2&num=2&type=2&danger="+result);
-	a_tags.eq(2).attr("href","listpick.do?Choose=2&num=2&type=2&danger="+result);
-	
-	var h3_tag = $("#danger");
-	
-	document.getElementById("danger").innerHTML = result+"%";
+
 }
+
 </script>
 </body>
 </html>
