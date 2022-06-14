@@ -7,6 +7,7 @@ var mhr = 0;   // 220-나이에 들어갈 최대심박수
 var maxHeart2 =0; // 운동했을때 목표심박수
 
 $(document).ready(function(){
+ 
   buttonEvt();
  
 });
@@ -21,35 +22,38 @@ function buttonEvt(){
   var min = 0;
   var sec = 0;
   var timer;
-
-	// maxHeart = 최대심박수 ,min = 최소목표심박수, max = 최대목표심박수  수정해야함 !!
-	// 
+	
+	// 심박수 데이터 통신 해야함 ★★★★★
+	// maxHeart = 최대심박수 ,targetmin = 최소목표심박수, targetmax = 최대목표심박수  수정해야함 !!
+	
 	let maxHeart = 220-21-60 ;
-	let min= 0;
-	let max = 0;
-	let pre = 60;
+	let targetmin= 0;
+	let targetmax = 0;
+	let danger = document.getElementById('danger').innerText;
+	console.log("danger : "+danger)
+	
 	let ter = 220-21;
 	
 	// 예측 위험도가 50프로 미만이라면 운동강도를 이만큼한다.
-	if(pre>50){
-	min = maxHeart*0.60+60
-	max = maxHeart*0.70+60
+	if(danger>50){
+	targetmin = maxHeart*0.60+60
+	targetmax = maxHeart*0.70+60
 	// parseInt() 형변환
-	min = parseInt(min)
-	max = parseInt(max)
+	targetmin = parseInt(targetmin)
+	targetmax = parseInt(targetmax)
 	
 	// 아니라면 운동강도를 이만큼한다.
 	}else { 
-	min = maxHeart*0.70+60
-	max = maxHeart*0.80+60
-	min = parseInt(min)
-	max = parseInt(max)
+	targetmin = maxHeart*0.70+60
+	targetmax = maxHeart*0.80+60
+	targetmin = parseInt(targetmin)
+	targetmax = parseInt(targetmax)
 	}
 	// j쿼리로 id값 heart의 내용을 바꿔준다
 		// 목표심박수
-	  document.getElementById("targetHeart").innerHTML = min+"~"+max;
+	  document.getElementById("targetHeart").innerHTML = targetmin+"~"+targetmax;
 	  // 공식의 최소목표심박수
-	   document.getElementById("minHeart").innerHTML = min;
+	   document.getElementById("minHeart").innerHTML = targetmin;
 	
   // start btn
   $("#startbtn").click(function(){
