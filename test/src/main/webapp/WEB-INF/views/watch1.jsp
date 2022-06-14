@@ -28,7 +28,7 @@
    .section .slidelist label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
    .section .slidelist .left {left:30px;background:url('./img/left.png') center center / 100% no-repeat;}
    .section .slidelist .right {right:30px;background:url('./img/right.png') center center / 100% no-repeat;}
-   .section .slidelist .textbox {position:absolute;z-index:1;top:50%;left:51%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
+   .section .slidelist .textbox {position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
    
    .section .slidelist .textbox h3 {font-size:50px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
    .section .slidelist .textbox p {font-size:24px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
@@ -60,10 +60,10 @@
 .circle {
   border: 4px solid white;
   border-radius: 80%;
-  width: 200%;
-  height: 200%;
-  max-width: 300px;
-  max-height: 300px;
+  width: 100%;
+  height: 100%;
+  max-width: 100px;
+  max-height: 100px;
   position: relative;
 }
 .circle:before {
@@ -101,10 +101,7 @@
 }
 #danger{
    font-color : white;
-   margin-top: 450px;
-   
-   
-   
+   margin-top: 200px;
 }
 
 
