@@ -298,34 +298,19 @@ $(document).ready(()=>{
   });
 function getData(){
 	// 통신 code
-	document.getElementById("danger").innerHTML = "<MARQUEE direction='up' height='60' truespeed='1'> 1%<br>2%<br>3%<br>" +
-	"4%<br>5%<br>6%<br>7%<br>8%<br>9%<br> </MARQUEE>";
-
-	$.ajax({
-		url : "http://localhost:9000/flask",
-		type : "GET",		
-		success : function(data) {
-			console.log(data);
-			var result = data*100;			
-			
-			document.getElementById("danger").innerHTML = result+"%";
-			
-			if(result >= 70)
-				document.getElementById("danger").style.color="red";
-			else if(result >= 30)
-				document.getElementById("danger").style.color="orange";
-			else
-				document.getElementById("danger").style.color="green";
-						
-			var a_tags = $("a.a_link");
-			console.log("length : "+a_tags.length)
-			a_tags.eq(0).attr("href","listpick.do?Choose=1&num=3&type=1&danger="+result+"&age="+${vo.getAge()});
-			a_tags.eq(1).attr("href","listpick.do?Choose=2&num=2&type=2&danger="+result+"&age="+${vo.getAge()});
-			a_tags.eq(2).attr("href","listpick.do?Choose=2&num=2&type=2&danger="+result+"&age="+${vo.getAge()});
-			
-			var h3_tag = $("#danger");
-		}		
-	});
+	
+	// 파싱 code
+	var result = 30;
+	
+	var a_tags = $("a.a_link");
+	console.log("length : "+a_tags.length)
+	a_tags.eq(0).attr("href","listpick.do?Choose=1&num=3&type=1&danger="+result);
+	a_tags.eq(1).attr("href","listpick.do?Choose=2&num=2&type=2&danger="+result);
+	a_tags.eq(2).attr("href","listpick.do?Choose=2&num=2&type=2&danger="+result);
+	
+	var h3_tag = $("#danger");
+	
+	document.getElementById("danger").innerHTML = result+"%";
 }
 </script>
 </body>
