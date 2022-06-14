@@ -103,7 +103,7 @@
 }
 #danger{
    font-color : white;
-   margin-top: 340px;
+   margin-top: 360px;
 }
 
 
