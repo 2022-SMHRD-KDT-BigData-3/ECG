@@ -34,10 +34,10 @@ function buttonEvt(){
 	
 	let ter = 220-21;
 	
-	// 예측 위험도가 50프로 미만이라면 운동강도를 이만큼한다.
+	// 예측 위험도가 50프로 이상이라면 운동강도를 이만큼한다.
 	if(danger>50){
-	targetmin = maxHeart*0.60+60
-	targetmax = maxHeart*0.70+60
+	targetmin = maxHeart*0.50+60
+	targetmax = maxHeart*0.60+60
 	// parseInt() 형변환
 	targetmin = parseInt(targetmin)
 	targetmax = parseInt(targetmax)

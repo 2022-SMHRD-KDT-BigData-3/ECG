@@ -12,8 +12,8 @@ public class MemberVO {
 	private String id;
 	private String pw;
 	private String nick;
-	private String height;
-	private String weight;
-	private String strong;
+	private int height;
+	private int weight;
+	private int age;
 }
 

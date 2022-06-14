@@ -2,6 +2,6 @@
     pageEncoding="UTF-8"%>
 <%
 
-	response.sendRedirect("watch.do");
+	response.sendRedirect("watchservice.do");
 
 %>
