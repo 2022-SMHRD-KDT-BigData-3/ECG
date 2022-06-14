@@ -57,13 +57,9 @@ public class ProjectController {
 
 	@PostMapping("/loginservice.do")
 	public String loginservice(Model model, MemberVO vo) {
-		System.out.println("너냐?");
-
 		vo = projectMapper.login(vo);
 		model.addAttribute("vo", vo);
-		
 		return "calendar";
-
 	}
 
 	@RequestMapping("/listpick.do")
@@ -95,11 +91,8 @@ public class ProjectController {
 	
 	@GetMapping("/diaryslect.do")
 	public String diaryselect(Model model, String id, String checkdate) {
-		System.out.println("확인2"+id);
-		System.out.println("확인3"+checkdate);
-		
+
 		DiaryVO vo = projectMapper.diaryselect(id,checkdate);
-		System.out.println(vo);
 		model.addAttribute("dvo", vo);
 		
 		return "calendar";
