@@ -105,6 +105,22 @@ public class ProjectController {
 		return "calendar";
 	}
 	
-	
+	@GetMapping("/watchservice.do")
+	public String watchservice(Model model) {
+		System.out.println("너냐?");
+		
+		MemberVO vo = new MemberVO();
+		vo.setId("a");
+		vo.setPw("a");
+		vo.setNick("김홍석");
+		vo.setHeight(175);
+		vo.setWeight(77);
+		vo.setAge(29);
+		
+		model.addAttribute("vo", vo);
+		
+		return "watch1";
+
+	}
 	
 }
