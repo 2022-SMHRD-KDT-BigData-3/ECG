@@ -29,9 +29,9 @@
    .section .slidelist label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
    .section .slidelist .left {left:30px;background:url('./img/left.png') center center / 100% no-repeat;}
    .section .slidelist .right {right:30px;background:url('./img/right.png') center center / 100% no-repeat;}
-   .section .slidelist .textbox {position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
+   .section .slidelist .textbox {position:absolute;z-index:1;top:50%;left:51%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
    
-   .section .slidelist .textbox h3 {font-size:50px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
+   .section .slidelist .textbox h3 {font-size:84px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
    .section .slidelist .textbox p {font-size:24px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
 
    .section input[id="slide01"]:checked ~ .slide-wrap .slidelist > li {transform:translateX(0%);}
@@ -61,10 +61,11 @@
 .circle {
   border: 4px solid white;
   border-radius: 80%;
-  width: 100%;
-  height: 100%;
-  max-width: 100px;
-  max-height: 100px;
+  width: 220%;
+  height: 220%;
+  max-width: 350px;
+  max-height: 350px;
+  margin-bottom: 14%;
   position: relative;
 }
 .circle:before {
@@ -102,7 +103,7 @@
 }
 #danger{
    font-color : white;
-   margin-top: 200px;
+   margin-top: 360px;
 }
 
 
@@ -149,7 +150,6 @@ h1 {
 }
 
 .btn-holder {
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1000px;
@@ -162,13 +162,14 @@ h1 {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  margin: 0px 25px 15px;
+  margin: 35px 155px -95px -95px;
   min-width: 150px;
+  left: 6rem;
 }
   .btn span {         
     position: relative;
     display: inline-block;
-    font-size: 14px;
+    font-size: 30px;
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
