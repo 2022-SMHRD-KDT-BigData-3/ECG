@@ -328,9 +328,9 @@ function getData(){
 
 	var a_tags = $("a.a_link");
 	console.log("length : "+a_tags.length)
-	a_tags.eq(0).attr("href","listpick.do?Choose=1&num=3&type=1&danger="+result);
-	a_tags.eq(1).attr("href","listpick.do?Choose=2&num=2&type=2&danger="+result);
-	a_tags.eq(2).attr("href","listpick.do?Choose=2&num=2&type=2&danger="+result);
+	a_tags.eq(0).attr("href","listpick.do?Choose=1&danger="+result);
+	a_tags.eq(1).attr("href","listpick.do?Choose=2&danger="+result);
+	a_tags.eq(2).attr("href","listpick.do?Choose=3&anger="+result);
 	
 	var h3_tag = $("#danger");
 	

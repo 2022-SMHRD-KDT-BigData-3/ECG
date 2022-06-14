@@ -63,16 +63,14 @@ public class ProjectController {
 	}
 
 	@RequestMapping("/listpick.do")
-	public String listpick(Model model, int Choose, int num, int type ,String danger) {
+	public String listpick(Model model, int Choose,String danger) {
 		List<String> mvo = new ArrayList<String>();
 		System.out.println("ddddd"+danger);
 		// Choose = 선택한 운동종류 , num = 셀렉트할 횟수, type 운동종류
-		for (int i = 0; i < num; i++) {
-			List<String> data = projectMapper.exerlist(Choose, i + 1, type);
-			// data 크기만큼 mvo에 넣어준다
-			for (int a = 0; a < data.size(); a++) {
-				mvo.add(data.get(a));
-			}
+		for (int i = 0; i < 3; i++) {
+			List<String> data = projectMapper.exerlist(Choose, i + 1);	
+				mvo.add(data.get(i));
+			
 		}
 		model.addAttribute("danger", danger);
 		model.addAttribute("mvo", mvo);
