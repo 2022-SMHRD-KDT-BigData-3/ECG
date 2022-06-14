@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	<!DOCTYPE html>
 	<html lang="en">
 	
@@ -28,17 +29,17 @@ body {
     }
 </style>
 	</head>
-	
+
 	<body class="light">
 	
 		<div class="calendar">
 			<div class="calendar-header">
 
-				<span class="year-change" id="prev-year">
+				<span class="month-change" id="prev-month">
 					<pre><</pre>
 				</span>
 				<div class="month-picker" id="month-picker">February</div>
-				<span class="year-change" id="next-year">
+				<span class="month-change" id="next-month">
 					<pre>></pre>
 				</span>
 
@@ -71,28 +72,30 @@ body {
 				<table class="alt">
 					<tbody>
 						<tr>
+						<td id="idvo" style="display: none" >${vo.id}</td>
 							<td>시간</td>
-							<td>1시간</td>
+							<td>${dvo.getExtime()}</td>
+								
 						</tr>
 						<tr>
 							<td>최대 / 평균</td>
-							<td>90 / 100</td>
+							<td>${dvo.getMax()}/${dvo.getMean()}</td>
 						</tr>
 						<tr>
 							<td>운동 List</td>
-							<td>프랭크</td>
+							<td>${dvo.getList()}</td>
 						</tr>
 						<tr>
 							<td>운동 강도(판별)</td>
-							<td>강</td>
+							<td>${dvo.getStrong()}</td>
 						</tr>
 						<tr>
 							<td>키</td>
-							<td>175</td>
+							<td>${dvo.getHeight()}</td>
 						</tr>
 						<tr>
 							<td>몸무게</td>
-							<td>62</td>
+							<td>${dvo.getWeight()}</td>
 						</tr>
 					</tbody>
 				</table>

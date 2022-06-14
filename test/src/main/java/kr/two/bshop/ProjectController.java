@@ -16,12 +16,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.two.entity.BookVO;
+import kr.two.entity.DiaryVO;
 import kr.two.entity.ExerVO;
 import kr.two.entity.MemberVO;
 import kr.two.mapper.ProjectMapper;
 
 @Controller
 public class ProjectController {
+	
 	@Autowired
 	private ProjectMapper projectMapper;
 	// http://127.0.0.1:8081/controller
@@ -57,13 +59,13 @@ public class ProjectController {
 	public String loginservice(Model model, MemberVO vo) {
 		vo = projectMapper.login(vo);
 		model.addAttribute("vo", vo);
-		return "watch1";
+		return "calendar";
 	}
 
-	@GetMapping("/listpick.do")
-	public String listpick(Model model, int Choose, int num, int type) {
+	@RequestMapping("/listpick.do")
+	public String listpick(Model model, int Choose, int num, int type ,String danger) {
 		List<String> mvo = new ArrayList<String>();
-
+		System.out.println("ddddd"+danger);
 		// Choose = 선택한 운동종류 , num = 셀렉트할 횟수, type 운동종류
 		for (int i = 0; i < num; i++) {
 			List<String> data = projectMapper.exerlist(Choose, i + 1, type);
@@ -72,8 +74,30 @@ public class ProjectController {
 				mvo.add(data.get(a));
 			}
 		}
+		model.addAttribute("danger", danger);
 		model.addAttribute("mvo", mvo);
-		return "main";
+		return "watch2";
+	}
+	@RequestMapping("/watch.do")
+	public String watch() {
+		return "watch1";
 	}
 
+	@GetMapping("/diaryinsert.do")
+	public String diaryinsert() {
+		
+		return "watch";
+	}
+	
+	@GetMapping("/diaryslect.do")
+	public String diaryselect(Model model, String id, String checkdate) {
+
+		DiaryVO vo = projectMapper.diaryselect(id,checkdate);
+		model.addAttribute("dvo", vo);
+		
+		return "calendar";
+	}
+	
+	
+	
 }
