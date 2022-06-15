@@ -326,7 +326,7 @@ button {
 						<div> <h3 id="maxHeart" name="maxHeart"></h3> / <h3 id="minHeart" name="min"></h3>BPM </div> 
 						<h3 id="strong" name="strong"></h3>
 						<h3 id="age" style="display: none">29</h3>
-						<h3 name="danger" style="display: none">${danger}</h3>
+						<h3 id="danger" name="danger" style="display: none">${danger}</h3>
 					</div>
 				</div>
 				저장하시겠습니까 ?
