@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="resources/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="resources/assets/css/noscript.css" /></noscript>
-		<script type="text/javascript">
+				<script type="text/javascript">
 		<script type="text/javascript">
 		function checkOnlyOne(element) {
 			  
@@ -22,35 +22,34 @@
 			  element.checked = true;
 			}
 		</script>
-		</script>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
 
+
 				<!-- Header -->
-					<header id="header">
-						<a href="" class="logo">Edit Page</a>
-					</header>
+
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="login.do">로그인</a></li>
-							<li><a href="register.do">회원가입</a></li>
-							<li class="active"><a href="edit.do">회원수정</a></li>
+							<li><a href="login.jsp">Login Page</a></li>
+							<li><a href="register.jsp">Register Page</a></li>
+							<li class="active"><a href="edit.jsp">Edit Page</a></li>
 						</ul>
 					</nav>
 
 				<!-- Main -->
-					<div id="main">
 
+					<div id="main">
+					<img src="resources/assets/images/logo.png" style="width: 5rem; height: 4.6rem; padding: 1px;">
 						<!-- Featured Post -->
 							<article class="post featured">
 						<section>
-							<form method="post" action="UpdatService.do">
-								<div class="fields">
+							<form action="memberinsert.do" method="post" >
+																<div class="fields">
 									<div class="field">
 										<label for="name">수정할 닉네임을 입력하세요</label>
 										<input type="text" name="nick" id="name" value="${vo.nick}"/>
@@ -60,6 +59,12 @@
 										<label for="name">수정할 비밀번호를 입력하세요</label>
 										<input type="password" name="nick" id="name" />
 									</div>
+									
+									<div class="field">
+										<label for="email">수정할 나이를 입력하세요</label>
+										<input type="number" name="age" id="age" value="${vo.age}"/>
+									</div>
+								
 								
 									<div class="field">
 										<label for="email">수정할 몸무게를 입력하세요</label>
@@ -71,37 +76,13 @@
 										<input type="number" name="height" id="name" value="${vo.height}"/>
 									</div>
 								</div>
-																<hr>
-								<div class="row gtr-uniform">
-								<div class="col-12">
-								<label>운동강도를 선택해 주세요</label>
-								</div>
-											<!-- Break -->
-											<div class="col-4 col-12-small">
-												<input type="checkbox" id="demo-priority-low" name="strong" value="1" onclick="checkOnlyOne(this)">
-												<label for="demo-priority-low">저강도</label>
-											</div>
-											<div class="col-4 col-12-small">
-												<input type="checkbox" id="demo-priority-normal" name="strong" value="2" onclick="checkOnlyOne(this)">
-												<label for="demo-priority-normal">중강도</label>
-											</div>
-											<div class="col-4 col-12-small">
-												<input type="checkbox" id="demo-priority-high" name="strong" value="3" onclick="checkOnlyOne(this)">
-												<label for="demo-priority-high">고강도</label>
-											</div>
-										</div>
-								<hr>
+				
 								<ul class="actions special">
-									<li><input type="submit" value="변경하기" /></li>
+									<li><input type="submit" value="확인" /></li>
 								</ul>
 							</form>
 						</section>
 							</article>
-					</div>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; soul heart</li><li>Design: <a href="https://html5up.net">Soul Heart</a></li></ul>
 					</div>
 
 			</div>
