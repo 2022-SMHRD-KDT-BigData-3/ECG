@@ -1,310 +1,608 @@
-:root {
-    --dark-body: #4d4c5a;
-    --dark-main: #141529;
-    --dark-second: #79788c;
-    --dark-hover: #323048;
-    --dark-text: #f8fbff;
-
-    --light-body: #f3f8fe;
-    --light-main: #fdfdfd;
-    --light-second: #c3c2c8;
-    --light-hover: #edf0f5;
-    --light-text: #151426;
-
-    --blue: #0000ff;
-    --white: #fff;
-
-    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
-    --font-family: cursive;
+:root { -
+	-dark-body: #4d4c5a; -
+	-dark-main: #141529; -
+	-dark-second: #79788c; -
+	-dark-hover: #323048; -
+	-dark-text: #f8fbff; -
+	-light-body: #f3f8fe; -
+	-light-main: #fdfdfd; -
+	-light-second: #c3c2c8; -
+	-light-hover: #edf0f5; -
+	-light-text: #151426; -
+	-blue: #0000ff; -
+	-white: #fff; -
+	-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; -
+	-font-family: 'EliceDigitalBaeum'; -
+	-src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_elice@1.0/EliceDigitalBaeum.woff2')
+		format('woff2'); -
+	-font-weight: normal; -
+	-font-style: normal;
 }
 
-.dark {
-    --bg-body: var(--dark-body);
-    --bg-main: var(--dark-main);
-    --bg-second: var(--dark-second);
-    --color-hover: var(--dark-hover);
-    --color-txt: var(--dark-text);
+.dark { -
+	-bg-body: var(- -dark-body); -
+	-bg-main: var(- -dark-main); -
+	-bg-second: var(- -dark-second); -
+	-color-hover: var(- -dark-hover); -
+	-color-txt: var(- -dark-text);
 }
 
-.light {
-    --bg-body: var(--light-body);
-    --bg-main: var(--light-main);
-    --bg-second: var(--light-second);
-    --color-hover: var(--light-hover);
-    --color-txt: var(--light-text);
+.light { -
+	-bg-body: var(- -light-body); -
+	-bg-main: var(- -light-main); -
+	-bg-second: var(- -light-second); -
+	-color-hover: var(- -light-hover); -
+	-color-txt: var(- -light-text);
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html,
-body {
-    height: 100vh;
-    display: grid;
-    place-items: center;
-    font-family: var(--font-family);
-    background-color: var(--bg-body);
+html {
+	font-size: 16pt;
+}
+
+@media screen and (max-width: 1680px) {
+	html {
+		font-size: 14pt;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	html {
+		font-size: 12pt;
+	}
+}
+
+@media screen and (max-width: 990px) {
+	html {
+		font-size: 11pt;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	html {
+		font-size: 10pt;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	html {
+		font-size: 9pt;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	html {
+		font-size: 10pt;
+	}
+}
+
+@media screen and (max-width: 390px) {
+	html {
+		font-size: 9pt;
+	}
+}
+
+@media screen and (max-width: 370px) {
+	html {
+		font-size: 8pt;
+	}
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	display: grid;
+	place-items: center;
+	font-family: var(- -font-family);
+	background-color: var(- -bg-body);
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+@media screen and (max-width: 480px) {
+	html, body {
+		min-width: 320px
+	}
 }
 
 .calendar {
-    height: max-content;
-    width: max-content;
-    background-color: var(--bg-main);
-    border-radius: 30px;
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
-    /* transform: scale(1.25); */
+	height: 100%;
+	width: calc(100% - 4rem);
+	background-color: var(- -bg-main);
+	border-radius: 1rem; /*모서리 둥글기 정도 */
+	padding: 1rem;
+	position: relative;
+	/*overflow: hidden; 내용이 넘칠경우 넘친 내용은 안보여짐 */
 }
 
 .light .calendar {
-    box-shadow: var(--shadow);
+	box-shadow: var(- -shadow);
 }
 
 .calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 25px;
-    font-weight: 600;
-    color: var(--color-txt);
-    padding: 10px;
+	display: flex;
+	justify-content: space-between; /* 새로축 기준 두 콘텐츠 벌리게 하는것*/
+	align-items: center;
+	font-size: 1.5rem;
+	font-weight: 600; /*굵기 */
+	color: var(- -color-txt);
+	width: 100%;
+	padding: 4% 0% 0% 4%;
 }
 
 .calendar-body {
-    padding: 10px;
+	padding: 0.5rem;
+	width: 100%;
+	height: 40%;
 }
 
 .calendar-week-day {
-    height: 50px;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    font-weight: 600;
+	height: 3.5rem;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	/* 열배치  fr:1비율 -> repeat(7, 1fr) 7개열을 1:1:1~ 비율로 만들겠다 */
+	font-weight: 600;
+	width: 100%;
 }
 
 .calendar-week-day div {
-    display: grid;
-    place-items: center;
-    color: var(--bg-second);
+	display: grid; /* 디스플레이 영역 전체를 그리드 영역으로 만들겠다. */
+	place-items: center;
+	color: var(- -bg-second);
 }
 
 .calendar-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 2px;
-    color: var(--color-txt);
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 0.15rem; /* 각 태그들 마다 거리 조절 */
+	color: var(- -color-txt);
+	width: 100%;
+	height: 90%;
+}
+
+@media screen and (max-width: 420px) {
+	.calendar-days {
+		height: 90%;
+	}
+}
+
+@media screen and (max-width: 370px) {
+	.calendar-days {
+		height: 90%;
+	}
 }
 
 .calendar-days div {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    position: relative;
-    cursor: pointer;
-    animation: to-top 1s forwards;
-    /* border-radius: 50%; */
+	width: 3.4rem;
+	height: 3.4rem;
+	display: flex;
+	align-items: center; /* 가로축 기준 정렬*/
+	justify-content: center; /* 수직 축 기준 좌우 정렬*/
+	padding: 0.35rem;
+	position: relative;
+	cursor: pointer;
+	animation: to-top 1s forwards;
+	/* border-radius: 50%; */
 }
 
 .calendar-days div span {
-    position: absolute;
+	position: absolute;
 }
 
 .calendar-days div:hover span {
-    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+	transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
 }
 
-.calendar-days div span:nth-child(2),
-.calendar-days div span:nth-child(4) {
-    width: 2px;
-    height: 0;
-    background-color: var(--color-txt);
+.calendar-days div span:nth-child(2), .calendar-days div span:nth-child(4)
+	{
+	width: 0.18rem;
+	height: 0;
+	background-color: var(- -color-txt);
 }
 
-.calendar-days div:hover span:nth-child(2),
-.calendar-days div:hover span:nth-child(4) {
-    height: 100%;
+.calendar-days div:hover span:nth-child(2), .calendar-days div:hover span:nth-child(4)
+	{
+	height: 100%;
 }
 
 .calendar-days div span:nth-child(2) {
-    bottom: 0;
-    left: 0;
+	bottom: 0;
+	left: 0;
 }
 
 .calendar-days div span:nth-child(4) {
-    top: 0;
-    right: 0;
+	top: 0;
+	right: 0;
 }
 
-.calendar-days div span:nth-child(3),
-.calendar-days div span:nth-child(5) {
-    width: 0;
-    height: 2px;
-    background-color: var(--color-txt);
+.calendar-days div span:nth-child(3), .calendar-days div span:nth-child(5)
+	{
+	width: 0;
+	height: 0.18rem;
+	background-color: var(- -color-txt);
 }
 
-.calendar-days div:hover span:nth-child(3),
-.calendar-days div:hover span:nth-child(5) {
-    width: 100%;
+.calendar-days div:hover span:nth-child(3), .calendar-days div:hover span:nth-child(5)
+	{
+	width: 100%;
 }
 
 .calendar-days div span:nth-child(3) {
-    top: 0;
-    left: 0;
+	top: 0;
+	left: 0;
 }
 
 .calendar-days div span:nth-child(5) {
-    bottom: 0;
-    right: 0;
+	bottom: 0;
+	right: 0;
 }
 
 .calendar-days div:hover span:nth-child(3) {
-    transition-delay: 0.2s;
+	transition-delay: 0.2s;
 }
 
 .calendar-days div:hover span:nth-child(4) {
-    transition-delay: 0.4s;
+	transition-delay: 0.4s;
 }
 
 .calendar-days div:hover span:nth-child(5) {
-    transition-delay: 0.6s;
+	transition-delay: 0.6s;
 }
 
-.calendar-days div.curr-date,
-.calendar-days div.curr-date:hover {
-    background-color: var(--blue);
-    color: var(--white);
-    border-radius: 50%;
+.calendar-days div.curr-date, .calendar-days div.curr-date:hover {
+	background-color: var(- -blue);
+	color: var(- -white);
+	border-radius: 50%;
 }
 
 .calendar-days div.curr-date span {
-    display: none;
+	display: none;
 }
 
 .month-picker {
-    padding: 5px 10px;
-    border-radius: 10px;
-    cursor: pointer;
+	padding: 0.35rem 0.7rem;
+	border-radius: 0.8rem;
+	cursor: pointer; /* 커서 댈 때 커서 모양 종류 중 하나*/
 }
 
 .month-picker:hover {
-    background-color: var(--color-hover);
+	background-color: var(- -color-hover);
 }
 
-.year-picker {
-    display: flex;
-    align-items: center;
+#year {
+	display: flex;
+	align-items: center;
 }
 
 .month-change {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    margin: 0 10px;
-    cursor: pointer;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	margin: 0 /*세로*/ 0rem; /*가로*/
+	cursor: pointer;
 }
 
 .month-change:hover {
-    background-color: var(--color-hover);
+	background-color: var(- -color-hover);
 }
 
 .calendar-footer {
-    padding: 10px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+	padding: 0.7rem;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+}
+
+@media screen and (max-width: 420px) {
+	.calendar-footer {
+		height: 6.3%;
+	}
+}
+
+@media screen and (max-width: 370px) {
+	.calendar-footer {
+		height: 7%;
+	}
 }
 
 .toggle {
-    display: flex;
+	display: flex;
+	align-items: center;
 }
 
 .toggle span {
-    margin-right: 10px;
-    color: var(--color-txt);
+	margin-right: 0.7rem;
+	color: var(- -color-txt);
 }
 
 .dark-mode-switch {
-    position: relative;
-    width: 48px;
-    height: 25px;
-    border-radius: 14px;
-    background-color: var(--bg-second);
-    cursor: pointer;
+	position: relative;
+	width: 3.5rem;
+	height: 1.7rem;
+	border-radius: 0.9rem;
+	background-color: var(- -bg-second);
+	cursor: pointer;
 }
 
 .dark-mode-switch-ident {
-    width: 21px;
-    height: 21px;
-    border-radius: 50%;
-    background-color: var(--bg-main);
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    transition: left 0.2s ease-in-out;
+	width: 1.45rem;
+	height: 1.45rem;
+	border-radius: 50%;
+	background-color: var(- -bg-main);
+	position: absolute;
+	top: 0.15rem;
+	left: 0.15rem;
+	transition: left 0.2s ease-in-out;
 }
 
 .dark .dark-mode-switch .dark-mode-switch-ident {
-    top: 2px;
-    left: calc(2px + 50%);
+	top: 0.15rem;
+	left: calc(0.15rem + 50%);
 }
 
 .month-list {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: var(--bg-main);
-    padding: 20px;
-    grid-template-columns: repeat(3, auto);
-    gap: 5px;
-    display: grid;
-    transform: scale(1.5);
-    visibility: hidden;
-    pointer-events: none;
+	position: absolute;
+	/* 위 상위 엘리먼트가 relative가 있을 때 사용하는 것으로 absolute는 상위 엘리먼트 내부에서만 자유롭게 배치를 도와줌*/
+	width: 100%;
+	height: 57%;
+	top: 0;
+	left: 0;
+	background-color: var(- -bg-main);
+	grid-template-columns: repeat(3, auto);
+	gap: 0.3rem;
+	display: grid;
+	transform: scale(1); /*요소를 1.5배 확대하겠다. */
+	visibility: hidden;
+	pointer-events: none;
 }
 
 .month-list.show {
-    transform: scale(1);
-    visibility: visible;
-    pointer-events: visible;
-    transition: all 0.2s ease-in-out;
+	transform: scale(1);
+	visibility: visible;
+	pointer-events: visible;
+	transition: all 0.2s ease-in-out;
 }
 
-.month-list > div {
-    display: grid;
-    place-items: center;
+.month-list>div {
+	display: grid;
+	place-items: center;
 }
 
-.month-list > div > div {
-    width: 100%;
-    padding: 5px 20px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    color: var(--color-txt);
+.month-list>div>div {
+	width: 100%;
+	padding: 0.3rem 1.3rem;
+	border-radius: 0.7rem;
+	text-align: center;
+	cursor: pointer;
+	color: var(- -color-txt);
 }
 
-.month-list > div > div:hover {
-    background-color: var(--color-hover);
+.month-list>div>div:hover {
+	background-color: var(- -color-hover);
 }
 
-@keyframes to-top {
-    0% {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+@
+keyframes to-top { 0% {
+	transform: translateY(100%);
+	opacity: 0;
+}
+
+100
+%
+{
+transform
+:
+translateY(
+0
+);
+opacity
+:
+1;
+}
+}
+
+/* 테이블 */
+.table-wrapper {
+	overflow-x: auto;
+	color: var(- -color-txt);
+	text-align: center;
+	height: 42%;
+}
+
+table {
+	width: 100%;
+	height: 90%;
+}
+
+@media screen and (max-width: 420px) {
+	table {
+		height: 100%;
+	}
+}
+
+table tbody tr {
+	border: solid 1px;
+	border-left: 0;
+	border-right: 0;
+}
+
+table td {
+	padding: 0.75rem 0.75rem;
+	animation: to-top 1s forwards;
+	font-size: 1.3rem;
+}
+
+table th {
+	font-size: 0.8rem;
+	font-weight: 900;
+	letter-spacing: 0.075em;
+	line-height: 1.5;
+	padding: 0 0.75rem 0.75rem 0.75rem;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+@media screen and (max-width: 980px) {
+	table th {
+		font-size: 0.9rem;
+	}
+}
+
+table thead {
+	border-bottom: solid 2px;
+}
+
+table tfoot {
+	border-top: solid 2px;
+}
+
+table.alt {
+	border-collapse: separate;
+}
+
+table.alt tbody tr td {
+	border: solid 1px;
+	border-left-width: 0;
+	border-top-width: 0;
+}
+
+table.alt tbody tr td:first-child {
+	border-left-width: 1px;
+}
+
+table.alt tbody tr:first-child td {
+	border-top-width: 1px;
+}
+
+table.alt thead {
+	border-bottom: 0;
+}
+
+table.alt tfoot {
+	border-top: 0;
+}
+
+table tbody tr {
+	border-color: #eeeeee;
+}
+
+table tbody tr:nth-child(2n+1) {
+	background-color: rgba(220, 220, 220, 0.25);
+}
+
+table th {
+	color: #212931;
+}
+
+table thead {
+	border-bottom-color: #eeeeee;
+}
+
+table tfoot {
+	border-top-color: #eeeeee;
+}
+
+table.alt tbody tr td {
+	border-color: #eeeeee;
+}
+
+/* 버튼 */
+.name {
+	display: flex;
+	justify-content: space-between;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+	margin-right: 5%;
+}
+
+.button {
+	height: 3rem;
+	width: 3rem;
+	padding: 0% 5%;
+	font-family: 'EliceDigitalBaeum';
+	font-size: 1.5rem;
+	font-weight: 700;
+	background-color: #fff;
+	border-radius: 50%;
+	border: 1pt solid #eeeeee;
+	color: #000;
+}
+
+.button:hover {
+	font-size: 2rem;
+	background-color: #b3b7bb;
+	color: #fff;
+	transition: left 0.2s ease-in-out;
+}
+
+#drop-content {
+	position: absolute;
+	z-index: 1;
+	transition: left 0.2s ease-in-out;
+}
+
+#drop-content a {
+	height: 3rem;
+	width: 8rem;
+	display: block;
+	text-align: center;
+	font-size: 65%;
+	padding-top: 10%;
+	color: #eeeeee;
+	text-decoration: none;
+	border: 1px solid #eeeeee;
+	transition: left 0.2s ease-in-out;
+}
+
+#drop-content a:hover {
+	color: #fff;
+}
+
+.menuList {
+	width: 8rem;
+	height: 6rem;
+	border-radius: 5%;
+	background: #b3b7bb;
+	margin: 5% 0rem 0rem -1.5rem;
+	box-shadow: rgba(100, 100, 111, 0.4) 0px 4px 9px 0px;
+}
+
+.name>h2 {
+	padding-left: 40%;
+}
+
+@media screen and (max-width: 468px) {
+	.name>h2 {
+		padding-left: 35%;
+	}
+}
+
+.btn-group, .btn-group-vertical {
+	color: red;
+	position: relative;
+	display: inline-flex;
+	vertical-align: middle;
+	width: 100%;
+	height: 5%;
+}
+
+@media screen and (max-width: 420px) {
+	.btn-group, .btn-group-vertical {
+		height: 6.2%;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.btn-group, .btn-group-vertical {
+		height: 6.2%;
+	}
 }
