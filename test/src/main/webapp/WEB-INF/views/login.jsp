@@ -9,17 +9,7 @@
 		<link rel="stylesheet" href="resources/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="resources/assets/css/noscript.css" /></noscript>
 				<script type="text/javascript">
-		function checkOnlyOne(element) {
-			  
-			  const checkboxes 
-			      = document.getElementsByName("strong");
-			  
-			  checkboxes.forEach((cb) => {
-			    cb.checked = false;
-			  })
-			  
-			  element.checked = true;
-			}
+	
 		</script>
 	</head>
 		<body class="is-preload">
@@ -41,18 +31,18 @@
 
 				<!-- Main -->
 					<div id="main">
-							<img src="resources/assets/images/logo.png">
+							<img src="resources/assets/images/logo.png" id="loginLogo">
 						<!-- Featured Post -->
 							<article class="post featured">
 						<section>
 							<form method="post" action="loginservice.do">
-								<div class="fields">
-									<div class="field">
+								<div class="fields" id="loginfields">
+									<div class="field" id="loginId">
 										<label for="name">ID를 입력하세요</label>
 										<input type="text" name="id" id="id" />
 									</div>
 								
-									<div class="field">
+									<div class="field" id="loginPw">
 										<label for="email">PassWord를 입력하세요</label>
 										<input type="text" name="pw" id="password" />
 									</div>
@@ -67,7 +57,7 @@
 									<span class="date"></span>
 								</header>
 								<ul class="actions special">
-									<li><a href="#" class="button large">회원가입</a></li>
+									<li><a href="register.do" class="button large">회원가입</a></li>
 								</ul>
 							</article>
 							</form>

@@ -465,7 +465,7 @@ h1 {
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
-	margin: 3px 25px 5px 33px;
+	margin: 86px 25px 5px 33px;
 	min-width: 495px;
 	right: 4.9rem;
 }
@@ -576,18 +576,15 @@ h1 {
 </head>
 <body>
 
-
 	<!-- 종료 모달창 -->
 	<div class="modal">
 
 
 		<form action="exerInsert.do" style="height: 245px;">
 			<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-
-
-
 				<h2 style="font-size: 70px;">오늘 운동 내역은</h2>
-				<div class="modalbox" style="margin-top: 70px; font-size: 40px;">
+				<div class="modalbox"
+					style="margin-top: 110px; font-size: 31px; width: 50%; float: left; height: 39%;">
 					<div id="modal1" style="margin-bottom: 50px;">
 						<h3>시간</h3>
 					</div>
@@ -597,34 +594,51 @@ h1 {
 					<div id="modal3" style="margin-bottom: 50px;">
 						<h3>최대/평균심박수</h3>
 					</div>
-
-					<div id="modal">
-						<div name="id">${vo.getId()}</div>
-						<div id="exerlist" name="list"></div>
-						<h3 id="time2" name="time2"></h3>
-						<h3>time</h3>
-						<h3 id="cal4" name="cal2"></h3>
-						<h3>kcal</h3>
-						<div>
-							<h3 id="maxHeart" name="maxHeart"></h3>
-							/
-							<h3 id="minHeart" name="min"></h3>
-							BPM
-						</div>
-						<h3 id="strong" name="strong"></h3>
-						<h3 id="age" style="display: none">${vo.getAge()}</h3>
-						<h3 id="danger" name="danger" style="display: none">${danger}</h3>
+					<div id="modal3" style="margin-bottom: 50px;">
+						<h3>운동리스트</h3>
 					</div>
 				</div>
-				<button class="btn btn-1 hover-filled-slide-down" type="">저장</button>
-				<button class="btn btn-1 hover-filled-slide-down">돌아가기</button>
+				<div id="modal"
+					style="margin-top: 110px; margin-bottom: 50px; font-size: 31px; width: 50%; float: left; height: 39%;">
+					<div id="exerlist" name="list"></div>
+					<h3 id="time2" name="time2"></h3>
+					<h3 style="margin-bottom: 50px;">time</h3>
+					<h3 id="cal2" name="cal2"></h3>
+					<h3 style="margin-bottom: 50px;">kcal</h3>
+					<div style="margin-bottom: 50px;">
+						<h3 id="maxHeart" name="maxHeart"></h3>
+						<div id="minHeart" name="min"></div>
+						<h3 style="margin-bottom: 50px;">/ BPM</h3>
+						<h3 id="strong" name="strong"></h3>
+						<h3 id="age" style="display: none">${vo.getAge()}</h3>
+						<h3 name="danger" style="display: none">${danger}</h3>
+						<h3 id="exer" style="margin-bottom: 50px;"></h3>
+					</div>
 
-			</div>
+					<button class="btn btn-1 hover-filled-slide-down"
+						style="margin: -6px 2px 13px -316px;">
+						<div class="back">
+							<span>저장</span>
+						</div>
+					</button>
+				</div>
 		</form>
+
 	</div>
 	</div>
 
 	<script type="text/javascript">
+	
+	$(document).ready(()=>{
+	    // jquery에 만들어져 있는 함수 ==> $. 비동기식 함수
+	    // $.ajax({ })-> 초기화list
+	      getData();
+	  });
+	
+	function getData(){
+		// 통신 code
+		document.getElementById("exer").innerHTML = "<MARQUEE direction='left' height='60' width='100'style='font-size: 34px;line-height: 30px;'> 벤치프레스 고구마먹기 닭먹기 </MARQUEE>";
+	}
 $(function(){ 
 	// 모달창 보이기
 	  $("#stopbtn").click(function(){
@@ -640,21 +654,21 @@ $(function(){
 	  
 	});
 </script>
-<!-- 슬라이드 생성 -->
+	<!-- 슬라이드 생성 -->
 	<div class="section">
 		<input type="radio" name="slide" id="slide01" checked> <input
 			type="radio" name="slide" id="slide02"> <input type="radio"
 			name="slide" id="slide03"> <input type="radio" name="slide"
 			id="slide04">
 
-<!-- 메인페이지 -> 운동추천 받은 페이지 -->
+		<!-- 메인페이지 -> 운동추천 받은 페이지 -->
 		<div class="slide-wrap">
 			<ul class="slidelist">
 				<li><a>
 						<table class='table'>
 							<div id="none">
 								<div class="wrap">
-					
+
 									<label for="slide02" class="right"></label>
 									<div class="textbox">
 										<div id="box1">
@@ -662,11 +676,11 @@ $(function(){
 											<c:forEach var="name" items="${mvo}" varStatus="status">
 												<h3 id="list${status.count}">${name}</h3>
 											</c:forEach>
-		
+
 										</div>
-										
+
 										<div id="box2">
-												<h3 id="weight" style="display: none">${vo.getWeight()}</h3>
+											<h3 id="weight" style="display: none">${vo.getWeight()}</h3>
 											<h3 class="set" style="border-radius: 10px; height: 106.5px;">5세트
 												- 10회</h3>
 											<h3 id="targetHeart" class="beat"
@@ -678,7 +692,8 @@ $(function(){
 									<div class="frame" style="margin-top: 67%">
 
 
-										<button class="btn btn-1 hover-filled-slide-down" id="startbtn">
+										<button class="btn btn-1 hover-filled-slide-down"
+											id="startbtn">
 											<div class="back">
 												<span>시작하기</span>
 											</div>
@@ -702,15 +717,16 @@ $(function(){
 
 
 										<div id="box3">
-											<h3  class="set"
+											<h3 class="set"
 												style="border-radius: 10px; font-size: 62px; line-height: center;">${mvo.get(0)}</h3>
 										</div>
 										<div id="box4">
 											<h3 class="set" style="border-radius: 10px">5세트 - 10회</h3>
 										</div>
 										<div id="box5">
-											<h3 id="cal1" class="beat" style="border-radius: 10px, font-size: 56px;">칼로리</h3>
-											
+											<h3 id="cal1" class="beat"
+												style="border-radius: 10px, font-size: 56px;">칼로리</h3>
+
 										</div>
 									</div>
 
@@ -719,7 +735,7 @@ $(function(){
 
 										<button class="btn btn-1 hover-filled-slide-down" id="btn1">
 											<div class="back">
-											 <span>다했어요</span>
+												<span>다했어요</span>
 											</div>
 										</button>
 
@@ -752,8 +768,9 @@ $(function(){
 											<h3 class="set" style="border-radius: 10px">5세트 - 10회</h3>
 										</div>
 										<div id="box5">
-											<h3 id="cal2" class="beat" style="border-radius: 10px, font-size: 56px;">칼로리</h3>
-						
+											<h3 id="cal2" class="beat"
+												style="border-radius: 10px, font-size: 56px;">칼로리</h3>
+
 										</div>
 									</div>
 
@@ -762,7 +779,7 @@ $(function(){
 
 										<button class="btn btn-1 hover-filled-slide-down" id="btn2">
 											<div class="back">
-												 <span>다했어요</span>
+												<span>다했어요</span>
 											</div>
 										</button>
 
@@ -797,7 +814,7 @@ $(function(){
 										<div id="box5">
 											<h3 id="cal3" class="beat"
 												style="border-radius: 10px, font-size: 56px;">칼로리</h3>
-									
+
 										</div>
 									</div>
 
@@ -812,7 +829,7 @@ $(function(){
 
 
 									</div>
-					
+
 								</div>
 							</div>
 						</table>

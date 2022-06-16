@@ -10,17 +10,7 @@
 		<noscript><link rel="stylesheet" href="resources/assets/css/noscript.css" /></noscript>
 				<script type="text/javascript">
 		<script type="text/javascript">
-		function checkOnlyOne(element) {
-			  
-			  const checkboxes 
-			      = document.getElementsByName("strong");
-			  
-			  checkboxes.forEach((cb) => {
-			    cb.checked = false;
-			  })
-			  
-			  element.checked = true;
-			}
+
 		</script>
 	</head>
 	<body class="is-preload">
@@ -44,12 +34,12 @@
 				<!-- Main -->
 
 					<div id="main">
-					<img src="resources/assets/images/logo.png" style="width: 5rem; height: 4.6rem; padding: 1px;">
+					<img src="resources/assets/images/logo.png" id="logoEdit">
 						<!-- Featured Post -->
 							<article class="post featured">
 						<section>
-							<form action="memberinsert.do" method="post" >
-																<div class="fields">
+							<form action="edit.do" method="post" >
+								<div class="fields" style="margin: -1.5rem 0 2rem -1.5rem;">
 									<div class="field">
 										<label for="name">수정할 닉네임을 입력하세요</label>
 										<input type="text" name="nick" id="name" value="${vo.nick}"/>

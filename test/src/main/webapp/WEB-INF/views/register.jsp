@@ -11,17 +11,7 @@
 		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<noscript><link rel="stylesheet" href="resources/assets/css/noscript.css" /></noscript>
 		<script type="text/javascript">
-		function checkOnlyOne(element) {
-			  
-			  const checkboxes 
-			      = document.getElementsByName("strong");
-			  
-			  checkboxes.forEach((cb) => {
-			    cb.checked = false;
-			  })
-			  
-			  element.checked = true;
-			}
+
 		</script>
 	</head>
 <body class="is-preload">
@@ -43,7 +33,7 @@
 
 				<!-- Main -->
 					<div id="main">
-						<img src="resources/assets/images/logo.png" style="width: 5rem; height: 4.6rem; padding: 1px;">
+						<img src="resources/assets/images/logo.png" id="logoRegister">
 						<!-- Featured Post -->
 							<article class="post featured">
 						<section>

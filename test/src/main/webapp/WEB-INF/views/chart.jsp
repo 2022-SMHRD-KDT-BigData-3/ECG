@@ -10,10 +10,19 @@
 	content="width=device-width, height=device-height, initial-scale=1" />
 <link rel="stylesheet" href="resources/assets/css/chartBody.css" />
 <link rel="stylesheet" href="resources/assets/css/chartist.min.css">
-<link rel="stylesheet" href="resources/assets/css/chartist-plugin-tooltip.css">
-<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="resources/assets/css/chartist-plugin-tooltip.css">
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'
+	rel='stylesheet'>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
 
 
 </head>
@@ -32,7 +41,9 @@
 
 				<h2>부정맥 위험도</h2>
 				<div class="dropdown">
-					<button onclick="dp_menu()" class="button"><i class='bx bx-home'></i></button>
+					<button onclick="dp_menu()" class="button">
+						<i class='bx bx-home'></i>
+					</button>
 					<div style="display: none;" id="drop-content">
 						<div class="menuList">
 							<a hreaf='#'>로그아웃</a> <a hreaf='#'>회원정보수정</a>
@@ -55,10 +66,15 @@
 					</h3>
 				</div>
 			</footer>
-			<div class="btn-group" role="group" aria-label="Basic outlined example">
-  <button type="button" class="btn btn-outline-secondary"><a hreaf="#"><i class='bx bx-home'></i>차트페이지</a></button>
-  <button type="button" class="btn btn-outline-secondary"><a hreaf="#"><i class='bx bx-receipt'>켈린더페이지</i></a></button>
-</div>
+			<div class="btn-group" role="group"
+				aria-label="Basic outlined example">
+				<button type="button" class="btn btn-outline-secondary" id="btnLeft">
+					<a hreaf="#">차트페이지</a>
+				</button>
+				<button type="button" class="btn btn-outline-secondary" id="btnRight">
+					<a hreaf="#">켈린더페이지</a>
+				</button>
+			</div>
 		</article>
 	</div>
 
