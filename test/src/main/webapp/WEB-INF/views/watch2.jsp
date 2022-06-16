@@ -303,12 +303,12 @@ button {
 	background: linear-gradient(0deg, rgba(255, 151, 0, 1) 0%,
 		rgba(251, 75, 2, 1) 100%);
 }
-#set {
+.set {
 	border: 10px solid #dddddd;
 	background: #dddddd;
 	margin-top: 1rem;
 }
-#beat {
+.beat {
 	border: 10px solid #dddddd;
 	background: #dddddd;
 	margin-top: 1rem;
@@ -525,8 +525,8 @@ $(function(){
 										</div>
 
 										<div id="box2">
-											<h3 id = "set" style="border-radius : 10px">5세트 - 10회</h3>
-											<h3 id = "beat" style="border-radius : 10px">목표심박수</h3>
+											<h3 class = "set" style="border-radius : 10px;height: 106.5px;">5세트 - 10회</h3>
+											<h3 class = "beat" style="border-radius : 10px;height: 106.5px;">목표심박수</h3>
 											<h3 id="targetHeart"></h3>
 										</div>
 									</div>
@@ -558,13 +558,13 @@ $(function(){
 										
 
 										<div id="box3">
-											<h3 id = "set" style="border-radius : 10px;font-size: 62px;line-height: center;">롱플머신</h3>
+											<h3 class = "set" style="border-radius : 10px;font-size: 62px;line-height: center;">롱플머신</h3>
 										</div>	
 										<div id="box4">
-											<h3 id = "set" style="border-radius : 10px">5세트 - 10회</h3>
+											<h3 class = "set" style="border-radius : 10px">5세트 - 10회</h3>
 										</div>
 										<div id="box5">
-											<h3 id = "beat" style="border-radius : 10px, font-size : 56px;">칼로리</h3>
+											<h3 class = "beat" style="border-radius : 10px, font-size : 56px;">칼로리</h3>
 											<h3 id="targetHeart"></h3>
 										</div>
 									</div>
@@ -600,13 +600,13 @@ $(function(){
 									<label for="slide02" class="left"></label>
 									<div class="textbox">
 										<div id="box3">
-											<h3 id = "set" style="border-radius : 10px;font-size: 62px;line-height: center;">시티드 로우</h3>
+											<h3 class = "set" style="border-radius : 10px;font-size: 62px;line-height: center;">시티드 로우</h3>
 										</div>	
 										<div id="box4">
-											<h3 id = "set" style="border-radius : 10px">5세트 - 10회</h3>
+											<h3 class = "set" style="border-radius : 10px">5세트 - 10회</h3>
 										</div>
 										<div id="box5">
-											<h3 id = "beat" style="border-radius : 10px, font-size : 56px;">칼로리</h3>
+											<h3 class = "beat" style="border-radius : 10px, font-size : 56px;">칼로리</h3>
 											<h3 id="targetHeart"></h3>
 										</div>
 									</div>
@@ -642,13 +642,13 @@ $(function(){
 									<label for="slide03" class="left"></label>
 									<div class="textbox">
 										<div id="box3">
-											<h3 id = "set" style=" border-radius : 10px; font-size: 62px; line-height: center;">덤벨 숄더 프레스</h3>
+											<h3 class = "set" style=" border-radius : 10px; font-size: 62px; line-height: center;">덤벨 숄더 프레스</h3>
 										</div>	
 										<div id="box4">
-											<h3 id = "set" style="border-radius : 10px">5세트 - 10회</h3>
+											<h3 class = "set" style="border-radius : 10px;">5세트 - 10회</h3>
 										</div>
 										<div id="box5">
-											<h3 id = "beat" style="border-radius : 10px, font-size : 56px;">칼로리</h3>
+											<h3 class = "beat" style="border-radius : 10px, font-size : 56px;">칼로리</h3>
 											<h3 id="targetHeart"></h3>
 										</div>
 									</div>
