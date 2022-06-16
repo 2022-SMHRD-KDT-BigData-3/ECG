@@ -43,7 +43,7 @@
 			</div>
 			<div class="dropdown">
 				<button onclick="dp_menu()" class="button">
-					<i class='bx bx-home'></i>
+					<i class='bx bx-log-out'></i>
 				</button>
 				<div style="display: none;" id="drop-content">
 					<div class="menuList">
