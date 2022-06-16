@@ -50,15 +50,14 @@ function buttonEvt(){
 	
 	// j쿼리로 id값 heart의 내용을 바꿔준다
 		// 목표심박수
-	  document.getElementById("targetHeart").innerHTML = targetHeart;
+	  document.getElementById("beat").innerHTML = "목표심박수 - "+targetHeart;
 	  // 운동 전 설정한 목표심박수
 	   document.getElementById("minHeart").innerHTML = targetHeart;
 	
   // start btn
   $("#startbtn").click(function(){
  $("#slide02").prop("checked",true);
-  $("#pausebtn").css('display','inline');		
-  $("#medle").css('display','none');
+
   
 	
     if(starFlag){
