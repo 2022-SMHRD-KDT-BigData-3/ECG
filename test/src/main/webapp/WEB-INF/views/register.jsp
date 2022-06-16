@@ -11,17 +11,7 @@
 		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<noscript><link rel="stylesheet" href="resources/assets/css/noscript.css" /></noscript>
 		<script type="text/javascript">
-		function checkOnlyOne(element) {
-			  
-			  const checkboxes 
-			      = document.getElementsByName("strong");
-			  
-			  checkboxes.forEach((cb) => {
-			    cb.checked = false;
-			  })
-			  
-			  element.checked = true;
-			}
+
 		</script>
 	</head>
 <body class="is-preload">
@@ -107,7 +97,6 @@
 			<script src="resources/assets/js/breakpoints.min.js"></script>
 			<script src="resources/assets/js/util.js"></script>
 			<script src="resources/assets/js/main.js"></script>
-			<script type="text/javascript"> document.getElementById("navPanelToggle").style.display="none" </script>
 
 	</body>
 </html>

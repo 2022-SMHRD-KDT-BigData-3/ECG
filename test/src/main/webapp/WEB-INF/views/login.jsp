@@ -9,17 +9,7 @@
 		<link rel="stylesheet" href="resources/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="resources/assets/css/noscript.css" /></noscript>
 				<script type="text/javascript">
-		function checkOnlyOne(element) {
-			  
-			  const checkboxes 
-			      = document.getElementsByName("strong");
-			  
-			  checkboxes.forEach((cb) => {
-			    cb.checked = false;
-			  })
-			  
-			  element.checked = true;
-			}
+	
 		</script>
 	</head>
 		<body class="is-preload">
@@ -67,7 +57,7 @@
 									<span class="date"></span>
 								</header>
 								<ul class="actions special">
-									<li><a href="#" class="button large">회원가입</a></li>
+									<li><a href="register.do" class="button large">회원가입</a></li>
 								</ul>
 							</article>
 							</form>

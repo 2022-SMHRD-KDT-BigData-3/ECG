@@ -10,17 +10,7 @@
 		<noscript><link rel="stylesheet" href="resources/assets/css/noscript.css" /></noscript>
 				<script type="text/javascript">
 		<script type="text/javascript">
-		function checkOnlyOne(element) {
-			  
-			  const checkboxes 
-			      = document.getElementsByName("strong");
-			  
-			  checkboxes.forEach((cb) => {
-			    cb.checked = false;
-			  })
-			  
-			  element.checked = true;
-			}
+
 		</script>
 	</head>
 	<body class="is-preload">
@@ -48,7 +38,7 @@
 						<!-- Featured Post -->
 							<article class="post featured">
 						<section>
-							<form action="memberinsert.do" method="post" >
+							<form action="edit.do" method="post" >
 																<div class="fields">
 									<div class="field">
 										<label for="name">수정할 닉네임을 입력하세요</label>
