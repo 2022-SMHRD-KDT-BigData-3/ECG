@@ -87,9 +87,10 @@ public class ProjectController {
 		return "watch2";
 	}
 
-	@GetMapping("/diaryinsert.do")
+	@PostMapping("/diaryinsert.do")
 	public String diaryinsert(DiaryVO vo) {
-		
+		projectMapper.diaryinsert(vo);
+		System.out.println("인서트성공");
 		return "watch1";
 	}
 	

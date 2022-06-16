@@ -4,7 +4,7 @@ var todayHeart =0;  // 현재 심박수
 var stabilityHeart =0; // 안정시 심박수 
 var maxHeart = 0;   // 사용자의 최대심박수
 var mhr = 0;   // 220-나이에 들어갈 최대심박수
-
+var cal=0;
 
 
 $(document).ready(function(){
@@ -50,7 +50,7 @@ function buttonEvt(){
 	
 	// j쿼리로 id값 heart의 내용을 바꿔준다
 		// 목표심박수
-	  document.getElementById("targetHeart").innerHTML = "목표심박수 - "+targetHeart;
+	  document.getElementById("targetHeart").innerHTML = "목표심박수 : "+targetHeart+"BPM";
 	  // 운동 전 설정한 목표심박수
 	   document.getElementById("minHeart").innerHTML = targetHeart;
 	
@@ -101,13 +101,16 @@ function buttonEvt(){
         }
     	var weight = document.getElementById('weight').innerText;
         let numb = 21*weight*0.005*timerdd/60;
-        numb = numb.toFixed(2);
+        cal = numb.toFixed(2);
+       
         var age = document.getElementById('age').innerText;
  		document.getElementById("time").innerText = th + ":" + tm + ":" + ts;
-        document.getElementById("cal1").innerHTML = "칼로리 : "+numb ;
-        document.getElementById("cal2").innerHTML = "칼로리 : "+numb ;
-        document.getElementById("cal3").innerHTML = "칼로리 : "+numb ;
+        document.getElementById("cal1").innerHTML = "소모칼로리 : "+cal+"kcal" ;
+        document.getElementById("cal2").innerHTML = "소모칼로리 : "+cal+"kcal" ;
+        document.getElementById("cal3").innerHTML = "소모칼로리 : "+cal+"kcal" ;
         document.getElementById("strong").innerHTML = maxHeart/mhr;
+        
+  
 
       }, 1000);
     }
@@ -119,17 +122,29 @@ function buttonEvt(){
   
   // 웹에 가져오는 값들
   var timeval = document.getElementById('time').innerText;
-  var calval = document.getElementById('cal').innerText;
+  var calval = document.getElementById('cal3').innerText;
   var list1 = document.getElementById('list1').innerText;
   var list2 = document.getElementById('list2').innerText;
   var list3 = document.getElementById('list3').innerText;
   console.log(timeval);
+  
+  // DB에 넣을 강도값 int
+  document.getElementById("time2").innerHTML = timeval;
   // db에 넣을 타이머값
   document.getElementById("time2").innerHTML = timeval;
+
+	// DB에 넣을 최대,목표심박수와 사용자에게 보여줄 목표심박수
+	document.getElementById("maxHeart").innerHTML = maxHeart;
+	document.getElementById("minHeart").innerHTML = targetHeart;
+	document.getElementById("maxmin").innerHTML = maxHeart+"/"+targetHeart+"BPM";
+	
 	// db에 넣을 칼로리값 
-  document.getElementById("cal4").innerHTML = calval;
+  document.getElementById("cal5").innerHTML = cal;
+  document.getElementById("cal4").innerHTML = cal+"kcal";
   // 운동리스트 합쳐서 보내기
-   document.getElementById("exerlist").innerHTML = list1+","+list2+","+list3;
+  
+   document.getElementById("exer").innerHTML = "<MARQUEE name='list' direction='left' height='60' width='250'style='font-size: 34px;line-height: 30px;'>"+list1+","+list2+","+list3+"</MARQUEE>";
+	
     if(time != 0){
 
       clearInterval(timer);
