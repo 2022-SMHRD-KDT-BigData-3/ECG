@@ -7,50 +7,51 @@
 	font-style: normal;
 }
 
-:root { -
-	-dark-body: #4d4c5a; -
-	-dark-main: #141529; -
-	-dark-second: #79788c; -
-	-dark-hover: #323048; -
-	-dark-text: #f8fbff; -
-	-dark-left-button: #141529de; -
-	-dark-right-button: #141529e6; -
-	-light-body: #f3f8fe; -
-	-light-main: #fffff0; -
-	-light-second: #c3c2c8; -
-	-light-hover: #edf0f5; -
-	-light-text: #151426; -
-	-light-left-button: #eeeeee; - -light-right-button : #c3c2c8; -
-	-blue: #0000ff; -
-	-white: #fff; -
-	-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; -
-	-font-family: 'EliceDigitalBaeum'; -
-	-src:
+:root { 
+	--dark-body: #4d4c5a;
+	--dark-main: #141529;
+	--dark-second: #79788c;
+	--dark-hover: #323048;
+	--dark-text: #f8fbff;
+	--dark-left-button: #141529de;
+	--dark-right-button: #141529e6;
+	--light-body: #f3f8fe;
+	--light-main: #fffff0;
+	--light-second: #c3c2c8;
+	--light-hover: #edf0f5;
+	--light-text: #151426;
+	--light-left-button: #eeeeee; 
+	--light-right-button : #c3c2c8;
+	--blue: #0000ff;
+	--white: #fff;
+	--shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	--font-family: 'EliceDigitalBaeum';
+	--src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_elice@1.0/EliceDigitalBaeum.woff2')
-		format('woff2'); -
-	-font-weight: normal; -
-	-font-style: normal;
-	-light-right-button: #c3c2c8;
+		format('woff2');
+	--font-weight: normal;
+	--font-style: normal;
+	--light-right-button: #c3c2c8;
 }
 
-.dark { -
-	-bg-body: var(- -dark-body); -
-	-bg-main: var(- -dark-main); -
-	-bg-second: var(- -dark-second); -
-	-color-hover: var(- -dark-hover); -
-	-color-txt: var(- -dark-text); -
-	-color-left: var(- -dark-left-button); -
-	-color-right: var(- -dark-right-button);
+.dark {
+	--bg-body: var(--dark-body);
+	--bg-main: var(--dark-main);
+	--bg-second: var(--dark-second);
+	--color-hover: var(--dark-hover);
+	--color-txt: var(--dark-text);
+	--color-left: var(--dark-left-button);
+	--color-right: var(--dark-right-button);
 }
 
 .light { -
-	-bg-body: var(- -light-body); -
-	-bg-main: var(- -light-main); -
-	-bg-second: var(- -light-second); -
-	-color-hover: var(- -light-hover); -
-	-color-txt: var(- -light-text); -
-	-color-left: var(- -light-left-button); -
-	-color-right: var(- -light-right-button);
+	--bg-body: var(--light-body);
+	--bg-main: var(--light-main);
+	--bg-second: var(--light-second);
+	--color-hover: var(--light-hover);
+	--color-txt: var(--light-text);
+	--color-left: var(--light-left-button);
+	--color-right: var(--light-right-button);
 }
 
 * {
@@ -114,8 +115,8 @@ html, body {
 	width: 100%;
 	display: grid;
 	place-items: center;
-	font-family: var(- -font-family);
-	background-color: var(- -bg-body);
+	font-family: var(--font-family);
+	background-color: var(--bg-body);
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -130,7 +131,7 @@ html, body {
 .calendar {
 	height: 100%;
 	width: calc(100% - 4rem);
-	background-color: var(- -bg-main);
+	background-color: var(--bg-main);
 	border-radius: 1rem; /*모서리 둥글기 정도 */
 	padding: 1rem;
 	position: relative;
@@ -138,7 +139,7 @@ html, body {
 }
 
 .light .calendar {
-	box-shadow: var(- -shadow);
+	box-shadow: var(--shadow);
 }
 
 .calendar-header {
@@ -147,7 +148,7 @@ html, body {
 	align-items: center;
 	font-size: 1.5rem;
 	font-weight: 600; /*굵기 */
-	color: var(- -color-txt);
+	color: var(--color-txt);
 	width: 100%;
 	padding: 4% 0% 0% 4%;
 }
@@ -170,14 +171,14 @@ html, body {
 .calendar-week-day div {
 	display: grid; /* 디스플레이 영역 전체를 그리드 영역으로 만들겠다. */
 	place-items: center;
-	color: var(- -bg-second);
+	color: var(--bg-second);
 }
 
 .calendar-days {
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
 	gap: 0.15rem; /* 각 태그들 마다 거리 조절 */
-	color: var(- -color-txt);
+	color: var(--color-txt);
 	width: 100%;
 	height: 90%;
 }
@@ -219,7 +220,7 @@ html, body {
 	{
 	width: 0.18rem;
 	height: 0;
-	background-color: var(- -color-txt);
+	background-color: var(--color-txt);
 }
 
 .calendar-days div:hover span:nth-child(2), .calendar-days div:hover span:nth-child(4)
@@ -241,7 +242,7 @@ html, body {
 	{
 	width: 0;
 	height: 0.18rem;
-	background-color: var(- -color-txt);
+	background-color: var(--color-txt);
 }
 
 .calendar-days div:hover span:nth-child(3), .calendar-days div:hover span:nth-child(5)
@@ -272,8 +273,8 @@ html, body {
 }
 
 .calendar-days div.curr-date, .calendar-days div.curr-date:hover {
-	background-color: var(- -blue);
-	color: var(- -white);
+	background-color: var(--blue);
+	color: var(--white);
 	border-radius: 50%;
 }
 
@@ -288,7 +289,7 @@ html, body {
 }
 
 .month-picker:hover {
-	background-color: var(- -color-hover);
+	background-color: var(--color-hover);
 }
 
 #year {
@@ -305,7 +306,7 @@ html, body {
 }
 
 .month-change:hover {
-	background-color: var(- -color-hover);
+	background-color: var(--color-hover);
 }
 
 .calendar-footer {
@@ -335,7 +336,7 @@ html, body {
 
 .toggle span {
 	margin-right: 0.7rem;
-	color: var(- -color-txt);
+	color: var(--color-txt);
 }
 
 .dark-mode-switch {
@@ -343,7 +344,7 @@ html, body {
 	width: 3.5rem;
 	height: 1.7rem;
 	border-radius: 0.9rem;
-	background-color: var(- -bg-second);
+	background-color: var(--bg-second);
 	cursor: pointer;
 }
 
@@ -351,7 +352,7 @@ html, body {
 	width: 1.45rem;
 	height: 1.45rem;
 	border-radius: 50%;
-	background-color: var(- -bg-main);
+	background-color: var(--bg-main);
 	position: absolute;
 	top: 0.15rem;
 	left: 0.15rem;
@@ -370,7 +371,7 @@ html, body {
 	height: 57%;
 	top: 0;
 	left: 0;
-	background-color: var(- -bg-main);
+	background-color: var(--bg-main);
 	grid-template-columns: repeat(3, auto);
 	gap: 0.3rem;
 	display: grid;
@@ -397,11 +398,11 @@ html, body {
 	border-radius: 0.7rem;
 	text-align: center;
 	cursor: pointer;
-	color: var(- -color-txt);
+	color: var(--color-txt);
 }
 
 .month-list>div>div:hover {
-	background-color: var(- -color-hover);
+	background-color: var(--color-hover);
 }
 
 @
@@ -427,7 +428,7 @@ opacity
 /* 테이블 */
 .table-wrapper {
 	overflow-x: auto;
-	color: var(- -color-txt);
+	color: var(--color-txt);
 	text-align: center;
 	height: 42%;
 }
@@ -548,10 +549,10 @@ table.alt tbody tr td {
 	font-family: 'EliceDigitalBaeum';
 	font-size: 1.5rem;
 	font-weight: 700;
-	background-color: var(- -bg-main);
+	background-color: var(--bg-main);
 	border-radius: 50%;
 	border: 1pt solid #eeeeee;
-	color: var(- -color-txt);
+	color: var(--color-txt);
 }
 
 .button:hover {
@@ -630,21 +631,23 @@ table.alt tbody tr td {
 }
 
 #btnRight {
-	color: var(- -color-txt);
-	background-color: var(- -color-right);
+	color: var(--color-txt);
+	background-color: var(--color-right);
 	border-color: transparent;
 	border-radius: 0;
+	font-size: 1.3rem;
 }
 
 #btnLeft {
 	border-color: transparent;
-	color: var(- -color-txt);
-	background-color: var(- -color-left);
+	color: var(--color-txt);
+	background-color: var(--color-left);
 	border-radius: 0;
+	font-size: 1.3rem;
 }
 
 @media screen and (max-width: 360px) {
 	#btnLeft {
-		width: 7.685rem;
+		width: 10.685rem;
 	}
 }
