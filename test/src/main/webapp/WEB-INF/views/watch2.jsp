@@ -478,7 +478,7 @@ h1 {
 						<h3 id="danger" name="danger" style="display: none">${danger}</h3>
 					</div>
 				</div>
-				<button class="btn btn-1 hover-filled-slide-down" type="button">저장</button>
+				<button class="btn btn-1 hover-filled-slide-down" type="">저장</button>
                 <button class="btn btn-1 hover-filled-slide-down" >돌아가기</button>
                 
               </div>
@@ -528,17 +528,17 @@ $(function(){
 
 										<div id="box2">
 											<h3 id = "set" style="border-radius : 10px">5세트 - 10회</h3>
-											<h3 id = "beat" style="border-radius : 10px">목표심박수</h3>
-											<h3 id="targetHeart"></h3>
+											<h3 id = "beat" style="border-radius : 10px"></h3>
+											
 										</div>
 									</div>
 
 									<div class="frame" style="margin-top: 67%">
 
 
-										<button class="btn btn-1 hover-filled-slide-down">
+										<button class="btn btn-1 hover-filled-slide-down" id="startbtn">
 					                        <div class="back">
-					                         <a href="listpick.do?Choose=1&num=3&type=1"> <span>시작하기</span></a>
+					                         <span>시작하기</span>
 					                        </div>
 					                    </button>
 
