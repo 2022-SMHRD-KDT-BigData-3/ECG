@@ -476,16 +476,8 @@ h1 {
 						<h3 name="danger" style="display: none">${danger}</h3>
 					</div>
 				</div>
-				<button class="btn btn-1 hover-filled-slide-down">
-                    <div class="back">
-                     <a href="listpick.do?Choose=1&num=3&type=1"> <span>저장</span></a>
-                    </div>
-                </button>
-                <button class="btn btn-1 hover-filled-slide-down">
-                    <div class="back">
-                     <a href="listpick.do?Choose=1&num=3&type=1"> <span>돌아가기</span></a>
-                    </div>
-                </button>
+				<button class="btn btn-1 hover-filled-slide-down" type="button">저장</button>
+                <button class="btn btn-1 hover-filled-slide-down" >돌아가기</button>
                 
               </div>
 		</form>

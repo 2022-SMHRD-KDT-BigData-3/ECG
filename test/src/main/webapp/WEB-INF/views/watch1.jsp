@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>watch1</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style type="text/css">
 
 
@@ -31,6 +34,7 @@
    .section .slidelist .textbox {position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
    
    .section .slidelist .textbox h3 {font-size:68px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
+
    .section .slidelist .textbox p {font-size:24px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
 
    .section input[id="slide01"]:checked ~ .slide-wrap .slidelist > li {transform:translateX(0%);}
@@ -169,6 +173,7 @@ h1 {
   margin: 0px 25px 15px;
   min-width: 528px;
   right: 4.9rem;
+
 }
   .btn span {         
     position: relative;
@@ -284,7 +289,7 @@ h1 {
                   
                      <button class="btn btn-1 hover-filled-slide-down">
                         <div class="back">
-                         <a href="listpick.do?Choose=1&num=3&type=1"> <span>상체</span></a>
+                         <a class="a_link" href=""> <span>상체</span></a>
                         </div>
                     </button>
                   
@@ -292,7 +297,7 @@ h1 {
                  
                      <button class="btn btn-1 hover-filled-slide-down">
                          <div class="back">
-                             <a href="listpick.do?Choose=2&num=2&type=2"> <span>하체</span></a>
+                             <a class="a_link" href=""> <span>하체</span></a>
                          </div>
                     </button>
                  
@@ -300,7 +305,7 @@ h1 {
                  
                      <button class="btn btn-1 hover-filled-slide-down">
                          <div class="back">
-                             <a href="listpick.do?Choosee=3&num=2&type=2"> <span>전신</span></a>
+                             <a class="a_link" href=""> <span>전신</span></a>
                          </div>
                     </button>
                   
@@ -315,5 +320,47 @@ h1 {
    </div>
 </div>
 
+
+<script type="text/javascript">
+$(document).ready(()=>{
+    // jquery에 만들어져 있는 함수 ==> $. 비동기식 함수
+    // $.ajax({ })-> 초기화list
+      getData();
+  });
+
+function getData(){
+	// 통신 code
+	document.getElementById("danger").innerHTML = "<MARQUEE direction='up' height='60' truespeed='1'> 1%<br>2%<br>3%<br>" +
+	"4%<br>5%<br>6%<br>7%<br>8%<br>9%<br> </MARQUEE>";
+
+	$.ajax({
+		url : "http://localhost:9000/flask",
+		type : "GET",		
+		success : function(data) {
+			console.log(data);
+			var result = data*100;			
+			
+			document.getElementById("danger").innerHTML = result+"%";
+			
+			if(result >= 70)
+				document.getElementById("danger").style.color="red";
+			else if(result >= 30)
+				document.getElementById("danger").style.color="orange";
+			else
+				document.getElementById("danger").style.color="green";
+						
+			var a_tags = $("a.a_link");
+			console.log("length : "+a_tags.length)
+			
+			a_tags.eq(0).attr("href","listpick.do?Choose=1&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}");
+			a_tags.eq(1).attr("href","listpick.do?Choose=2&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}");
+			a_tags.eq(2).attr("href","listpick.do?Choose=2&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}");
+			console.log("확인");
+			var h3_tag = $("#danger");
+		}		
+	});
+	
+}
+</script>
 </body>
 </html>
