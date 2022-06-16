@@ -143,107 +143,27 @@ body {
 }
 
 .section input[id="slide01"]:checked ~ .slide-wrap .slidelist>li {transform: translateX(0%);}
-
 .section input[id="slide02"]:checked ~ .slide-wrap .slidelist>li {transform: translateX(-100%);}
-
 .section input[id="slide03"]:checked ~ .slide-wrap .slidelist>li {transform: translateX(-200%);}
 .section input[id="slide04"]:checked ~ .slide-wrap .slidelist>li {transform: translateX(-300%);}
 .section input[id="slide05"]:checked ~ .slide-wrap .slidelist>li {transform: translateX(-400%);}
 .section input[id="slide06"]:checked ~ .slide-wrap .slidelist>li {transform: translateX(-500%);}
 .section input[id="slide07"]:checked ~ .slide-wrap .slidelist>li {transform: translateX(-600%);}
-
 .section input[id="slide01"]:checked ~ .slide-wrap li:nth-child(1) .textbox h3{opacity: 1;transform: translateY(0);transition-delay: .2s;}
+.section input[id="slide01"]:checked ~ .slide-wrap li:nth-child(1) .textbox p{opacity: 1;transform: translateY(0);transition-delay: .4s;}
+.section input[id="slide02"]:checked ~ .slide-wrap li:nth-child(2) .textbox h3{opacity: 1;transform: translateY(0);transition-delay: .2s;}
+.section input[id="slide02"]:checked ~ .slide-wrap li:nth-child(2) .textbox p{opacity: 1;transform: translateY(0);transition-delay: .4s;}
+.section input[id="slide03"]:checked ~ .slide-wrap li:nth-child(3) .textbox h3{opacity: 1;transform: translateY(0);transition-delay: .2s;}
+.section input[id="slide03"]:checked ~ .slide-wrap li:nth-child(3) .textbox p{opacity: 1;transform: translateY(0);transition-delay: .4s;}
+.section input[id="slide04"]:checked ~ .slide-wrap li:nth-child(4) .textbox h3{opacity: 1;transform: translateY(0);transition-delay: .2s;}
+.section input[id="slide04"]:checked ~ .slide-wrap li:nth-child(4) .textbox p{opacity: 1;transform: translateY(0);transition-delay: .4s;}
+.section input[id="slide05"]:checked ~ .slide-wrap li:nth-child(5) .textbox h3{opacity: 1;transform: translateY(0);transition-delay: .2s;}
+.section input[id="slide05"]:checked ~ .slide-wrap li:nth-child(5) .textbox p{opacity: 1;transform: translateY(0);transition-delay: .4s;}
+.section input[id="slide06"]:checked ~ .slide-wrap li:nth-child(6) .textbox h3{opacity: 1;transform: translateY(0);transition-delay: .2s;}
+.section input[id="slide06"]:checked ~ .slide-wrap li:nth-child(6) .textbox p{opacity: 1;transform: translateY(0);transition-delay: .4s;}
+.section input[id="slide07"]:checked ~ .slide-wrap li:nth-child(7) .textbox h3{opacity: 1;transform: translateY(0);transition-delay: .2s;}
+.section input[id="slide07"]:checked ~ .slide-wrap li:nth-child(7) .textbox p{opacity: 1;transform: translateY(0);transition-delay: .4s;}
 
-.section input[id="slide01"]:checked ~ .slide-wrap li:nth-child(1) .textbox p
-	{
-	opacity: 1;
-	transform: translateY(0);
-	transition-delay: .4s;
-}
-
-.section input[id="slide02"]:checked ~ .slide-wrap li:nth-child(2) .textbox h3
-	{
-	opacity: 1;
-	transform: translateY(0);
-	transition-delay: .2s;
-}
-
-.section input[id="slide02"]:checked ~ .slide-wrap li:nth-child(2) .textbox p
-	{
-	opacity: 1;
-	transform: translateY(0);
-	transition-delay: .4s;
-}
-
-.section input[id="slide03"]:checked ~ .slide-wrap li:nth-child(3) .textbox h3
-	{
-	opacity: 1;
-	transform: translateY(0);
-	transition-delay: .2s;
-}
-
-.section input[id="slide03"]:checked ~ .slide-wrap li:nth-child(3) .textbox p
-	{
-	opacity: 1;
-	transform: translateY(0);
-	transition-delay: .4s;
-}
-
-.section input[id="slide04"]:checked ~ .slide-wrap li:nth-child(4) .textbox h3
-	{
-	opacity: 1;
-	transform: translateY(0);
-	transition-delay: .2s;
-}
-
-.section input[id="slide04"]:checked ~ .slide-wrap li:nth-child(4) .textbox p
-	{
-	opacity: 1;
-	transform: translateY(0);
-	transition-delay: .4s;
-}
-
-.section input[id="slide05"]:checked ~ .slide-wrap li:nth-child(5) .textbox h3
-	{
-	opacity: 1;
-	transform: translateY(0);
-	transition-delay: .2s;
-}
-
-.section input[id="slide05"]:checked ~ .slide-wrap li:nth-child(5) .textbox p
-	{
-	opacity: 1;
-	transform: translateY(0);
-	transition-delay: .4s;
-}
-
-.section input[id="slide06"]:checked ~ .slide-wrap li:nth-child(6) .textbox h3
-	{
-	opacity: 1;
-	transform: translateY(0);
-	transition-delay: .2s;
-}
-
-.section input[id="slide06"]:checked ~ .slide-wrap li:nth-child(6) .textbox p
-	{
-	opacity: 1;
-	transform: translateY(0);
-	transition-delay: .4s;
-}
-
-.section input[id="slide07"]:checked ~ .slide-wrap li:nth-child(7) .textbox h3
-	{
-	opacity: 1;
-	transform: translateY(0);
-	transition-delay: .2s;
-}
-
-.section input[id="slide07"]:checked ~ .slide-wrap li:nth-child(7) .textbox p
-	{
-	opacity: 1;
-	transform: translateY(0);
-	transition-delay: .4s;
-}
 /*watch1 아이콘 시작 */
 .slidelist {
 	background-color: black;
@@ -428,6 +348,7 @@ h1 {
   max-width: 1000px;
   margin: 50px auto -80px;
 }
+/* 모달창 버튼 조절가능 */
 .btn {
   position: relative;
   display: inline-block;
@@ -530,6 +451,8 @@ h1 {
 	
 		<form action="exerInsert.do" style = "height: 245px;">
 			<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			
+			
 
 				<h2 style = "font-size: 70px;">오늘 운동 내역은</h2>
 				<div class="modalbox" style = "margin-top: 70px;font-size: 40px;">
@@ -563,6 +486,8 @@ h1 {
                      <a href="listpick.do?Choose=1&num=3&type=1"> <span>돌아가기</span></a>
                     </div>
                 </button>
+                
+              
 		</form>
 	</div>
 	</div>
