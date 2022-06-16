@@ -580,65 +580,59 @@ h1 {
 	<div class="modal">
 
 
-		<form action="exerInsert.do" style="height: 245px;">
+		<form action="diaryinsert.do" method="post" style="height: 245px;" >
 			<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 				<h2 style="font-size: 70px;">오늘 운동 내역은</h2>
 				<div class="modalbox"
 					style="margin-top: 110px; font-size: 31px; width: 50%; float: left; height: 39%;">
-					<div id="modal1" style="margin-bottom: 50px;">
+					<div class="modallist" style="margin-bottom: 50px;">
 						<h3>시간</h3>
 					</div>
-					<div id="modal2" style="margin-bottom: 50px;">
+					<div class="modallist" style="margin-bottom: 50px;">
 						<h3>칼로리</h3>
 					</div>
-					<div id="modal3" style="margin-bottom: 50px;">
-						<h3>최대/평균심박수</h3>
+					<div class="modallist" style="margin-bottom: 50px;">
+						<h3>최대/목표심박수</h3>
 					</div>
-					<div id="modal3" style="margin-bottom: 50px;">
+					<div class="modallist" style="margin-bottom: 50px;">
 						<h3>운동리스트</h3>
 					</div>
 				</div>
+				
 				<div id="modal"
 					style="margin-top: 110px; margin-bottom: 50px; font-size: 31px; width: 50%; float: left; height: 39%;">
-					<div id="exerlist" name="list"></div>
-					<h3 id="time2" name="time2"></h3>
-					<h3 style="margin-bottom: 50px;">time</h3>
-					<h3 id="cal2" name="cal2"></h3>
-					<h3 style="margin-bottom: 50px;">kcal</h3>
+					<h3 id="time2" name="time" style="margin-bottom: 50px;">time</h3>
+					<h3 id="cal4"  style="margin-bottom: 50px;">kcal</h3>
 					<div style="margin-bottom: 50px;">
-						<h3 id="maxHeart" name="maxHeart"></h3>
-						<div id="minHeart" name="min"></div>
-						<h3 style="margin-bottom: 50px;">/ BPM</h3>
-						<h3 id="strong" name="strong"></h3>
+					<h3 name="id" style="display: none">a</h3>				
+					
+						<h3 id="maxmin" style="margin-bottom: 50px;">BPM</h3>
+						<h3 id="exer" style="margin-bottom: 50px;">list</h3>
+
+						<h3 id="cal5" name="cal" style="display: none"> </h3>
+						<h3 id="maxHeart" name="max" style="display: none"></h3>
+						<div id="minHeart" name="min" style="display: none"></div>
+						<h3 id="strong" name="strong" style="display: none"></h3>
 						<h3 id="age" style="display: none">${vo.getAge()}</h3>
-						<h3 name="danger" style="display: none">${danger}</h3>
-						<h3 id="exer" style="margin-bottom: 50px;"></h3>
+						<h3 id="danger" name="danger" style="display: none">${danger}</h3>
 					</div>
 
 					<button class="btn btn-1 hover-filled-slide-down"
-						style="margin: -6px 2px 13px -316px;">
+						style="margin: -6px 2px 13px -316px;" type="submit">
 						<div class="back">
 							<span>저장</span>
 						</div>
 					</button>
-				</div>
 		</form>
+	</div>
+
 
 	</div>
 	</div>
 
 	<script type="text/javascript">
 	
-	$(document).ready(()=>{
-	    // jquery에 만들어져 있는 함수 ==> $. 비동기식 함수
-	    // $.ajax({ })-> 초기화list
-	      getData();
-	  });
-	
-	function getData(){
-		// 통신 code
-		document.getElementById("exer").innerHTML = "<MARQUEE direction='left' height='60' width='100'style='font-size: 34px;line-height: 30px;'> 벤치프레스 고구마먹기 닭먹기 </MARQUEE>";
-	}
+
 $(function(){ 
 	// 모달창 보이기
 	  $("#stopbtn").click(function(){
