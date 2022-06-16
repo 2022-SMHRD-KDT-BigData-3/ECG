@@ -31,7 +31,7 @@
 
 				<!-- Main -->
 					<div id="main">
-							<img src="resources/assets/images/logo.png">
+							<img src="resources/assets/images/logo.png" id="loginLogo">
 						<!-- Featured Post -->
 							<article class="post featured">
 						<section>
