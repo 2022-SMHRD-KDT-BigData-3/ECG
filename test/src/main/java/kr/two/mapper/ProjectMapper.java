@@ -23,7 +23,7 @@ public interface ProjectMapper { // new BoardMapper();
 	@Select("select * from member where id =#{id} and pw =#{pw}")
 	public MemberVO login(MemberVO vo);
 	
-	@Insert("insert into member values(user_seq.nextval,#{id},#{pw},#{nick},#{height},#{weight},#{strong})")
+	@Insert("insert into member values(user_seq.nextval,#{id},#{pw},#{nick},#{age},#{height},#{weight})")
 	public void memberinsert(MemberVO vo);
 	
 	@Select("select e_name from (select * from exercise order by dbms_random.value) where e_kind=#{chocie} and e_number=#{i}")

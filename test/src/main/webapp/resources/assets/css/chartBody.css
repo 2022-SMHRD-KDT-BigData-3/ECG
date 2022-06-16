@@ -281,7 +281,7 @@ label {
 }
 
 #main {
-	background-color: #ffffff;
+	background-color: #fffff0;
 	position: relative;
 	margin: 0 auto;
 	width: calc(100% - 4rem);
@@ -657,7 +657,7 @@ label {
 .dropdown {
 	position: relative;
 	display: inline-block;
-	margin-right: 5%;
+	margin-right: 3%;
 }
 
 .button {
@@ -717,7 +717,8 @@ label {
 
 @media screen and (max-width: 468px) {
 	.name>h2 {
-		padding-left: 35%;
+		padding-left: 32%;
+		padding-top: 2%;
 	}
 }
 
@@ -752,4 +753,25 @@ label {
 	.btn-group, .btn-group-vertical {
 		height: 10%;
 	}
+}
+#btnRight {
+	color: black;
+	background-color: #eeeeee;
+	border-color: transparent;
+	border-radius: 0;
+	font-size: 1.3rem;
+}
+@media screen and (max-width: 360px) {
+#btnRight {
+	    width: 32%;
+}
+}
+
+
+#btnLeft {
+	border-color: transparent;
+	color: black;
+	background-color: #c3c2c8;
+	border-radius: 0;
+	font-size: 1.3rem;
 }
