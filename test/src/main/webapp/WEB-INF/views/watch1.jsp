@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>watch1</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style type="text/css">
 
 
@@ -30,11 +33,8 @@
    .section .slidelist .right {right:30px;background:url('./img/right.png') center center / 100% no-repeat;}
    .section .slidelist .textbox {position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
    
-<<<<<<< HEAD
    .section .slidelist .textbox h3 {font-size:68px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
-=======
-   .section .slidelist .textbox h3 {font-size:50px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/ECG.git
+
    .section .slidelist .textbox p {font-size:24px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
 
    .section input[id="slide01"]:checked ~ .slide-wrap .slidelist > li {transform:translateX(0%);}
@@ -67,17 +67,10 @@
 .circle {
   border: 4px solid white;
   border-radius: 80%;
-<<<<<<< HEAD
   width: 140%;
   height: 140%;
   max-width: 250px;
   max-height: 250px;
-=======
-  width: 100%;
-  height: 100%;
-  max-width: 100px;
-  max-height: 100px;
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/ECG.git
   position: relative;
   margin-bottom: 9rem;
 }
@@ -116,12 +109,9 @@
 }
 #danger{
    font-color : white;
-<<<<<<< HEAD
    margin-top: 266px;
    margin-left: 20px;
-=======
-   margin-top: 200px;
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/ECG.git
+
 }
 
 
@@ -182,12 +172,9 @@ h1 {
   border: none;
   cursor: pointer;
   margin: 0px 25px 15px;
-<<<<<<< HEAD
   min-width: 528px;
   right: 4.9rem;
-=======
-  min-width: 150px;
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/ECG.git
+
 }
   .btn span {         
     position: relative;
@@ -305,7 +292,7 @@ h1 {
                   
                      <button class="btn btn-1 hover-filled-slide-down">
                         <div class="back">
-                         <a href="listpick.do?Choose=1&num=3&type=1"> <span>상체</span></a>
+                         <a class="a_link" href=""> <span>상체</span></a>
                         </div>
                     </button>
                   
@@ -313,7 +300,7 @@ h1 {
                  
                      <button class="btn btn-1 hover-filled-slide-down">
                          <div class="back">
-                             <a href="listpick.do?Choose=2&num=2&type=2"> <span>하체</span></a>
+                             <a class="a_link" href=""> <span>하체</span></a>
                          </div>
                     </button>
                  
@@ -321,7 +308,7 @@ h1 {
                  
                      <button class="btn btn-1 hover-filled-slide-down">
                          <div class="back">
-                             <a href="listpick.do?Choosee=3&num=2&type=2"> <span>전신</span></a>
+                             <a class="a_link" href=""> <span>전신</span></a>
                          </div>
                     </button>
                   
@@ -336,8 +323,8 @@ h1 {
    </div>
 </div>
 
-<<<<<<< HEAD
-=======
+
+<script type="text/javascript">
 $(document).ready(()=>{
     // jquery에 만들어져 있는 함수 ==> $. 비동기식 함수
     // $.ajax({ })-> 초기화list
@@ -368,16 +355,15 @@ function getData(){
 			var a_tags = $("a.a_link");
 			console.log("length : "+a_tags.length)
 			
-			a_tags.eq(0).attr("href","listpick.do?Choose=1&danger="+result+"&age="+${vo.getAge()}+"&id="+${vo.getId()});
-			a_tags.eq(1).attr("href","listpick.do?Choose=2&&danger="+result+"&age="+${vo.getAge()}+"&id="+${vo.getId()});
-			a_tags.eq(2).attr("href","listpick.do?Choose=2&danger="+result+"&age="+${vo.getAge()}+"&id="+${vo.getId()});
-			
+			a_tags.eq(0).attr("href","listpick.do?Choose=1&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}");
+			a_tags.eq(1).attr("href","listpick.do?Choose=2&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}");
+			a_tags.eq(2).attr("href","listpick.do?Choose=2&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}");
+			console.log("확인");
 			var h3_tag = $("#danger");
 		}		
 	});
 	
 }
 </script>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/ECG.git
 </body>
 </html>

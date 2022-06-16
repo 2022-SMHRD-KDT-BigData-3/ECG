@@ -468,36 +468,20 @@ h1 {
 						<h3>최대/평균심박수</h3>
 					</div>
 					
-<<<<<<< HEAD
 					<div id="modal">
 						<div id="exerlist" name="list" ></div>
 						<h3 id="time2" name="time2"></h3><h3>time</h3>
 						<h3 id="cal2" name="cal2"></h3><h3>kcal</h3>
 						<div> <h3 id="maxHeart" name="maxHeart"></h3> / <h3 id="minHeart" name="min"></h3>BPM </div> 
-=======
-					<div id="box2">
-						<div id="exerlist" name="list" style="display: none"></div>
-						<h3 id="time2" name="time2"></h3>
-						<h3 id="cal2" name="cal2"></h3>
-						<div> <h3 id="maxHeart" name="max"></h3> / <h3 id="minHeart" name="min"></h3>BPM </div> 
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/ECG.git
 						<h3 id="strong" name="strong"></h3>
 						<h3 id="age" style="display: none">${age}</h3>
 						<h3 id="danger" name="danger" style="display: none">${danger}</h3>
 					</div>
 				</div>
-				<button class="btn btn-1 hover-filled-slide-down">
-                    <div class="back">
-                     <a href="listpick.do?Choose=1&num=3&type=1"> <span>저장</span></a>
-                    </div>
-                </button>
-                <button class="btn btn-1 hover-filled-slide-down">
-                    <div class="back">
-                     <a href="listpick.do?Choose=1&num=3&type=1"> <span>돌아가기</span></a>
-                    </div>
-                </button>
+				<button class="btn btn-1 hover-filled-slide-down" type="button">저장</button>
+                <button class="btn btn-1 hover-filled-slide-down" >돌아가기</button>
                 
-              
+              </div>
 		</form>
 	</div>
 	

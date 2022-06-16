@@ -63,15 +63,18 @@ public class ProjectController {
 	}
 	// 운동리스트 서비스
 	@RequestMapping("/listpick.do")
-	public String listpick(Model model, int Choose,String danger, int age) {
+	public String listpick(Model model, int Choose,String danger, int age,String id) {
 		List<String> mvo = new ArrayList<String>();
 		System.out.println("위험예측도"+danger);
-	
+		
 		for (int i = 0; i < 3; i++) {
 			List<String> data = projectMapper.exerlist(Choose, i + 1);	
 				mvo.add(data.get(i));
 			
 		}
+		
+		
+		model.addAttribute("id",id);
 		model.addAttribute("age",age);
 		model.addAttribute("danger", danger);
 		model.addAttribute("mvo", mvo);
