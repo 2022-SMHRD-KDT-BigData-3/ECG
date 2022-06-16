@@ -1,3 +1,6 @@
+
+
+
 package kr.two.entity;
 
 import lombok.AllArgsConstructor;
@@ -13,9 +16,9 @@ public class DiaryVO {
 	private String extime;
 	private String list;
 	private int strong;
-	private int danger;
+	private int danger;	
 	private int max;
 	private int min;
-	private int exernumber;
+	private int cal;
 
 }

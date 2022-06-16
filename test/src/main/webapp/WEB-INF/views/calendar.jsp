@@ -1,40 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	<!DOCTYPE html>
 	<html lang="en">
 	
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
 		<title>
 			Calendar
 		</title>
 		<link rel="stylesheet" href="resources/assets/css/calendar.css">
-		<link rel="stylesheet" href="resources/assets/css/main.css" />
-		<noscript>
-			<link rel="stylesheet" href="resources/assets/css/noscript.css" />
-		</noscript>
+
+		<noscript><link rel="stylesheet" href="resources/assets/css/noscript.css" /></noscript>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<style>
-	 @font-face {
-    font-family: 'EliceDigitalBaeum';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_elice@1.0/EliceDigitalBaeum.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-body {
-   font-family: 'EliceDigitalBaeum';
-    }
-</style>
+		<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		
 	</head>
-
-	<body class="light">
 	
+	<body class="light">
 		<div class="calendar">
 			<div class="calendar-header">
-
 				<span class="month-change" id="prev-month">
 					<pre><</pre>
 				</span>
@@ -46,7 +33,17 @@ body {
 				<div class="year-picker">
 					<span id="year">2021</span>
 				</div>
+			<div class="dropdown">
+				<button onclick="dp_menu()" class="button">
+					<i class='bx bx-home'></i>
+				</button>
+				<div style="display: none;" id="drop-content">
+					<div class="menuList">
+						<a hreaf='#'>로그아웃</a> <a hreaf='#'>회원정보수정</a>
+					</div>
+				</div>
 			</div>
+		</div>
 			<div class="calendar-body">
 				<div class="calendar-week-day">
 					<div>Sun</div>
@@ -57,7 +54,7 @@ body {
 					<div>Fri</div>
 					<div>Sat</div>
 				</div>
-				<div class="calendar-days"></div>
+				<div class="calendar-days" style="place-items: center;"></div>
 			</div>
 			<div class="calendar-footer">
 				<div class="toggle">
@@ -100,15 +97,26 @@ body {
 					</tbody>
 				</table>
 			</div>
+						<div class="btn-group" role="group" aria-label="Basic outlined example">
+  <button type="button" class="btn btn-outline-secondary"><a hreaf="#"><i class='bx bx-home'></i>차트페이지</a></button>
+  <button type="button" class="btn btn-outline-secondary"><a hreaf="#"><i class='bx bx-receipt'>켈린더페이지</i></a></button>
+</div>
 		</div>
-		<script src="resources/assets/js/jquery.min.js"></script>
-		<script src="resources/assets/js/jquery.scrollex.min.js"></script>
-		<script src="resources/assets/js/jquery.scrolly.min.js"></script>
-		<script src="resources/assets/js/browser.min.js"></script>
-		<script src="resources/assets/js/breakpoints.min.js"></script>
-		<script src="resources/assets/js/util.js"></script>
-		<script src="resources/assets/js/main.js"></script>
+
 		<script src="resources/assets/js/calendar.js"></script>
+			<script>
+		function dp_menu() {
+			let click = document.getElementById("drop-content");
+			if (click.style.display === "none") {
+				click.style.display = "block";
+
+			} else {
+				click.style.display = "none";
+
+			}
+		}
+	</script>
+		
 	</body>
 	
 	</html>

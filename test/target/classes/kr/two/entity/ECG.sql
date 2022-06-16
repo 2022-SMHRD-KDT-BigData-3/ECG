@@ -143,8 +143,8 @@ select * from diary;
 
 delete from DIARY where id='a';
 select checkdate from DIARY where  '';
-select * from diary where id='a'and checkdate='20220607' and rownum =1 order by 1 desc ;
+select * from diary where id='a'and checkdate='20220615' and rownum =1 order by 1 desc ;
 delete DIARY 
-insert into DIARY values('a','20220607','00:50:05','sss',2,8,23,8,30,87);
+insert into DIARY values('a',to_char(sysdate,'yyyy.mm.dd'),'00:50:05','sss',3,8,23,8,30);
 select * from diary;
-
+select to_char(sysdate,'yyyy.mm.dd') 

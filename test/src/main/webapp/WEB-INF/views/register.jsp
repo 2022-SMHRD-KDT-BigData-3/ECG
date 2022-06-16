@@ -26,20 +26,15 @@
 	</head>
 <body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+		<div id="wrapper" class="fade-in">
 
-
-				<!-- Header -->
-					<header id="header">
-					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="login.do">로그인</a></li>
-							<li class="active"><a href="register.do">회원가입</a></li>
-							<li><a href="edit.do">회원수정</a></li>
+							<li><a href="login.jsp">Login Page</a></li>
+							<li class="active"><a href="register.jsp">Register Page</a></li>
+							<li><a href="edit.jsp">Edit Page</a></li>
 						</ul>
 						<ul class="icons">
 							
@@ -48,7 +43,7 @@
 
 				<!-- Main -->
 					<div id="main">
-
+						<img src="resources/assets/images/logo.png" style="width: 5rem; height: 4.6rem; padding: 1px;">
 						<!-- Featured Post -->
 							<article class="post featured">
 						<section>
@@ -71,27 +66,26 @@
 										<input type="password" name="pw" id="password" />
 									</div>
 								</div>
-								<hr>
 								<div class="fields">
 									<div class="field">
 										<label for="weight">나이를 입력하세요</label>
-										<input type="number" name="age" id="age" />
+										<input type="text" name="age" id="age" />
 									</div>
 								</div>
 								<div class="fields">
 									<div class="field">
 										<label for="height">키를 입력하세요</label>
-										<input type="number" name="height" id="height" />
+										<input type="text" name="height" id="height" />
 									</div>
 								</div>
 								<div class="fields">
 									<div class="field">
 										<label for="weight">몸무게를 입력하세요</label>
-										<input type="number" name="weight" id="weight" />
+										<input type="text" name="weight" id="weight" />
 									</div>
 								</div>
 
-								<hr>
+							
 								<ul class="actions special">
 									<li><input type="submit" value="확인" /></li>
 								</ul>

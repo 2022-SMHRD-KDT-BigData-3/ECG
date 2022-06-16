@@ -8,6 +8,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="resources/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="resources/assets/css/noscript.css" /></noscript>
+				<script type="text/javascript">
+		function checkOnlyOne(element) {
+			  
+			  const checkboxes 
+			      = document.getElementsByName("strong");
+			  
+			  checkboxes.forEach((cb) => {
+			    cb.checked = false;
+			  })
+			  
+			  element.checked = true;
+			}
+		</script>
 	</head>
 		<body class="is-preload">
 
@@ -15,16 +28,12 @@
 			<div id="wrapper" class="fade-in">
 
 
-				<!-- Header -->
-					<header id="header">
-						<a href="" class="logo">LoginPage</a>
-					</header>
-
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="active"><a href="login.jsp">로그인</a></li>
-							<li><a href="register.jsp">회원가입</a></li>
+							<li class="active"><a href="login.jsp">Login Page</a></li>
+							<li><a href="register.jsp">Register Page</a></li>
+							<li><a href="edit.jsp">Edit Page</a></li>
 						</ul>
 						<ul class="icons">
 						</ul>
@@ -32,25 +41,25 @@
 
 				<!-- Main -->
 					<div id="main">
-
+							<img src="resources/assets/images/logo.png">
 						<!-- Featured Post -->
 							<article class="post featured">
 						<section>
 							<form method="post" action="loginservice.do">
 								<div class="fields">
 									<div class="field">
-										<label for="name">아이디를 입력하세요</label>
+										<label for="name">ID를 입력하세요</label>
 										<input type="text" name="id" id="id" />
 									</div>
 								
 									<div class="field">
-										<label for="email">비밀번호를 입력하세요</label>
-										<input type="password" name="pw" id="password" />
+										<label for="email">PassWord를 입력하세요</label>
+										<input type="text" name="pw" id="password" />
 									</div>
 
 								</div>
 								<ul class="actions special">
-									<li><input type="submit" value="로그인" /></li>
+									<li><input type="submit" value="확인" /></li>
 								</ul>
 							<article class="post featured">
 								<header class="major">
@@ -58,7 +67,7 @@
 									<span class="date"></span>
 								</header>
 								<ul class="actions special">
-									<li><a href="register.do" class="button large">회원가입</a></li>
+									<li><a href="#" class="button large">회원가입</a></li>
 								</ul>
 							</article>
 							</form>
@@ -67,12 +76,6 @@
 							
 
 					</div>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; soul heart</li><li>Design: <a href="https://html5up.net">Soul Heart</a></li></ul>
-					</div>
-
 			</div>
 
 		<!-- Scripts -->
