@@ -654,6 +654,14 @@ $(function(){
 	  
 	});
 </script>
+
+<!-- 알림모달창 -->
+
+
+
+<!-- 알림모달창 끝 -->
+
+
 	<!-- 슬라이드 생성 -->
 	<div class="section">
 		<input type="radio" name="slide" id="slide01" checked> <input
