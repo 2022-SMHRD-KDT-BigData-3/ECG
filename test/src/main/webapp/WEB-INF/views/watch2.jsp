@@ -356,7 +356,7 @@ h1 {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  margin: 3px 25px 5px 33px;
+  margin: 86px 25px 5px 33px;
   min-width: 495px;
   right: 4.9rem;
 }
@@ -444,7 +444,6 @@ h1 {
 </head>
 <body>
 
-
 	<!-- 종료 모달창 -->
 	<div class="modal">
 
@@ -455,7 +454,7 @@ h1 {
 			
 
 				<h2 style = "font-size: 70px;">오늘 운동 내역은</h2>
-				<div class="modalbox" style = "margin-top: 70px;font-size: 40px;">
+				<div class="modalbox" style = "margin-top: 110px;font-size: 31px;width:50%;float:left;height:39%;">
 					<div id="modal1" style = "margin-bottom: 50px;">
 						<h3>시간</h3>
 					</div>
@@ -465,26 +464,47 @@ h1 {
 					<div id="modal3" style = "margin-bottom: 50px;">
 						<h3>최대/평균심박수</h3>
 					</div>
-					
-					<div id="modal">
+					<div id="modal3" style = "margin-bottom: 50px;">
+						<h3>운동리스트</h3>
+					</div>	
+				</div>
+				<div id="modal"style = "margin-top: 110px;margin-bottom: 50px;font-size: 31px;width:50%;float:left;height:39%;">
 						<div id="exerlist" name="list" ></div>
-						<h3 id="time2" name="time2"></h3><h3>time</h3>
-						<h3 id="cal2" name="cal2"></h3><h3>kcal</h3>
-						<div> <h3 id="maxHeart" name="maxHeart"></h3> / <h3 id="minHeart" name="min"></h3>BPM </div> 
+						<h3 id="time2" name="time2"></h3><h3 style="margin-bottom: 50px;">time</h3>
+						<h3 id="cal2" name="cal2"></h3><h3 style="margin-bottom: 50px;">kcal</h3>
+						<div style="margin-bottom: 50px;"> <h3 id="maxHeart" name="maxHeart"></h3><div id="minHeart" name="min"></div><h3 style="margin-bottom: 50px;">/ BPM</h3> 
+						
 						<h3 id="strong" name="strong"></h3>
 						<h3 id="age" style="display: none">29</h3>
 						<h3 name="danger" style="display: none">${danger}</h3>
+						<h3 id="exer" style="margin-bottom: 50px;"></h3>
 					</div>
-				</div>
-				<button class="btn btn-1 hover-filled-slide-down" type="button">저장</button>
-                <button class="btn btn-1 hover-filled-slide-down" >돌아가기</button>
+					
+				<button class="btn btn-1 hover-filled-slide-down" style = "margin: -6px 2px 13px -316px;">
+                    <div class="back">
+                     <a href="listpick.do?Choose=1&num=3&type=1"> <span>저장</span></a>
+                    </div>
+                </button>
                 
-              </div>
+                </div>
+              
 		</form>
+		
 	</div>
 	</div>
 
 	<script type="text/javascript">
+	
+	$(document).ready(()=>{
+	    // jquery에 만들어져 있는 함수 ==> $. 비동기식 함수
+	    // $.ajax({ })-> 초기화list
+	      getData();
+	  });
+	
+	function getData(){
+		// 통신 code
+		document.getElementById("exer").innerHTML = "<MARQUEE direction='left' height='60' width='100'style='font-size: 34px;line-height: 30px;'> 벤치프레스 고구마먹기 닭먹기 </MARQUEE>";
+	}
 $(function(){ 
 	// 모달창 보이기
 	  $("#stopbtn").click(function(){
