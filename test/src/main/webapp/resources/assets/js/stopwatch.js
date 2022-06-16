@@ -50,7 +50,7 @@ function buttonEvt(){
 	
 	// j쿼리로 id값 heart의 내용을 바꿔준다
 		// 목표심박수
-	  document.getElementById("beat").innerHTML = "목표심박수 - "+targetHeart;
+	  document.getElementById("targetHeart").innerHTML = "목표심박수 - "+targetHeart;
 	  // 운동 전 설정한 목표심박수
 	   document.getElementById("minHeart").innerHTML = targetHeart;
 	
@@ -85,10 +85,11 @@ function buttonEvt(){
         hour = Math.floor(min/60);
         sec = time%60;
         min = min%60;
-		timerdd = (hour*60)+min;
+		timerdd = (((hour*60)+min)*60)+sec;
         var th = hour;
         var tm = min;
         var ts = sec;
+       	
         if(th<10){
         th = "0" + hour;
         }
@@ -98,70 +99,19 @@ function buttonEvt(){
         if(ts < 10){
         ts = "0" + sec;
         }
+    	var weight = document.getElementById('weight').innerText;
+        let numb = 21*weight*0.005*timerdd/60;
+        numb = numb.toFixed(2);
         var age = document.getElementById('age').innerText;
  		document.getElementById("time").innerText = th + ":" + tm + ":" + ts;
-        document.getElementById("cal").innerHTML = 21*60*0.005*timerdd;
+        document.getElementById("cal1").innerHTML = "칼로리 : "+numb ;
+        document.getElementById("cal2").innerHTML = "칼로리 : "+numb ;
+        document.getElementById("cal3").innerHTML = "칼로리 : "+numb ;
         document.getElementById("strong").innerHTML = maxHeart/mhr;
-        
-      }, 1000);
-    }
-  });
-
-$("#medle").click(function(){
- $("#pausebtn").css('display','inline');		
-  $("#medle").css('display','none');		
-    if(starFlag){
-		
-      starFlag = false;
-
-      if(time == 0){
-        init();
-      }
-
-      timer = setInterval(function(){
-        time++;
-	
-        min = Math.floor(time/60);
-        hour = Math.floor(min/60);
-        sec = time%60;
-        min = min%60;
-		timerdd = (hour*60)+min;
-        var th = hour;
-        var tm = min;
-        var ts = sec;
-        if(th<10){
-        th = "0" + hour;
-        }
-        if(tm < 10){
-        tm = "0" + min;
-        }
-        if(ts < 10){
-        ts = "0" + sec;
-        }
-        // 타이머
- 		document.getElementById("time").innerText = th + ":" + tm + ":" + ts;
-		// 칼로리 계산뿌려주기
-        document.getElementById("cal").innerHTML = 21*60*0.005*timerdd;
 
       }, 1000);
     }
   });
-  // pause btn
-  $("#pausebtn").click(function(){
-   	console.log("확인5");
-    if(time != 0){
-
-      clearInterval(timer);
-      starFlag = true;
-
-       }
-       	console.log("확인3");
- 	$("#medle").css('display','inline');		
- 	$("#pausebtn").css('display','none');		
-	
- 	console.log("확인4");
-  });
-
 
 
   // stop btn
@@ -177,7 +127,7 @@ $("#medle").click(function(){
   // db에 넣을 타이머값
   document.getElementById("time2").innerHTML = timeval;
 	// db에 넣을 칼로리값 
-  document.getElementById("cal2").innerHTML = calval;
+  document.getElementById("cal4").innerHTML = calval;
   // 운동리스트 합쳐서 보내기
    document.getElementById("exerlist").innerHTML = list1+","+list2+","+list3;
     if(time != 0){
@@ -189,3 +139,9 @@ $("#medle").click(function(){
     }
   });
 }
+$("#btn1").click(function(){
+	$("#slide03").prop("checked",true);
+	});
+$("#btn2").click(function(){
+	 $("#slide04").prop("checked",true);
+		});

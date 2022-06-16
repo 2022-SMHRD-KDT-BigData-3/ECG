@@ -63,19 +63,25 @@ public class ProjectController {
 	}
 	// 운동리스트 서비스
 	@RequestMapping("/listpick.do")
-	public String listpick(Model model, int Choose,String danger, int age,String id) {
+
+	public String listpick(Model model, int Choose,String danger, int age,String id,int weight) {
+
 		List<String> mvo = new ArrayList<String>();
+
 		System.out.println("위험예측도"+danger);
 		
+
 		for (int i = 0; i < 3; i++) {
 			List<String> data = projectMapper.exerlist(Choose, i + 1);	
 				mvo.add(data.get(i));
 			
 		}
-		
-		
-		model.addAttribute("id",id);
-		model.addAttribute("age",age);
+		MemberVO vo = new MemberVO();
+		vo.setAge(age);
+		vo.setWeight(weight);
+		vo.setId(id);
+	
+		model.addAttribute("vo",vo);
 		model.addAttribute("danger", danger);
 		model.addAttribute("mvo", mvo);
 		return "watch2";
@@ -106,7 +112,7 @@ public class ProjectController {
 		vo.setHeight(175);
 		vo.setWeight(77);
 		vo.setAge(29);
-		
+	
 		model.addAttribute("vo", vo);
 		
 		return "watch1";

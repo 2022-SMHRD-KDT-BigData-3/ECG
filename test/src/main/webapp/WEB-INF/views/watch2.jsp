@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html>
 
@@ -13,7 +12,6 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script type="text/javascript">
 
 
@@ -64,8 +62,6 @@ body {
 	margin: 0;
 	padding: 0;
 }
-
-
 
 .section input[id*="slide"] {
 	display: none;
@@ -144,27 +140,131 @@ body {
 	transition: all .5s;
 }
 
-.section input[id="slide01"]:checked ~ .slide-wrap .slidelist>li {transform: translateX(0%);}
-.section input[id="slide02"]:checked ~ .slide-wrap .slidelist>li {transform: translateX(-100%);}
-.section input[id="slide03"]:checked ~ .slide-wrap .slidelist>li {transform: translateX(-200%);}
-.section input[id="slide04"]:checked ~ .slide-wrap .slidelist>li {transform: translateX(-300%);}
-.section input[id="slide05"]:checked ~ .slide-wrap .slidelist>li {transform: translateX(-400%);}
-.section input[id="slide06"]:checked ~ .slide-wrap .slidelist>li {transform: translateX(-500%);}
-.section input[id="slide07"]:checked ~ .slide-wrap .slidelist>li {transform: translateX(-600%);}
-.section input[id="slide01"]:checked ~ .slide-wrap li:nth-child(1) .textbox h3{opacity: 1;transform: translateY(0);transition-delay: .2s;}
-.section input[id="slide01"]:checked ~ .slide-wrap li:nth-child(1) .textbox p{opacity: 1;transform: translateY(0);transition-delay: .4s;}
-.section input[id="slide02"]:checked ~ .slide-wrap li:nth-child(2) .textbox h3{opacity: 1;transform: translateY(0);transition-delay: .2s;}
-.section input[id="slide02"]:checked ~ .slide-wrap li:nth-child(2) .textbox p{opacity: 1;transform: translateY(0);transition-delay: .4s;}
-.section input[id="slide03"]:checked ~ .slide-wrap li:nth-child(3) .textbox h3{opacity: 1;transform: translateY(0);transition-delay: .2s;}
-.section input[id="slide03"]:checked ~ .slide-wrap li:nth-child(3) .textbox p{opacity: 1;transform: translateY(0);transition-delay: .4s;}
-.section input[id="slide04"]:checked ~ .slide-wrap li:nth-child(4) .textbox h3{opacity: 1;transform: translateY(0);transition-delay: .2s;}
-.section input[id="slide04"]:checked ~ .slide-wrap li:nth-child(4) .textbox p{opacity: 1;transform: translateY(0);transition-delay: .4s;}
-.section input[id="slide05"]:checked ~ .slide-wrap li:nth-child(5) .textbox h3{opacity: 1;transform: translateY(0);transition-delay: .2s;}
-.section input[id="slide05"]:checked ~ .slide-wrap li:nth-child(5) .textbox p{opacity: 1;transform: translateY(0);transition-delay: .4s;}
-.section input[id="slide06"]:checked ~ .slide-wrap li:nth-child(6) .textbox h3{opacity: 1;transform: translateY(0);transition-delay: .2s;}
-.section input[id="slide06"]:checked ~ .slide-wrap li:nth-child(6) .textbox p{opacity: 1;transform: translateY(0);transition-delay: .4s;}
-.section input[id="slide07"]:checked ~ .slide-wrap li:nth-child(7) .textbox h3{opacity: 1;transform: translateY(0);transition-delay: .2s;}
-.section input[id="slide07"]:checked ~ .slide-wrap li:nth-child(7) .textbox p{opacity: 1;transform: translateY(0);transition-delay: .4s;}
+.section input[id="slide01"]:checked ~ .slide-wrap .slidelist>li {
+	transform: translateX(0%);
+}
+
+.section input[id="slide02"]:checked ~ .slide-wrap .slidelist>li {
+	transform: translateX(-100%);
+}
+
+.section input[id="slide03"]:checked ~ .slide-wrap .slidelist>li {
+	transform: translateX(-200%);
+}
+
+.section input[id="slide04"]:checked ~ .slide-wrap .slidelist>li {
+	transform: translateX(-300%);
+}
+
+.section input[id="slide05"]:checked ~ .slide-wrap .slidelist>li {
+	transform: translateX(-400%);
+}
+
+.section input[id="slide06"]:checked ~ .slide-wrap .slidelist>li {
+	transform: translateX(-500%);
+}
+
+.section input[id="slide07"]:checked ~ .slide-wrap .slidelist>li {
+	transform: translateX(-600%);
+}
+
+.section input[id="slide01"]:checked ~ .slide-wrap li:nth-child(1) .textbox h3
+	{
+	opacity: 1;
+	transform: translateY(0);
+	transition-delay: .2s;
+}
+
+.section input[id="slide01"]:checked ~ .slide-wrap li:nth-child(1) .textbox p
+	{
+	opacity: 1;
+	transform: translateY(0);
+	transition-delay: .4s;
+}
+
+.section input[id="slide02"]:checked ~ .slide-wrap li:nth-child(2) .textbox h3
+	{
+	opacity: 1;
+	transform: translateY(0);
+	transition-delay: .2s;
+}
+
+.section input[id="slide02"]:checked ~ .slide-wrap li:nth-child(2) .textbox p
+	{
+	opacity: 1;
+	transform: translateY(0);
+	transition-delay: .4s;
+}
+
+.section input[id="slide03"]:checked ~ .slide-wrap li:nth-child(3) .textbox h3
+	{
+	opacity: 1;
+	transform: translateY(0);
+	transition-delay: .2s;
+}
+
+.section input[id="slide03"]:checked ~ .slide-wrap li:nth-child(3) .textbox p
+	{
+	opacity: 1;
+	transform: translateY(0);
+	transition-delay: .4s;
+}
+
+.section input[id="slide04"]:checked ~ .slide-wrap li:nth-child(4) .textbox h3
+	{
+	opacity: 1;
+	transform: translateY(0);
+	transition-delay: .2s;
+}
+
+.section input[id="slide04"]:checked ~ .slide-wrap li:nth-child(4) .textbox p
+	{
+	opacity: 1;
+	transform: translateY(0);
+	transition-delay: .4s;
+}
+
+.section input[id="slide05"]:checked ~ .slide-wrap li:nth-child(5) .textbox h3
+	{
+	opacity: 1;
+	transform: translateY(0);
+	transition-delay: .2s;
+}
+
+.section input[id="slide05"]:checked ~ .slide-wrap li:nth-child(5) .textbox p
+	{
+	opacity: 1;
+	transform: translateY(0);
+	transition-delay: .4s;
+}
+
+.section input[id="slide06"]:checked ~ .slide-wrap li:nth-child(6) .textbox h3
+	{
+	opacity: 1;
+	transform: translateY(0);
+	transition-delay: .2s;
+}
+
+.section input[id="slide06"]:checked ~ .slide-wrap li:nth-child(6) .textbox p
+	{
+	opacity: 1;
+	transform: translateY(0);
+	transition-delay: .4s;
+}
+
+.section input[id="slide07"]:checked ~ .slide-wrap li:nth-child(7) .textbox h3
+	{
+	opacity: 1;
+	transform: translateY(0);
+	transition-delay: .2s;
+}
+
+.section input[id="slide07"]:checked ~ .slide-wrap li:nth-child(7) .textbox p
+	{
+	opacity: 1;
+	transform: translateY(0);
+	transition-delay: .4s;
+}
 
 /*watch1 아이콘 시작 */
 .slidelist {
@@ -191,10 +291,9 @@ body {
 }
 
 /*watch1 아이콘 끝 - 수정하지 말것 */
-
 #modal {
- width: 165%;
- height: 89%;
+	width: 165%;
+	height: 89%;
 }
 
 /* watch2 List box 시작*/
@@ -205,9 +304,10 @@ body {
 	background: #dddddd;
 	width: 684px;
 	border-radius: 10px;
-};
 }
 
+;
+}
 #box2 {
 	/* margin-left: 150px; */
 	width: 165%;
@@ -220,8 +320,8 @@ body {
 	width: 684px;
 	border-radius: 10px;
 	height: 150px;
-    /* line-height: 110px; */
-    margin-bottom: 1rem;
+	/* line-height: 110px; */
+	margin-bottom: 1rem;
 }
 
 #box4 {
@@ -231,8 +331,8 @@ body {
 	width: 684px;
 	border-radius: 10px;
 	height: 150px;
-    /* line-height: 110px; */
-    margin-bottom: 1rem;
+	/* line-height: 110px; */
+	margin-bottom: 1rem;
 }
 
 #box5 {
@@ -242,8 +342,8 @@ body {
 	width: 684px;
 	border-radius: 10px;
 	height: 150px;
-    /* line-height: 110px; */
-    margin-bottom: 1rem;
+	/* line-height: 110px; */
+	margin-bottom: 1rem;
 }
 
 /* watch2 List box 끝*/
@@ -305,143 +405,173 @@ button {
 	background: linear-gradient(0deg, rgba(255, 151, 0, 1) 0%,
 		rgba(251, 75, 2, 1) 100%);
 }
-#set {
+
+.set {
 	border: 10px solid #dddddd;
 	background: #dddddd;
 	margin-top: 1rem;
 }
-#beat {
+
+.beat {
 	border: 10px solid #dddddd;
 	background: #dddddd;
 	margin-top: 1rem;
 }
 /* watch2 운동 버튼 끝 */
 
-   /* 버튼 시작  */
+/* 버튼 시작  */
 * {
-  box-sizing: border-box;
-  margin: 0; padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
+
 body {
-  font-family: 'EliceDigitalBaeum';
-  color: rgb(85,75,85);
-  background-color: rgb(255,255,255);
+	font-family: 'EliceDigitalBaeum';
+	color: rgb(85, 75, 85);
+	background-color: rgb(255, 255, 255);
 }
+
 h1 {
-  padding: 50px 0;
-  font-size: 45px;
-  text-align: center;
-  color: rgb(54, 56, 55);
+	padding: 50px 0;
+	font-size: 45px;
+	text-align: center;
+	color: rgb(54, 56, 55);
 }
+
 :active, :hover, :focus {
-  outline: 0!important;
-  outline-offset: 0;
+	outline: 0 !important;
+	outline-offset: 0;
 }
-::before,
-::after {
-  position: absolute;
-  content: "";
+
+::before, ::after {
+	position: absolute;
+	content: "";
 }
 
 .btn-holder {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 1000px;
-  margin: 50px auto -80px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 1000px;
+	margin: 50px auto -80px;
 }
 /* 모달창 버튼 조절가능 */
 .btn {
-  position: relative;
-  display: inline-block;
-  width: auto; height: auto;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  margin: 3px 25px 5px 33px;
-  min-width: 495px;
-  right: 4.9rem;
+	position: relative;
+	display: inline-block;
+	width: auto;
+	height: auto;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	margin: 3px 25px 5px 33px;
+	min-width: 495px;
+	right: 4.9rem;
 }
-  .btn span {         
-    position: relative;
-    display: inline-block;
-    font-size: 30px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    top: 0; left: 0;
-    width: 100%;
-    padding: 30px 20px;
-    transition: 0.3s;
-  }
+
+.btn span {
+	position: relative;
+	display: inline-block;
+	font-size: 30px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 30px 20px;
+	transition: 0.3s;
+}
 
 /*--- btn-1 ---*/
-.back{
-  background-color : white;
-  width: 130%;
+.back {
+	background-color: white;
+	width: 130%;
 }
 
 .btn-1::before {
-  background-color: rgb(28, 31, 30);
-  transition: 0.3s ease-out;
+	background-color: rgb(28, 31, 30);
+	transition: 0.3s ease-out;
 }
+
 .btn-1 span {
-  color: rgb(255,255,255);
-  border: 1px solid rgb(28, 31, 30);
-  transition: 0.2s 0.1s;
+	color: rgb(255, 255, 255);
+	border: 1px solid rgb(28, 31, 30);
+	transition: 0.2s 0.1s;
 }
+
 .btn-1 span:hover {
-  color: rgb(28, 31, 30);
-  transition: 0.2s 0.1s;
+	color: rgb(28, 31, 30);
+	transition: 0.2s 0.1s;
 }
 
 /* 1.hover-filled-slide-down */
 .btn.hover-filled-slide-down::before {
-  bottom: 0; left: 0; right: 0; 
-  height: 100%; width: 130%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 130%;
 }
+
 .btn.hover-filled-slide-down:hover::before {
-  height: 0%;
+	height: 0%;
 }
 
 /* 2.hover-filled-slide-up */
 .btn.hover-filled-slide-up::before {
-  top: 0; left: 0; right: 0;
-  height: 100%; width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
 }
+
 .btn.hover-filled-slide-up:hover::before {
-  height: 0%;
+	height: 0%;
 }
 
 /* 3.hover-filled-slide-left */
 .btn.hover-filled-slide-left::before {
-  top: 0; bottom: 0; left: 0;
-  height: 100%; width: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
 }
 
 .btn.hover-filled-slide-left:hover::before {
-  width: 0%;
+	width: 0%;
 }
 
 /* 4. hover-filled-slide-right */
 .btn.hover-filled-slide-right::before {
-  top:0; bottom: 0; right: 0;
-  height: 100%; width: 100%;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
 }
+
 .btn.hover-filled-slide-right:hover::before {
-  width: 0%;
+	width: 0%;
 }
 
 /* 5. hover-filled-opacity */
 .btn.hover-filled-opacity::before {
-  top:0; bottom: 0; right: 0;
-  height: 100%; width: 100%;
-  opacity: 1;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 1;
 }
+
 .btn.hover-filled-opacity:hover::before {
-  opacity: 0;
+	opacity: 0;
 }
-   /* 버튼 끝  */
+/* 버튼 끝  */
 </style>
 </head>
 <body>
@@ -450,41 +580,49 @@ h1 {
 	<!-- 종료 모달창 -->
 	<div class="modal">
 
-	
-		<form action="exerInsert.do" style = "height: 245px;">
-			<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			
-			
 
-				<h2 style = "font-size: 70px;">오늘 운동 내역은</h2>
-				<div class="modalbox" style = "margin-top: 70px;font-size: 40px;">
-					<div id="modal1" style = "margin-bottom: 50px;">
+		<form action="exerInsert.do" style="height: 245px;">
+			<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+
+
+
+				<h2 style="font-size: 70px;">오늘 운동 내역은</h2>
+				<div class="modalbox" style="margin-top: 70px; font-size: 40px;">
+					<div id="modal1" style="margin-bottom: 50px;">
 						<h3>시간</h3>
 					</div>
-					<div id="modal2" style = "margin-bottom: 50px;">
+					<div id="modal2" style="margin-bottom: 50px;">
 						<h3>칼로리</h3>
 					</div>
-					<div id="modal3" style = "margin-bottom: 50px;">
+					<div id="modal3" style="margin-bottom: 50px;">
 						<h3>최대/평균심박수</h3>
 					</div>
-					
+
 					<div id="modal">
-						<div id="exerlist" name="list" ></div>
-						<h3 id="time2" name="time2"></h3><h3>time</h3>
-						<h3 id="cal2" name="cal2"></h3><h3>kcal</h3>
-						<div> <h3 id="maxHeart" name="maxHeart"></h3> / <h3 id="minHeart" name="min"></h3>BPM </div> 
+						<div name="id">${vo.getId()}</div>
+						<div id="exerlist" name="list"></div>
+						<h3 id="time2" name="time2"></h3>
+						<h3>time</h3>
+						<h3 id="cal4" name="cal2"></h3>
+						<h3>kcal</h3>
+						<div>
+							<h3 id="maxHeart" name="maxHeart"></h3>
+							/
+							<h3 id="minHeart" name="min"></h3>
+							BPM
+						</div>
 						<h3 id="strong" name="strong"></h3>
-						<h3 id="age" style="display: none">${age}</h3>
+						<h3 id="age" style="display: none">${vo.getAge()}</h3>
 						<h3 id="danger" name="danger" style="display: none">${danger}</h3>
 					</div>
 				</div>
 				<button class="btn btn-1 hover-filled-slide-down" type="">저장</button>
-                <button class="btn btn-1 hover-filled-slide-down" >돌아가기</button>
-                
-              </div>
+				<button class="btn btn-1 hover-filled-slide-down">돌아가기</button>
+
+			</div>
 		</form>
 	</div>
-	
+	</div>
 
 	<script type="text/javascript">
 $(function(){ 
@@ -502,20 +640,21 @@ $(function(){
 	  
 	});
 </script>
+<!-- 슬라이드 생성 -->
 	<div class="section">
-		<input type="radio" name="slide" id="slide01" checked> 
-		<input type="radio" name="slide" id="slide02">
-		<input type="radio" name="slide" id="slide03">
-		<input type="radio" name="slide" id="slide04">
-		
+		<input type="radio" name="slide" id="slide01" checked> <input
+			type="radio" name="slide" id="slide02"> <input type="radio"
+			name="slide" id="slide03"> <input type="radio" name="slide"
+			id="slide04">
 
+<!-- 메인페이지 -> 운동추천 받은 페이지 -->
 		<div class="slide-wrap">
 			<ul class="slidelist">
 				<li><a>
 						<table class='table'>
 							<div id="none">
 								<div class="wrap">
-
+					
 									<label for="slide02" class="right"></label>
 									<div class="textbox">
 										<div id="box1">
@@ -523,13 +662,16 @@ $(function(){
 											<c:forEach var="name" items="${mvo}" varStatus="status">
 												<h3 id="list${status.count}">${name}</h3>
 											</c:forEach>
-
+		
 										</div>
-
+										
 										<div id="box2">
-											<h3 id = "set" style="border-radius : 10px">5세트 - 10회</h3>
-											<h3 id = "beat" style="border-radius : 10px"></h3>
-											
+												<h3 id="weight" style="display: none">${vo.getWeight()}</h3>
+											<h3 class="set" style="border-radius: 10px; height: 106.5px;">5세트
+												- 10회</h3>
+											<h3 id="targetHeart" class="beat"
+												style="border-radius: 10px; height: 106.5px;">목표심박수</h3>
+											<h3 id="time" style="display: none"></h3>
 										</div>
 									</div>
 
@@ -537,12 +679,12 @@ $(function(){
 
 
 										<button class="btn btn-1 hover-filled-slide-down" id="startbtn">
-					                        <div class="back">
-					                         <span>시작하기</span>
-					                        </div>
-					                    </button>
+											<div class="back">
+												<span>시작하기</span>
+											</div>
+										</button>
 
-										
+
 									</div>
 								</div>
 							</div>
@@ -555,34 +697,35 @@ $(function(){
 							<div id="none">
 								<div class="wrap">
 
-									<label for="slide01" class="left"></label>
+									<label for="slide01" class="left" id="slidebtn"></label>
 									<div class="textbox">
-										
+
 
 										<div id="box3">
-											<h3 id = "set" style="border-radius : 10px;font-size: 62px;line-height: center;">롱플머신</h3>
-										</div>	
+											<h3  class="set"
+												style="border-radius: 10px; font-size: 62px; line-height: center;">${mvo.get(0)}</h3>
+										</div>
 										<div id="box4">
-											<h3 id = "set" style="border-radius : 10px">5세트 - 10회</h3>
+											<h3 class="set" style="border-radius: 10px">5세트 - 10회</h3>
 										</div>
 										<div id="box5">
-											<h3 id = "beat" style="border-radius : 10px, font-size : 56px;">칼로리</h3>
-											<h3 id="targetHeart"></h3>
+											<h3 id="cal1" class="beat" style="border-radius: 10px, font-size: 56px;">칼로리</h3>
+											
 										</div>
 									</div>
 
 									<div class="frame" style="margin-top: 67%">
 
 
-										<button class="btn btn-1 hover-filled-slide-down" >
-					                        <div class="back">
-					                         <a href="listpick.do?Choose=1&num=3&type=1"> <span>다했어요</span></a>
-					                        </div>
-					                    </button>
-										
-										
+										<button class="btn btn-1 hover-filled-slide-down" id="btn1">
+											<div class="back">
+											 <span>다했어요</span>
+											</div>
+										</button>
+
+
 									</div>
-									<label for="slide03" class="right"></label>
+									<label for="slide03" class="right" style="display: none"></label>
 								</div>
 							</div>
 						</table>
@@ -591,8 +734,8 @@ $(function(){
 
 
 
-				<!-- 운동 중 페이지 끝 -->
-				
+				<!-- 운동 중 페이지1 끝 -->
+
 				<!-- 운동 중 페이지 2 -->
 				<li><a>
 						<table class='table'>
@@ -602,27 +745,28 @@ $(function(){
 									<label for="slide02" class="left"></label>
 									<div class="textbox">
 										<div id="box3">
-											<h3 id = "set" style="border-radius : 10px;font-size: 62px;line-height: center;">시티드 로우</h3>
-										</div>	
+											<h3 class="set"
+												style="border-radius: 10px; font-size: 62px; line-height: center;">${mvo.get(1)}</h3>
+										</div>
 										<div id="box4">
-											<h3 id = "set" style="border-radius : 10px">5세트 - 10회</h3>
+											<h3 class="set" style="border-radius: 10px">5세트 - 10회</h3>
 										</div>
 										<div id="box5">
-											<h3 id = "beat" style="border-radius : 10px, font-size : 56px;">칼로리</h3>
-											<h3 id="targetHeart"></h3>
+											<h3 id="cal2" class="beat" style="border-radius: 10px, font-size: 56px;">칼로리</h3>
+						
 										</div>
 									</div>
 
 									<div class="frame" style="margin-top: 67%">
 
 
-										<button class="btn btn-1 hover-filled-slide-down">
-					                        <div class="back">
-					                         <a href="listpick.do?Choose=1&num=3&type=1"> <span>다했어요</span></a>
-					                        </div>
-					                    </button>
+										<button class="btn btn-1 hover-filled-slide-down" id="btn2">
+											<div class="back">
+												 <span>다했어요</span>
+											</div>
+										</button>
 
-										
+
 									</div>
 									<label for="slide04" class="right"></label>
 								</div>
@@ -633,8 +777,8 @@ $(function(){
 
 
 
-				<!-- 운동 중 페이지 끝 -->
-				
+				<!-- 운동 중 페이지2 끝 -->
+
 				<!-- 운동 중 페이지 3 -->
 				<li><a>
 						<table class='table'>
@@ -644,14 +788,16 @@ $(function(){
 									<label for="slide03" class="left"></label>
 									<div class="textbox">
 										<div id="box3">
-											<h3 id = "set" style=" border-radius : 10px; font-size: 62px; line-height: center;">덤벨 숄더 프레스</h3>
-										</div>	
+											<h3 class="set"
+												style="border-radius: 10px; font-size: 62px; line-height: center;">${mvo.get(2)}</h3>
+										</div>
 										<div id="box4">
-											<h3 id = "set" style="border-radius : 10px">5세트 - 10회</h3>
+											<h3 class="set" style="border-radius: 10px;">5세트 - 10회</h3>
 										</div>
 										<div id="box5">
-											<h3 id = "beat" style="border-radius : 10px, font-size : 56px;">칼로리</h3>
-											<h3 id="targetHeart"></h3>
+											<h3 id="cal3" class="beat"
+												style="border-radius: 10px, font-size: 56px;">칼로리</h3>
+									
 										</div>
 									</div>
 
@@ -659,14 +805,14 @@ $(function(){
 
 
 										<button class="btn btn-1 hover-filled-slide-down" id="stopbtn">
-					                        <div class="back">
-					                         <span>다했어요</span>
-					                        </div>
-					                    </button>
+											<div class="back">
+												<span>다했어요</span>
+											</div>
+										</button>
 
-										
+
 									</div>
-									<label for="slide05" class="right"></label>
+					
 								</div>
 							</div>
 						</table>
@@ -675,26 +821,16 @@ $(function(){
 
 
 
-		
 
 
 
 
-		
-		</ul>
+
+
+			</ul>
+		</div>
 	</div>
-	</div>
- <script type="text/javascript">
 
- function name() {
-	 Swal.fire({
-		  icon: 'error',
-		  title: 'Oops...',
-		  text: '위험 상태입니다 잠시 멈춰주세요!',
-		});
-}
-
- </script>
 	<script src="resources/assets/js/stopwatch.js"></script>
 
 </body>

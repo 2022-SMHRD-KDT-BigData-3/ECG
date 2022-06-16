@@ -111,7 +111,6 @@
    font-color : white;
    margin-top: 266px;
    margin-left: 20px;
-
 }
 
 
@@ -179,7 +178,7 @@ h1 {
   .btn span {         
     position: relative;
     display: inline-block;
-    font-size: 14px;
+    font-size: 30px;
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -259,8 +258,6 @@ h1 {
 </style>
 </head>
 <body>
-
-<div id="age" style="display:None">${vo.getAge()}</div>   
 
 <div class="section">
    <input type="radio" name="slide" id="slide01" checked>
@@ -355,9 +352,9 @@ function getData(){
 			var a_tags = $("a.a_link");
 			console.log("length : "+a_tags.length)
 			
-			a_tags.eq(0).attr("href","listpick.do?Choose=1&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}");
-			a_tags.eq(1).attr("href","listpick.do?Choose=2&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}");
-			a_tags.eq(2).attr("href","listpick.do?Choose=2&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}");
+			a_tags.eq(0).attr("href","listpick.do?Choose=1&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}&weight="+${vo.getWeight()});
+			a_tags.eq(1).attr("href","listpick.do?Choose=2&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}&weight="+${vo.getWeight()});
+			a_tags.eq(2).attr("href","listpick.do?Choose=2&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}&weight="+${vo.getWeight()});
 			console.log("확인");
 			var h3_tag = $("#danger");
 		}		
