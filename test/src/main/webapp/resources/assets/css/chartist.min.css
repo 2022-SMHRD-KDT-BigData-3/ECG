@@ -1,3 +1,51 @@
+:root { 
+	--dark-body: #4d4c5a;
+	--dark-main: #141529;
+	--dark-second: #79788c;
+	--dark-hover: #323048;
+	--dark-text: #f8fbff;
+	--dark-left-button: #141529de;
+	--dark-right-button: #141529e6;
+	--light-body: #f3f8fe;
+	--light-main: #fffff0;
+	--light-second: #c3c2c8;
+	--light-hover: #edf0f5;
+	--light-text: #151426;
+	--light-left-button: #eeeeee; 
+	--light-right-button : #c3c2c8;
+	--blue: #0000ff;
+	--white: #fff;
+	--shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	--font-family: 'EliceDigitalBaeum';
+	--src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_elice@1.0/EliceDigitalBaeum.woff2')
+		format('woff2');
+	--font-weight: normal;
+	--font-style: normal;
+	--light-right-button: #c3c2c8;
+}
+
+.dark {
+	--bg-body: var(--dark-body);
+	--bg-main: var(--dark-main);
+	--bg-second: var(--dark-second);
+	--color-hover: var(--dark-hover);
+	--color-txt: var(--dark-text);
+	--color-left: var(--dark-left-button);
+	--color-right: var(--dark-right-button);
+}
+
+.light {
+	--bg-body: var(--light-body);
+	--bg-main: var(--light-main);
+	--bg-second: var(--light-second);
+	--color-hover: var(--light-hover);
+	--color-txt: var(--light-text);
+	--color-left: var(--light-left-button);
+	--color-right: var(--light-right-button);
+}
+
+
 .ct-double-octave:after, .ct-major-eleventh:after, .ct-major-second:after,
 	.ct-major-seventh:after, .ct-major-sixth:after, .ct-major-tenth:after,
 	.ct-major-third:after, .ct-major-twelfth:after, .ct-minor-second:after,
@@ -9,8 +57,8 @@
 }
 
 .ct-label {
-	fill: rgba(0, 0, 0, .4);
-	color: rgba(0, 0, 0, .4);
+	fill: var(--color-txt);
+	color: var(--color-txt);
 	font-size: .75rem;
 	line-height: 1
 }
@@ -163,7 +211,7 @@
 }
 
 .ct-grid {
-	stroke: rgba(0, 0, 0, .2);
+	stroke: var(--color-txt);
 	stroke-width: 1px;
 	stroke-dasharray: 2px
 }

@@ -11,6 +11,58 @@ body {
 	font-family: 'EliceDigitalBaeum';
 }
 
+:root { 
+	--dark-body: #4d4c5a;
+	--dark-main: #141529;
+	--dark-second: #79788c;
+	--dark-hover: #323048;
+	--dark-text: #f8fbff;
+	--dark-left-button: #141529de;
+	--dark-right-button: #141529e6;
+	--dark-footer:#6c757d82;
+	--light-body: #f3f8fe;
+	--light-main: #fffff0;
+	--light-second: #c3c2c8;
+	--light-hover: #edf0f5;
+	--light-text: #151426;
+	--light-left-button: #eeeeee; 
+	--light-right-button : #c3c2c8;
+	--light-footer: #f5f5f5;
+	--blue: #0000ff;
+	--white: #fff;
+	--shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	--font-family: 'EliceDigitalBaeum';
+	--src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_elice@1.0/EliceDigitalBaeum.woff2')
+		format('woff2');
+	--font-weight: normal;
+	--font-style: normal;
+	--light-right-button: #c3c2c8;
+	
+}
+
+.dark {
+	--bg-body: var(--dark-body);
+	--bg-main: var(--dark-main);
+	--bg-second: var(--dark-second);
+	--color-hover: var(--dark-hover);
+	--color-txt: var(--dark-text);
+	--color-left: var(--dark-left-button);
+	--color-right: var(--dark-right-button);
+	--color-footer:var(--dark-footer);
+}
+
+.light {
+	--bg-body: var(--light-body);
+	--bg-main: var(--light-main);
+	--bg-second: var(--light-second);
+	--color-hover: var(--light-hover);
+	--color-txt: var(--light-text);
+	--color-left: var(--light-left-button);
+	--color-right: var(--light-right-button);
+	--color-footer:var(--light-footer); 
+}
+
 body, html {
 	height: 100%;
 }
@@ -145,9 +197,7 @@ html {
 	}
 }
 
-body {
-	color: #ffffff;
-}
+
 
 body, input, select, textarea {
 	font-family: 'EliceDigitalBaeum';
@@ -155,20 +205,6 @@ body, input, select, textarea {
 	line-height: 2.375;
 }
 
-a {
-	-moz-transition: color 0.2s ease-in-out, background-color 0.2s
-		ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s
-		ease-in-out;
-	-webkit-transition: color 0.2s ease-in-out, background-color 0.2s
-		ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s
-		ease-in-out;
-	-ms-transition: color 0.2s ease-in-out, background-color 0.2s
-		ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s
-		ease-in-out;
-	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
-		border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-	text-decoration: none;
-}
 
 a:hover {
 	border-bottom-color: transparent;
@@ -229,7 +265,7 @@ hr.major {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	color: #212931;
+	color: var(--color-txt);
 }
 
 hr {
@@ -243,6 +279,7 @@ hr {
 	width: 100%;
 	height: 100%;
 	align-content: space-evenly;
+	background-color: var(--bg-main);
 }
 
 .box>:last-child, .box>:last-child>:last-child, .box>:last-child>:last-child>:last-child
@@ -277,11 +314,12 @@ label {
 }
 
 label {
-	color: #212931;
+	color: var(--color-txt);
 }
 
 #main {
-	background-color: #fffff0;
+	background-color: var(--bg-main);
+	color: var(--color-txt);
 	position: relative;
 	margin: 0 auto;
 	width: calc(100% - 4rem);
@@ -351,7 +389,7 @@ label {
 }
 
 .ct-golden-section {
-	height: 80%
+	height: 72.8%
 }
 
 @media screen and (max-width: 290px) {
@@ -381,13 +419,12 @@ label {
 
 /* Footer */
 #footer {
-	color: #717981;
+	color: var(--color-txt);
 	display: -moz-flex;
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
-	background-color: #f5f5f5;
-	color: #909498;
+	background-color: var(--color-footer);
 	cursor: default;
 	position: relative;
 	max-width: 100%;
@@ -404,16 +441,16 @@ label {
 }
 
 #footer a {
-	color: #717981;
+	color: var(--color-txt);
 	border-bottom-color: rgba(113, 121, 129, 0.5);
 }
 
 #footer strong, #footer b {
-	color: #717981;
+	color: var(--color-txt);
 }
 
 #footer h1, #footer h2, #footer h3, #footer h4, #footer h5, #footer h6 {
-	color: #000000;
+	color: var(--color-txt);
 }
 
 #footer hr {
@@ -425,16 +462,16 @@ label {
 }
 
 #footer label {
-	color: #717981;
+	color: var(--color-txt);
 }
 
 #footer .select-wrapper:before {
-	color: #e2e2e2;
+	color: var(--color-txt);
 }
 
 #footer input[type="checkbox"]+label, #footer input[type="radio"]+label
 	{
-	color: #717981;
+	color: var(--color-txt);
 }
 
 #footer input[type="checkbox"]+label:before, #footer input[type="radio"]+label:before
@@ -446,7 +483,7 @@ label {
 	{
 	background-color: #717981;
 	border-color: #717981;
-	color: #f5f5f5;
+	color: var(--color-txt);
 }
 
 #footer input[type="checkbox"]:focus+label:before, #footer input[type="radio"]:focus+label:before
@@ -455,7 +492,7 @@ label {
 }
 
 #footer ::-webkit-input-placeholder {
-	color: #b3b7bb !important;
+	color: var(--color-txt) !important;
 }
 
 #footer :-moz-placeholder {
@@ -667,16 +704,16 @@ label {
 	font-family: 'EliceDigitalBaeum';
 	font-size: 1.5rem;
 	font-weight: 700;
-	background-color: #fff;
+	background-color: var(--bg-main);
 	border-radius: 50%;
 	border: 1pt solid #eeeeee;
-	color: #000;
+	color: var(--color-txt);
 }
 
 .button:hover {
 	font-size: 2rem;
 	background-color: #b3b7bb;
-	color: #fff;
+	color: var(--color-txt);
 	transition: left 0.2s ease-in-out;
 }
 
@@ -692,14 +729,14 @@ label {
 	display: block;
 	font-size: 100%;
 	padding-top: 15%;
-	color: #eeeeee;
+	color: var(--color-txt);
 	text-decoration: none;
 	border: 1px solid #eeeeee;
 	transition: left 0.2s ease-in-out;
 }
 
 #drop-content a:hover {
-	color: #fff;
+	color: var(--color-txt);
 }
 
 .menuList {
@@ -755,8 +792,8 @@ label {
 	}
 }
 #btnRight {
-	color: black;
-	background-color: #eeeeee;
+	color: var(--color-txt);
+	background-color: var(--color-right);
 	border-color: transparent;
 	border-radius: 0;
 	font-size: 1.3rem;
@@ -770,8 +807,67 @@ label {
 
 #btnLeft {
 	border-color: transparent;
-	color: black;
-	background-color: #c3c2c8;
+	color:var(--color-txt);
+	background-color: var(--color-left);
 	border-radius: 0;
 	font-size: 1.3rem;
+}
+.calendar-footer {
+	padding: 0.7rem;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+}
+
+@media screen and (max-width: 420px) {
+	.calendar-footer {
+		height: 6.3%;
+	}
+}
+
+@media screen and (max-width: 370px) {
+	.calendar-footer {
+		height: 7%;
+	}
+}
+
+.toggle {
+	display: flex;
+	align-items: center;
+}
+
+.toggle span {
+	margin-right: 0.7rem;
+	color: var(--color-txt);
+}
+
+.dark-mode-switch {
+	position: relative;
+	width: 3.5rem;
+	height: 1.7rem;
+	border-radius: 0.9rem;
+	background-color: var(--bg-second);
+	cursor: pointer;
+}
+
+.dark-mode-switch-ident {
+	width: 1.45rem;
+	height: 1.45rem;
+	border-radius: 50%;
+	background-color: var(--bg-main);
+	position: absolute;
+	top: 0.15rem;
+	left: 0.15rem;
+	transition: left 0.2s ease-in-out;
+}
+
+.dark .dark-mode-switch .dark-mode-switch-ident {
+	top: 0.15rem;
+	left: calc(0.15rem + 50%);
+}
+@media screen and (max-width: 360px) {
+	#btnLeft {
+		width: 32%;
+	}
 }

@@ -69,10 +69,10 @@
 			<div class="btn-group" role="group"
 				aria-label="Basic outlined example">
 				<button type="button" class="btn btn-outline-secondary" id="btnLeft">
-					<a hreaf="#">차트페이지</a>
+					<a hreaf="#">CHART</a>
 				</button>
 				<button type="button" class="btn btn-outline-secondary" id="btnRight">
-					<a hreaf="#">켈린더페이지</a>
+					<a hreaf="#">DIARY</a>
 				</button>
 			</div>
 		</article>
@@ -111,6 +111,14 @@
 
 			}
 		}
+	</script>
+	<script type="text/javascript">
+	let dark_mode_toggle = document.querySelector('.dark-mode-switch')
+
+	dark_mode_toggle.onclick = () => {
+	    document.querySelector('body').classList.toggle('light')
+	    document.querySelector('body').classList.toggle('dark')
+	}
 	</script>
 
 </body>

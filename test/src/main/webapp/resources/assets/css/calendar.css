@@ -44,7 +44,7 @@
 	--color-right: var(--dark-right-button);
 }
 
-.light { -
+.light {
 	--bg-body: var(--light-body);
 	--bg-main: var(--light-main);
 	--bg-second: var(--light-second);
@@ -648,6 +648,6 @@ table.alt tbody tr td {
 
 @media screen and (max-width: 360px) {
 	#btnLeft {
-		width: 10.685rem;
+		width: 18%;
 	}
 }

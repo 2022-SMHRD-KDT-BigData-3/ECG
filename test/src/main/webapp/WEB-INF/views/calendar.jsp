@@ -108,10 +108,10 @@
 		<div class="btn-group" role="group"
 			aria-label="Basic outlined example">
 			<button type="button" class="btn btn-outline-secondary" id="btnLeft">
-				<a hreaf="#">차트페이지</a>
+				<a hreaf="#">CHART</a>
 			</button>
 			<button type="button" class="btn btn-outline-secondary" id="btnRight">
-				<a hreaf="#">켈린더페이지</a>
+				<a hreaf="#">DIARY</a>
 			</button>
 		</div>
 	</div>
