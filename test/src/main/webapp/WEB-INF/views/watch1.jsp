@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>watch1</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <style type="text/css">
 
 
@@ -31,12 +30,19 @@
    .section .slidelist .right {right:30px;background:url('./img/right.png') center center / 100% no-repeat;}
    .section .slidelist .textbox {position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
    
+<<<<<<< HEAD
+   .section .slidelist .textbox h3 {font-size:68px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
+=======
    .section .slidelist .textbox h3 {font-size:50px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/ECG.git
    .section .slidelist .textbox p {font-size:24px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
 
    .section input[id="slide01"]:checked ~ .slide-wrap .slidelist > li {transform:translateX(0%);}
    .section input[id="slide02"]:checked ~ .slide-wrap .slidelist > li {transform:translateX(-100%);}
    .section input[id="slide03"]:checked ~ .slide-wrap .slidelist > li {transform:translateX(-200%);}
+   .section input[id="slide03"]:checked ~ .slide-wrap .slidelist > li {transform:translateX(-300%);}
+   .section input[id="slide03"]:checked ~ .slide-wrap .slidelist > li {transform:translateX(-400%);}
+   .section input[id="slide03"]:checked ~ .slide-wrap .slidelist > li {transform:translateX(-500%);}
 
    .section input[id="slide01"]:checked ~ .slide-wrap li:nth-child(1) .textbox h3 {opacity:1;transform:translateY(0);transition-delay:.2s;}
    .section input[id="slide01"]:checked ~ .slide-wrap li:nth-child(1) .textbox p {opacity:1;transform:translateY(0);transition-delay:.4s;}
@@ -61,11 +67,19 @@
 .circle {
   border: 4px solid white;
   border-radius: 80%;
+<<<<<<< HEAD
+  width: 140%;
+  height: 140%;
+  max-width: 250px;
+  max-height: 250px;
+=======
   width: 100%;
   height: 100%;
   max-width: 100px;
   max-height: 100px;
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/ECG.git
   position: relative;
+  margin-bottom: 9rem;
 }
 .circle:before {
   border: 4px solid white;
@@ -102,7 +116,12 @@
 }
 #danger{
    font-color : white;
+<<<<<<< HEAD
+   margin-top: 266px;
+   margin-left: 20px;
+=======
    margin-top: 200px;
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/ECG.git
 }
 
 
@@ -153,7 +172,7 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1000px;
-  margin: 10px auto 35px;
+  margin: 50px auto -80px;
 }
 .btn {
   position: relative;
@@ -163,7 +182,12 @@ h1 {
   border: none;
   cursor: pointer;
   margin: 0px 25px 15px;
+<<<<<<< HEAD
+  min-width: 528px;
+  right: 4.9rem;
+=======
   min-width: 150px;
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/ECG.git
 }
   .btn span {         
     position: relative;
@@ -174,7 +198,7 @@ h1 {
     text-transform: uppercase;
     top: 0; left: 0;
     width: 100%;
-    padding: 15px 20px;
+    padding: 30px 20px;
     transition: 0.3s;
   }
 
@@ -256,7 +280,7 @@ h1 {
    <input type="radio" name="slide" id="slide02">
   
    <div class="slide-wrap">
-      <ul class="slidelist" >
+      <ul class="slidelist" style = "width: 700px;" >
          <li>
             <a>
                   <div>
@@ -266,7 +290,7 @@ h1 {
                   </div>
                <label for="slide02" class="right"></label>
                <div class="textbox">
-                  <h3 id="danger" name="danger"></h3>
+                  <h3 id="danger">50%</h3>
                </div>
             </a>
          </li>
@@ -276,12 +300,12 @@ h1 {
                <div class="textbox">
                   <h3>오늘은 어디</h3>
                   <h3>운동을 해볼까요?</h3>
-              
+                 
                   <div class="btn-holder">
                   
                      <button class="btn btn-1 hover-filled-slide-down">
                         <div class="back">
-                         <a class="a_link" href=""> <span>상체</span></a>
+                         <a href="listpick.do?Choose=1&num=3&type=1"> <span>상체</span></a>
                         </div>
                     </button>
                   
@@ -289,7 +313,7 @@ h1 {
                  
                      <button class="btn btn-1 hover-filled-slide-down">
                          <div class="back">
-                             <a class="a_link" href=""> <span>하체</span></a>
+                             <a href="listpick.do?Choose=2&num=2&type=2"> <span>하체</span></a>
                          </div>
                     </button>
                  
@@ -297,10 +321,10 @@ h1 {
                  
                      <button class="btn btn-1 hover-filled-slide-down">
                          <div class="back">
-                             <a class="a_link" href=""> <span>전신</span></a>
+                             <a href="listpick.do?Choosee=3&num=2&type=2"> <span>전신</span></a>
                          </div>
                     </button>
-                     </div>
+                  
                  
                </div>
                <img src="">
@@ -311,8 +335,9 @@ h1 {
       </ul>
    </div>
 </div>
-<script type="text/javascript">
 
+<<<<<<< HEAD
+=======
 $(document).ready(()=>{
     // jquery에 만들어져 있는 함수 ==> $. 비동기식 함수
     // $.ajax({ })-> 초기화list
@@ -353,5 +378,6 @@ function getData(){
 	
 }
 </script>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/ECG.git
 </body>
 </html>
