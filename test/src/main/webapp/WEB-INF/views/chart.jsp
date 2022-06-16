@@ -26,7 +26,7 @@
 
 
 </head>
-<body class="is-preload">
+<body class="is-preload light">
 
 	<!-- Wrapper -->
 
