@@ -342,6 +342,7 @@ function getData(){
 						
 			var a_tags = $("a.a_link");
 			console.log("length : "+a_tags.length)
+			
 			a_tags.eq(0).attr("href","listpick.do?Choose=1&danger="+result+"&age="+${vo.getAge()}+"&id="+${vo.getId()});
 			a_tags.eq(1).attr("href","listpick.do?Choose=2&&danger="+result+"&age="+${vo.getAge()}+"&id="+${vo.getId()});
 			a_tags.eq(2).attr("href","listpick.do?Choose=2&danger="+result+"&age="+${vo.getAge()}+"&id="+${vo.getId()});
