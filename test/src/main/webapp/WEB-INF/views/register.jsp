@@ -33,7 +33,7 @@
 
 				<!-- Main -->
 					<div id="main">
-						<img src="resources/assets/images/logo.png" style="width: 5rem; height: 4.6rem; padding: 1px;">
+						<img src="resources/assets/images/logo.png" id="logoRegister">
 						<!-- Featured Post -->
 							<article class="post featured">
 						<section>
@@ -97,6 +97,7 @@
 			<script src="resources/assets/js/breakpoints.min.js"></script>
 			<script src="resources/assets/js/util.js"></script>
 			<script src="resources/assets/js/main.js"></script>
+			<script type="text/javascript"> document.getElementById("navPanelToggle").style.display="none" </script>
 
 	</body>
 </html>

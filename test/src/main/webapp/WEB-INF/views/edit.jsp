@@ -34,12 +34,12 @@
 				<!-- Main -->
 
 					<div id="main">
-					<img src="resources/assets/images/logo.png" style="width: 5rem; height: 4.6rem; padding: 1px;">
+					<img src="resources/assets/images/logo.png" id="logoEdit">
 						<!-- Featured Post -->
 							<article class="post featured">
 						<section>
 							<form action="edit.do" method="post" >
-																<div class="fields">
+								<div class="fields" style="margin: -1.5rem 0 2rem -1.5rem;">
 									<div class="field">
 										<label for="name">수정할 닉네임을 입력하세요</label>
 										<input type="text" name="nick" id="name" value="${vo.nick}"/>

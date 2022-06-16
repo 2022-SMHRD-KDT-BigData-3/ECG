@@ -36,13 +36,13 @@
 							<article class="post featured">
 						<section>
 							<form method="post" action="loginservice.do">
-								<div class="fields">
-									<div class="field">
+								<div class="fields" id="loginfields">
+									<div class="field" id="loginId">
 										<label for="name">ID를 입력하세요</label>
 										<input type="text" name="id" id="id" />
 									</div>
 								
-									<div class="field">
+									<div class="field" id="loginPw">
 										<label for="email">PassWord를 입력하세요</label>
 										<input type="text" name="pw" id="password" />
 									</div>
