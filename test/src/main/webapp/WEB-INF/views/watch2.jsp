@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -12,6 +13,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script type="text/javascript">
 
 
@@ -323,9 +325,9 @@ button {
 						<div id="exerlist" name="list" style="display: none"></div>
 						<h3 id="time2" name="time2"></h3>
 						<h3 id="cal2" name="cal2"></h3>
-						<div> <h3 id="maxHeart" name="maxHeart"></h3> / <h3 id="minHeart" name="min"></h3>BPM </div> 
+						<div> <h3 id="maxHeart" name="max"></h3> / <h3 id="minHeart" name="min"></h3>BPM </div> 
 						<h3 id="strong" name="strong"></h3>
-						<h3 id="age" style="display: none">29</h3>
+						<h3 id="age" style="display: none">${age}</h3>
 						<h3 id="danger" name="danger" style="display: none">${danger}</h3>
 					</div>
 				</div>
@@ -333,7 +335,7 @@ button {
 				<button type="submit">저장하기</button>
 		</form>
 	</div>
-	</div>
+	
 
 	<script type="text/javascript">
 $(function(){ 
@@ -422,7 +424,17 @@ $(function(){
 		</ul>
 	</div>
 	</div>
+ <script type="text/javascript">
 
+ function name() {
+	 Swal.fire({
+		  icon: 'error',
+		  title: 'Oops...',
+		  text: '위험 상태입니다 잠시 멈춰주세요!',
+		});
+}
+
+ </script>
 	<script src="resources/assets/js/stopwatch.js"></script>
 
 </body>

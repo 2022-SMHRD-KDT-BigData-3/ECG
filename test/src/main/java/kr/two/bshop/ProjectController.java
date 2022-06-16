@@ -54,37 +54,34 @@ public class ProjectController {
 		System.out.println("넘어감");
 		return "edit";
 	}
-
+	// 로그인 서비스
 	@PostMapping("/loginservice.do")
 	public String loginservice(Model model, MemberVO vo) {
 		vo = projectMapper.login(vo);
 		model.addAttribute("vo", vo);
 		return "calendar";
 	}
-
+	// 운동리스트 서비스
 	@RequestMapping("/listpick.do")
-	public String listpick(Model model, int Choose,String danger) {
+	public String listpick(Model model, int Choose,String danger, int age) {
 		List<String> mvo = new ArrayList<String>();
-		System.out.println("ddddd"+danger);
-		// Choose = 선택한 운동종류 , num = 셀렉트할 횟수, type 운동종류
+		System.out.println("위험예측도"+danger);
+	
 		for (int i = 0; i < 3; i++) {
 			List<String> data = projectMapper.exerlist(Choose, i + 1);	
 				mvo.add(data.get(i));
 			
 		}
+		model.addAttribute("age",age);
 		model.addAttribute("danger", danger);
 		model.addAttribute("mvo", mvo);
 		return "watch2";
 	}
-	@RequestMapping("/watch.do")
-	public String watch() {
-		return "watch1";
-	}
 
 	@GetMapping("/diaryinsert.do")
-	public String diaryinsert() {
+	public String diaryinsert(DiaryVO vo) {
 		
-		return "watch";
+		return "watch1";
 	}
 	
 	@GetMapping("/diaryslect.do")
@@ -96,10 +93,9 @@ public class ProjectController {
 		return "calendar";
 	}
 	
-	@GetMapping("/watchservice.do")
+	@RequestMapping("/watchservice.do")
 	public String watchservice(Model model) {
-		System.out.println("너냐?");
-		
+		System.out.println("watchservice.do");
 		MemberVO vo = new MemberVO();
 		vo.setId("a");
 		vo.setPw("a");
