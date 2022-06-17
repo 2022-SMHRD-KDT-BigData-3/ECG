@@ -83,9 +83,9 @@ let curr_month = {value: currDate.getMonth()}
 let curr_year = {value: currDate.getFullYear()}
 
 generateCalendar(curr_month.value, curr_year.value)
-
-document.querySelector('#prev-year').onclick = () => {
-       
+console.log("1");
+document.querySelector('#prev-month').onclick = () => {
+       console.log("2");
     if(curr_month.value<=0){
         curr_month.value=11;
         curr_year.value--
@@ -96,7 +96,7 @@ document.querySelector('#prev-year').onclick = () => {
     generateCalendar(curr_month.value, curr_year.value)
 }
 
-document.querySelector('#next-year').onclick = () => {
+document.querySelector('#next-month').onclick = () => {
     if(curr_month.value>=11){
         curr_month.value=0;
         curr_year.value++

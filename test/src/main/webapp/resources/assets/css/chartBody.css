@@ -685,6 +685,17 @@ label {
 #footer>section.split.contact>section.alt>:last-child {
 	margin-top: -0.325rem;
 }
+/*버튼*/
+@keyframes to-top {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
 .name {
 	display: flex;
@@ -694,7 +705,7 @@ label {
 .dropdown {
 	position: relative;
 	display: inline-block;
-	margin-right: 3%;
+	margin-right: 5%;
 }
 
 .button {
@@ -704,50 +715,61 @@ label {
 	font-family: 'EliceDigitalBaeum';
 	font-size: 1.5rem;
 	font-weight: 700;
-	background-color: var(--bg-main);
+	background-color: var(--color-drop);
 	border-radius: 50%;
 	border: 1pt solid #eeeeee;
 	color: var(--color-txt);
 }
 
 .button:hover {
-	font-size: 2rem;
-	background-color: #b3b7bb;
-	color: var(--color-txt);
-	transition: left 0.2s ease-in-out;
+	font-size: 1.5rem;
+	background-color: var(--color-right);
+	color: #fff;
+	transition: all 0.2s ease-in-out;
 }
 
-#drop-content {
+.drop-content {
 	position: absolute;
 	z-index: 1;
-	transition: left 0.2s ease-in-out;
+	visibility: hidden;
+	width: 0rem;
+}
+.act {
+  visibility: visible;
+	animation: to-top 1s forwards;
+	transition: all 0.2s;
+  	width: 6rem;
+	
 }
 
-#drop-content a {
-	height: 3rem;
-	width: 6rem;
+.drop-content a {
+
 	display: block;
-	font-size: 100%;
-	padding-top: 15%;
-	color: var(--color-txt);
+	text-align: center;
+	font-size: 65%;
+	padding: 10%;
+	color: var(--color-text);
 	text-decoration: none;
-	border: 1px solid #eeeeee;
-	transition: left 0.2s ease-in-out;
+	
+	
+
 }
 
-#drop-content a:hover {
-	color: var(--color-txt);
+.drop-content a:hover {
+	color: #fff;
 }
 
 .menuList {
-	width: 6rem;
-	height: 6rem;
+
 	border-radius: 5%;
-	background: #b3b7bb;
+	background: var(--color-left);
 	margin: 5% 0rem 0rem -1.5rem;
 	box-shadow: rgba(100, 100, 111, 0.4) 0px 4px 9px 0px;
 }
+#calHr {
+    margin: 0rem 0; 
 
+}
 .name>h2 {
 	padding-left: 40%;
 }

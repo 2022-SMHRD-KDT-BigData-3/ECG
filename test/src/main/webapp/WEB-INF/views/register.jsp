@@ -59,19 +59,19 @@
 								<div class="fields">
 									<div class="field">
 										<label for="weight">나이를 입력하세요</label>
-										<input type="text" name="age" id="age" />
+										<input type="number" name="age" id="age" />
 									</div>
 								</div>
 								<div class="fields">
 									<div class="field">
 										<label for="height">키를 입력하세요</label>
-										<input type="text" name="height" id="height" />
+										<input type="number" name="height" id="height" />
 									</div>
 								</div>
 								<div class="fields">
 									<div class="field">
 										<label for="weight">몸무게를 입력하세요</label>
-										<input type="text" name="weight" id="weight" />
+										<input type="number" name="weight" id="weight" />
 									</div>
 								</div>
 

@@ -35,7 +35,7 @@
 	border-radius: 10px;
 	position: relative;
 	top: 50%;
-	left: 32%;
+	left: 640px;
 	margin-top: -100px;
 	margin-left: -200px;
 	text-align: center;
@@ -585,8 +585,9 @@ h1 {
 	<div class="modal">
 
 
-		<form action="diaryinsert.do" method="post" style="height: 245px;">
-			<div class="modal_content" title="클릭하면 창이 닫힙니다." style="left: 643px;">
+		<div style="height: 245px;">
+			<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+
 				<h2 style="font-size: 70px;">오늘 운동 내역은</h2>
 				<div class="modalbox"
 					style="margin-top: 110px; font-size: 31px; width: 50%; float: left; height: 39%;">
@@ -606,33 +607,40 @@ h1 {
 
 				<div id="modal"
 					style="margin-top: 110px; margin-bottom: 50px; font-size: 31px; width: 50%; float: left; height: 39%;">
+
 					<h3 id="time2" name="time" style="margin-bottom: 50px;">time</h3>
+
 					<h3 id="cal4" style="margin-bottom: 50px;">kcal</h3>
 					<div style="margin-bottom: 50px;">
-						<h3 name="id" style="display: none">a</h3>
-
 						<h3 id="maxmin" style="margin-bottom: 50px;">BPM</h3>
 						<h3 id="exer" style="margin-bottom: 50px;">list</h3>
 
-						<h3 id="cal5" name="cal" style="display: none"></h3>
-						<h3 id="maxHeart" name="max" style="display: none"></h3>
-						<div id="minHeart" name="min" style="display: none"></div>
-						<h3 id="strong" name="strong" style="display: none"></h3>
-						<h3 id="age" style="display: none">${vo.getAge()}</h3>
-						<h3 id="danger" name="danger" style="display: none">${danger}</h3>
-					</div>
-
+							<h3 id="age" style="display: none">${vo.getAge()}</h3>
+				<form action="diaryinsert.do" method="get">
+						<input type="hidden" name="id" value="${vo.getId()}"> <input
+							type="hidden" id="time3" name="extime"> <input
+							type="hidden" id="exlist" name="list"> <input
+							type="hidden" id="strong" name="strong"> <input
+							type="hidden" id="danger" name="danger" value="${danger}">
+						<input type="hidden" id="maxHeart" name="max"> <input
+							type="hidden" id="minHeart" name="min"> <input
+							type="hidden" id="cal5" name="cal">
 					<button class="btn btn-1 hover-filled-slide-down"
 						style="margin: -6px 2px 13px -316px;" type="submit">
 						<div class="back">
 							<span>저장</span>
 						</div>
 					</button>
-		</form>
-	</div>
+					</form>
+					</div>
+
+					
+					
+					</div>
+			</div>
+		</div>
 
 
-	</div>
 	</div>
 
 	<script type="text/javascript">
@@ -655,7 +663,56 @@ h1 {
 </script>
 
 	
+<!-- 알림창1 -->
 
+	<div class="modal1">
+
+		<div class="modal_content" title="클릭하면 창이 닫힙니다." style="left: 643px;width: 654px;height: 655px;background: #fff;border-radius: 10px;position: relative;top: 50%;left: 32%;margin-top: -655px;margin-left: -200px;text-align: center;box-sizing: border-box;padding: 74px 0;line-height: 23px;cursor: pointer;">
+			<div id="box1"
+				style="height: 130.5%; width: 687px; margin-top: 700px; background: #F5F5F5; border: 10px solid #F5F5F5; position: relative; z-index: 2; margin: 610px 1px 34px 132px;">
+				<h3 style="font-size: 111px; color: black; margin-top: 6rem; ">위
+					험!</h3>
+
+				<div class="modalbox"
+					style="margin-top: 154px; font-size: 31px; width: 50%; float: left; height: 39%;">
+					<div class="modallist" style="margin-bottom: 50px;width:678px;font-size:44px;color:black;">
+						<h3 style="margin-bottom: 50px;">지금 심박수가 위험상태입니다.</h3>
+						<br>
+						<h3>휴식을 취해주세요!</h3>
+					</div>
+
+				</div>
+			
+			<button id="modalclose" class="btn btn-5 hover-filled-slide-down"
+				style="margin: 400px 1px 13px -322px;">
+				<div class="back">
+					<span style = "color: black; border: 1px solid; border-radius: 10px;">닫기</span>
+				</div>
+			</button>
+			</div>
+		</div>
+
+	</div>
+
+
+	<script type="text/javascript">
+	
+
+$(function(){ 
+	// 모달창 보이기
+	  $("#stopbtn").click(function(){
+	    $(".modal1").fadeIn();
+
+	   
+	  });
+		// 모달창 숨기기
+	  $("#modalclose").click(function(){
+	    $(".modal1").fadeOut();
+
+	  });
+	  
+	});
+</script>
 
 	
 

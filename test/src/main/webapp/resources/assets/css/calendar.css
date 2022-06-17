@@ -32,6 +32,7 @@
 	--font-weight: normal;
 	--font-style: normal;
 	--light-right-button: #c3c2c8;
+	--light-drop: #fff;
 }
 
 .dark {
@@ -42,6 +43,7 @@
 	--color-txt: var(--dark-text);
 	--color-left: var(--dark-left-button);
 	--color-right: var(--dark-right-button);
+	--color-drop: var(--dark-main);
 }
 
 .light {
@@ -52,6 +54,7 @@
 	--color-txt: var(--light-text);
 	--color-left: var(--light-left-button);
 	--color-right: var(--light-right-button);
+	--color-drop: var(--light-drop);
 }
 
 * {
@@ -405,24 +408,15 @@ html, body {
 	background-color: var(--color-hover);
 }
 
-@
-keyframes to-top { 0% {
-	transform: translateY(100%);
-	opacity: 0;
-}
-
-100
-%
-{
-transform
-:
-translateY(
-0
-);
-opacity
-:
-1;
-}
+@keyframes to-top {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /* 테이블 */
@@ -530,6 +524,7 @@ table.alt tbody tr td {
 	border-color: #eeeeee;
 }
 
+
 /* 버튼 */
 .name {
 	display: flex;
@@ -549,51 +544,61 @@ table.alt tbody tr td {
 	font-family: 'EliceDigitalBaeum';
 	font-size: 1.5rem;
 	font-weight: 700;
-	background-color: var(--bg-main);
+	background-color: var(--color-drop);
 	border-radius: 50%;
 	border: 1pt solid #eeeeee;
 	color: var(--color-txt);
 }
 
 .button:hover {
-	font-size: 2rem;
-	background-color: #b3b7bb;
+	font-size: 1.5rem;
+	background-color: var(--color-right);
 	color: #fff;
-	transition: left 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
-#drop-content {
+.drop-content {
 	position: absolute;
 	z-index: 1;
-	transition: left 0.2s ease-in-out;
+	visibility: hidden;
+	width: 0rem;
+}
+.act {
+  visibility: visible;
+	animation: to-top 1s forwards;
+	transition: all 0.2s;
+  	width: 6rem;
+	
 }
 
-#drop-content a {
-	height: 3rem;
-	width: 8rem;
+.drop-content a {
+
 	display: block;
 	text-align: center;
 	font-size: 65%;
-	padding-top: 10%;
-	color: #eeeeee;
+	padding: 10%;
+	color: var(--color-text);
 	text-decoration: none;
-	border: 1px solid #eeeeee;
-	transition: left 0.2s ease-in-out;
+	
+	
+
 }
 
-#drop-content a:hover {
+.drop-content a:hover {
 	color: #fff;
 }
 
 .menuList {
-	width: 8rem;
-	height: 6rem;
+
 	border-radius: 5%;
-	background: #b3b7bb;
+	background: var(--color-left);
 	margin: 5% 0rem 0rem -1.5rem;
 	box-shadow: rgba(100, 100, 111, 0.4) 0px 4px 9px 0px;
 }
+#calHr {
+    margin: 0rem 0; 
 
+}
 .name>h2 {
 	padding-left: 40%;
 }
@@ -610,8 +615,8 @@ table.alt tbody tr td {
 	vertical-align: middle;
 	width: 100%;
 	height: 5%;
-	background-color: #fff;
-	color: #eeeeee;
+	background-color: var(--color-right);
+	color: var(--color-right);
 	align-items: stretch;
 	border-color: transparent;
 }

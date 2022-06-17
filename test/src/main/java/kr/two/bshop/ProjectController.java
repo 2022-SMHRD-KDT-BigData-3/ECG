@@ -52,14 +52,15 @@ public class ProjectController {
 		vo = projectMapper.edit(vo);
 		model.addAttribute("vo", vo);
 		System.out.println("넘어감");
-		return "edit";
+		return "chart";
 	}
 	// 로그인 서비스
 	@PostMapping("/loginservice.do")
-	public String loginservice(Model model, MemberVO vo) {
+	public String loginservice(HttpSession session, MemberVO vo) {
 		vo = projectMapper.login(vo);
-		model.addAttribute("vo", vo);
-		return "calendar";
+		session.setAttribute("vo", vo);
+		return "chart";
+
 	}
 	// 운동리스트 서비스
 	@RequestMapping("/listpick.do")
@@ -87,14 +88,15 @@ public class ProjectController {
 		return "watch2";
 	}
 
-	@PostMapping("/diaryinsert.do")
+	@GetMapping("/diaryinsert.do")
 	public String diaryinsert(DiaryVO vo) {
+	
 		projectMapper.diaryinsert(vo);
-		System.out.println("인서트성공");
-		return "watch1";
+
+		return "index2";
 	}
 	
-	@GetMapping("/diaryslect.do")
+@GetMapping("/diaryslect.do")
 	public String diaryselect(Model model, String id, String checkdate) {
 
 		DiaryVO vo = projectMapper.diaryselect(id,checkdate);
@@ -103,9 +105,9 @@ public class ProjectController {
 		return "calendar";
 	}
 	
-	@RequestMapping("/watchservice.do")
+@RequestMapping("/watchservice.do")
 	public String watchservice(Model model) {
-		System.out.println("watchservice.do");
+
 		MemberVO vo = new MemberVO();
 		vo.setId("a");
 		vo.setPw("a");
@@ -119,5 +121,37 @@ public class ProjectController {
 		return "watch1";
 
 	}
+@RequestMapping("/diary.do")
+public String diary() {
+	return "calendar";
+}
+@RequestMapping("/logout.do")
+public String logout(HttpSession session) {
+	session.invalidate();
+	return "login";
+}
+@RequestMapping("/editpagin.do")
+public String editpaging() {
 	
+	return "edit";
+}
+@RequestMapping("/chart.do")
+public String chart() {
+	return "chart";
+}
+@PostMapping("/updateservice.do")
+public String updateservice(MemberVO vo, String pw1,HttpSession session) {
+	System.out.println("입력"+pw1);
+		if(vo.getPw().equals(pw1)) {
+			System.out.println("성공");
+			projectMapper.updateservice(vo);
+			vo = projectMapper.login(vo);
+			session.setAttribute("vo", vo);
+			return "chart";
+		
+		}else
+			System.out.println("실패");		
+	return "edit";
+	
+}
 }
