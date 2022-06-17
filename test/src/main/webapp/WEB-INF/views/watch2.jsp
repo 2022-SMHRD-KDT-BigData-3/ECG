@@ -495,6 +495,11 @@ h1 {
 	transition: 0.3s ease-out;
 }
 
+.btn-5::before {
+	background-color: #F5F5F5;
+	transition: 0.3s ease-out;
+}
+
 .btn-1 span {
 	color: rgb(255, 255, 255);
 	border: 1px solid rgb(28, 31, 30);
@@ -580,8 +585,8 @@ h1 {
 	<div class="modal">
 
 
-		<form action="diaryinsert.do" method="post" style="height: 245px;" >
-			<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+		<form action="diaryinsert.do" method="post" style="height: 245px;">
+			<div class="modal_content" title="클릭하면 창이 닫힙니다." style="left: 643px;">
 				<h2 style="font-size: 70px;">오늘 운동 내역은</h2>
 				<div class="modalbox"
 					style="margin-top: 110px; font-size: 31px; width: 50%; float: left; height: 39%;">
@@ -598,18 +603,18 @@ h1 {
 						<h3>운동리스트</h3>
 					</div>
 				</div>
-				
+
 				<div id="modal"
 					style="margin-top: 110px; margin-bottom: 50px; font-size: 31px; width: 50%; float: left; height: 39%;">
 					<h3 id="time2" name="time" style="margin-bottom: 50px;">time</h3>
-					<h3 id="cal4"  style="margin-bottom: 50px;">kcal</h3>
+					<h3 id="cal4" style="margin-bottom: 50px;">kcal</h3>
 					<div style="margin-bottom: 50px;">
-					<h3 name="id" style="display: none">a</h3>				
-					
+						<h3 name="id" style="display: none">a</h3>
+
 						<h3 id="maxmin" style="margin-bottom: 50px;">BPM</h3>
 						<h3 id="exer" style="margin-bottom: 50px;">list</h3>
 
-						<h3 id="cal5" name="cal" style="display: none"> </h3>
+						<h3 id="cal5" name="cal" style="display: none"></h3>
 						<h3 id="maxHeart" name="max" style="display: none"></h3>
 						<div id="minHeart" name="min" style="display: none"></div>
 						<h3 id="strong" name="strong" style="display: none"></h3>
@@ -633,7 +638,7 @@ h1 {
 	<script type="text/javascript">
 	
 
-$(function(){ 
+ $(function(){ 
 	// 모달창 보이기
 	  $("#stopbtn").click(function(){
 	    $(".modal").fadeIn();
@@ -646,14 +651,13 @@ $(function(){
 	    $(".textbox").css('display', 'block');
 	  });
 	  
-	});
+	}); 
 </script>
 
-<!-- 알림모달창 -->
+	
 
 
-
-<!-- 알림모달창 끝 -->
+	
 
 
 	<!-- 슬라이드 생성 -->
@@ -661,17 +665,25 @@ $(function(){
 		<input type="radio" name="slide" id="slide01" checked> <input
 			type="radio" name="slide" id="slide02"> <input type="radio"
 			name="slide" id="slide03"> <input type="radio" name="slide"
-			id="slide04">
+			id="slide04"><input type="radio" name="slide" id="slide05">
+		<input type="radio" name="slide" id="slide06"><input
+			type="radio" name="slide" id="slide07">
+
+		<!-- 알림창 -->
+
+
+
 
 		<!-- 메인페이지 -> 운동추천 받은 페이지 -->
-		<div class="slide-wrap">
+		<div class="slide-wrap"
+			style="width: 700px; height: 700px; margin-top: 1rem;">
 			<ul class="slidelist">
 				<li><a>
 						<table class='table'>
 							<div id="none">
 								<div class="wrap">
 
-									<label for="slide02" class="right"></label>
+									<label for="slide03" class="right"></label>
 									<div class="textbox">
 										<div id="box1">
 											<!-- jstl로 반복문 사용 -> mvo 출력 -->
@@ -708,13 +720,18 @@ $(function(){
 						</table>
 
 				</a></li>
+
+
+
+
+
 				<!-- 운동 중 페이지 1 -->
 				<li><a>
 						<table class='table'>
 							<div id="none">
 								<div class="wrap">
 
-									<label for="slide01" class="left" id="slidebtn"></label>
+									<label for="slide02" class="left" id="slidebtn"></label>
 									<div class="textbox">
 
 
@@ -743,7 +760,7 @@ $(function(){
 
 
 									</div>
-									<label for="slide03" class="right" style="display: none"></label>
+									<label for="slide04" class="right" style="display: none"></label>
 								</div>
 							</div>
 						</table>
@@ -760,7 +777,7 @@ $(function(){
 							<div id="none">
 								<div class="wrap">
 
-									<label for="slide02" class="left"></label>
+									<label for="slide03" class="left"></label>
 									<div class="textbox">
 										<div id="box3">
 											<h3 class="set"
@@ -787,7 +804,7 @@ $(function(){
 
 
 									</div>
-									<label for="slide04" class="right"></label>
+									<label for="slide05" class="right"></label>
 								</div>
 							</div>
 						</table>
@@ -798,13 +815,17 @@ $(function(){
 
 				<!-- 운동 중 페이지2 끝 -->
 
+
+
+
+
 				<!-- 운동 중 페이지 3 -->
 				<li><a>
 						<table class='table'>
 							<div id="none">
 								<div class="wrap">
 
-									<label for="slide03" class="left"></label>
+									<label for="slide04" class="left"></label>
 									<div class="textbox">
 										<div id="box3">
 											<h3 class="set"
@@ -831,6 +852,7 @@ $(function(){
 
 
 									</div>
+									<label for="slide06" class="right"></label>
 
 								</div>
 							</div>
