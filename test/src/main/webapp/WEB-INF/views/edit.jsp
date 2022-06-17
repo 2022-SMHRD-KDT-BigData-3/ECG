@@ -47,7 +47,7 @@
 								
 									<div class="field">
 										<label for="name">수정할 비밀번호를 입력하세요</label>
-										<input type="password" name="nick" id="name" />
+										<input type="password" name="pw" id="name" />
 									</div>
 									
 									<div class="field">

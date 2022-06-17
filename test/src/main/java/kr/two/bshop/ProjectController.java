@@ -56,10 +56,11 @@ public class ProjectController {
 	}
 	// 로그인 서비스
 	@PostMapping("/loginservice.do")
-	public String loginservice(Model model, MemberVO vo) {
+	public String loginservice(HttpSession session, MemberVO vo) {
 		vo = projectMapper.login(vo);
-		model.addAttribute("vo", vo);
+		session.setAttribute("vo", vo);
 		return "chart";
+
 	}
 	// 운동리스트 서비스
 	@RequestMapping("/listpick.do")
@@ -122,19 +123,20 @@ public class ProjectController {
 	}
 @RequestMapping("/diary.do")
 public String diary() {
-
 	return "calendar";
 }
 @RequestMapping("/logout.do")
-public String logout() {
-
+public String logout(HttpSession session) {
+	session.invalidate();
 	return "login";
 }
 @RequestMapping("/editpagin.do")
-public String editpaging(Model model, MemberVO vo) {
-	System.out.println("컨트럴로넘어옴");
-	model.addAttribute("vo", vo);
-	System.out.println("넘어감");
+public String editpaging() {
+	
 	return "edit";
+}
+@RequestMapping("/chart.do")
+public String chart() {
+	return "chart";
 }
 }

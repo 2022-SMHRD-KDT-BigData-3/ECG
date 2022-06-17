@@ -47,9 +47,9 @@
 				</button>
 				<div class="drop-content">
 					<div class="menuList">
-						<a hreaf='#'>로그아웃</a> 
+						<a href='logout.do'>로그아웃</a> 
 						<hr id="calHr">
-						<a hreaf='#'>회원정보수정</a>
+						<a href='editpagin.do'>회원정보수정</a>
 					</div>
 				</div>
 			</div>
@@ -86,40 +86,47 @@
 					</tr>
 					<tr>
 						<td>최대 / 평균</td>
-						<td>${dvo.getMax()}/${dvo.getMean()}</td>
+						<td>${dvo.getMax()}/${dvo.getMin()}</td>
 					</tr>
 					<tr>
 						<td>운동 List</td>
-						<td>${dvo.getList()}</td>
+						<td><MARQUEE style="width: 180px" direction='left'>${dvo.getList()}</MARQUEE></td>
+						
 					</tr>
 					<tr>
 						<td>운동 강도</td>
 						<td>${dvo.getStrong()}</td>
 					</tr>
 					<tr>
-						<td>키</td>
-						<td>${dvo.getHeight()}</td>
+						<td>소모 칼로리</td>
+						<td>${dvo.getCal()}</td>
 					</tr>
 					<tr>
-						<td>몸무게</td>
-						<td>${dvo.getWeight()}</td>
+						<td>키/몸무게</td>
+						<td>${vo.height} / ${vo.weight}</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		<div class="btn-group" role="group"
 			aria-label="Basic outlined example">
-			<button type="button" class="btn btn-outline-secondary" id="btnLeft">
-				<a hreaf="#">CHART</a>
-			</button>
-			<button type="button" class="btn btn-outline-secondary" id="btnRight">
-				<a hreaf="#">DIARY</a>
+			<button type="button" class="btn btn-outline-secondary" id="btnLeft" onclick="chart()">
+				CHART
+				</button>
+			<button type="button" class="btn btn-outline-secondary" id="btnRight" onclick="diary()">
+				DIARY
 			</button>
 		</div>
 	</div>
 
 	<script src="resources/assets/js/calendar.js"></script>
 	<script>
+	function diary() {
+		  location.href ="diary.do"; 
+	}
+	function chart() {
+		  location.href = "chart.do";
+	}
 	const btn = document.querySelector('.button');
 	const box = document.querySelector('.drop-content');
 	btn.addEventListener('click', () => {

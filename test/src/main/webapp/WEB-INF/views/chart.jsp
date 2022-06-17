@@ -46,8 +46,8 @@
 					</button>
 					<div style="display: none;" id="drop-content">
 						<div class="menuList">
-							<a hreaf='logout.do'>로그아웃</a>
-							 <a hreaf="editpagin?id=${vo.getId()}&age=${vo.getAge()}">회원정보수정</a>
+							<a href="logout.do">로그아웃</a>
+							 <a href="editpagin.do">회원정보수정</a>
 						</div>
 					</div>
 				</div>
@@ -77,11 +77,11 @@
 			</footer>
 		<div class="btn-group" role="group"
 			aria-label="Basic outlined example">
-			<button type="button" class="btn btn-outline-secondary" id="btnLeft">
-				<a hreaf="#">CHART</a>
+			<button type="button" class="btn btn-outline-secondary" id="btnLeft" onclick="chart()">
+				CHART
 			</button>
-			<button type="button" class="btn btn-outline-secondary" id="btnRight">
-				<a hreaf="diary.do">DIARY</a>
+			<button type="button" class="btn btn-outline-secondary" id="btnRight" onclick="diary()">
+			DIARY
 			</button>
 		</div>
 		</article>
@@ -98,6 +98,12 @@
 
 	<!-- 날짜별 부정맥 위험도 -->
 	<script type="text/javascript">
+	function diary() {
+		  location.href ="diary.do"; 
+	}
+	function chart() {
+		  location.href = "/chart.do";
+	}
 		new Chartist.Line('#simple-line-chart', {
 			labels : [ '6/1', '6/8', '6/15', '6/22', '6/29', '' ],
 			series : [ [ 15, 10, 20, 15, 30, 10 ] ]
@@ -125,8 +131,8 @@
 	let dark_mode_toggle = document.querySelector('.dark-mode-switch')
 
 	dark_mode_toggle.onclick = () => {
-	    document.querySelector('body').classList.toggle('light')
-	    document.querySelector('body').classList.toggle('dark')
+	    document.querySelector('body').classList.toggle('light');
+	    document.querySelector('body').classList.toggle('dark');
 	}
 	</script>
 
