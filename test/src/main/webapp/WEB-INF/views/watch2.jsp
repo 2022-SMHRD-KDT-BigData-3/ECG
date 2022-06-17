@@ -579,8 +579,7 @@ h1 {
 	<!-- 종료 모달창 -->
 	<div class="modal">
 
-
-		<form action="diaryinsert.do" method="post" style="height: 245px;" >
+		<div style="height: 245px;">
 			<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 				<h2 style="font-size: 70px;">오늘 운동 내역은</h2>
 				<div class="modalbox"
@@ -598,36 +597,42 @@ h1 {
 						<h3>운동리스트</h3>
 					</div>
 				</div>
-				
+
 				<div id="modal"
 					style="margin-top: 110px; margin-bottom: 50px; font-size: 31px; width: 50%; float: left; height: 39%;">
-					<h3 id="time2" name="time" style="margin-bottom: 50px;">time</h3>
-					<h3 id="cal4"  style="margin-bottom: 50px;">kcal</h3>
+					<h3 id="time2" style="margin-bottom: 50px;">time</h3>
+					<h3 id="cal4" style="margin-bottom: 50px;">kcal</h3>
 					<div style="margin-bottom: 50px;">
-					<h3 name="id" style="display: none">a</h3>				
-					
+
+
 						<h3 id="maxmin" style="margin-bottom: 50px;">BPM</h3>
 						<h3 id="exer" style="margin-bottom: 50px;">list</h3>
-
-						<h3 id="cal5" name="cal" style="display: none"> </h3>
-						<h3 id="maxHeart" name="max" style="display: none"></h3>
-						<div id="minHeart" name="min" style="display: none"></div>
-						<h3 id="strong" name="strong" style="display: none"></h3>
-						<h3 id="age" style="display: none">${vo.getAge()}</h3>
-						<h3 id="danger" name="danger" style="display: none">${danger}</h3>
-					</div>
-
+							<h3 id="age" style="display: none">${vo.getAge()}</h3>
+				<form action="diaryinsert.do" method="get">
+						<input type="hidden" name="id" value="${vo.getId()}"> <input
+							type="hidden" id="time3" name="extime"> <input
+							type="hidden" id="exlist" name="list"> <input
+							type="hidden" id="strong" name="strong"> <input
+							type="hidden" id="danger" name="danger" value="${danger}">
+						<input type="hidden" id="maxHeart" name="max"> <input
+							type="hidden" id="minHeart" name="min"> <input
+							type="hidden" id="cal5" name="cal">
 					<button class="btn btn-1 hover-filled-slide-down"
 						style="margin: -6px 2px 13px -316px;" type="submit">
 						<div class="back">
 							<span>저장</span>
 						</div>
 					</button>
-		</form>
-	</div>
+					</form>
+					</div>
+
+					
+					
+					</div>
+			</div>
+		</div>
 
 
-	</div>
 	</div>
 
 	<script type="text/javascript">

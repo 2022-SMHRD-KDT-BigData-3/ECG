@@ -19,6 +19,6 @@ public class DiaryVO {
 	private int danger;	
 	private int max;
 	private int min;
-	private int cal;
+	private float cal;
 
 }
