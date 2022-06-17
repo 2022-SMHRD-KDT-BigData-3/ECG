@@ -56,9 +56,9 @@ public class ProjectController {
 	}
 	// 로그인 서비스
 	@PostMapping("/loginservice.do")
-	public String loginservice(Model model, MemberVO vo) {
+	public String loginservice(HttpSession session, MemberVO vo) {
 		vo = projectMapper.login(vo);
-		model.addAttribute("vo", vo);
+		session.setAttribute("vo", vo);
 		return "calendar";
 	}
 	// 운동리스트 서비스

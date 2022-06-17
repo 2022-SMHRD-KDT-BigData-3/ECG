@@ -95,23 +95,24 @@
 					</tr>
 					<tr>
 						<td>최대 / 평균</td>
-						<td>${dvo.getMax()}/${dvo.getMean()}</td>
+						<td>${dvo.getMax()}/${dvo.getMin()}</td>
 					</tr>
 					<tr>
 						<td>운동 List</td>
-						<td>${dvo.getList()}</td>
+						<td><MARQUEE style="width: 180px" direction='left'>${dvo.getList()}</MARQUEE></td>
+						
 					</tr>
 					<tr>
 						<td>운동 강도</td>
 						<td>${dvo.getStrong()}</td>
 					</tr>
 					<tr>
-						<td>키</td>
-						<td>${dvo.getHeight()}</td>
+						<td>소모 칼로리</td>
+						<td>${dvo.getCal()}</td>
 					</tr>
 					<tr>
-						<td>몸무게</td>
-						<td>${dvo.getWeight()}</td>
+						<td>키/몸무게</td>
+						<td>${vo.height} / ${vo.weight}</td>
 					</tr>
 				</tbody>
 			</table>
