@@ -34,7 +34,7 @@ checkdate date default sysdate,
 ecg float(100),
 constraint info_id_fk foreign key(id) references member(id)
 );
-
+select * from diary;
 -- 다이어리 테이블
 create table diary(
 id varchar2(100) not null,
@@ -48,6 +48,7 @@ min number(10) not null,
 cal number(10) not null,
 constraint diary_id_fk foreign key(id) references member(id)
 );
+
 -- 운동정보 테이블
 create table exercise(
 e_name varchar2(100),
@@ -148,3 +149,4 @@ delete DIARY
 insert into DIARY values('a',to_char(sysdate,'yyyy.mm.dd'),'00:50:05','sss',3,8,23,8,30);
 select * from diary;
 select to_char(sysdate,'yyyy.mm.dd') 
+insert into diary values('a',to_char(sysdate,'yyyy.mm.dd'),'00:00:00','케이블 스윙, 케이블 사이드, 인클라인 덤벨프레스',51,0,151,0,0.81);

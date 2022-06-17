@@ -87,14 +87,15 @@ public class ProjectController {
 		return "watch2";
 	}
 
-	@PostMapping("/diaryinsert.do")
+	@GetMapping("/diaryinsert.do")
 	public String diaryinsert(DiaryVO vo) {
+	
 		projectMapper.diaryinsert(vo);
-		System.out.println("인서트성공");
+
 		return "watch1";
 	}
 	
-	@GetMapping("/diaryslect.do")
+@GetMapping("/diaryslect.do")
 	public String diaryselect(Model model, String id, String checkdate) {
 
 		DiaryVO vo = projectMapper.diaryselect(id,checkdate);
@@ -103,9 +104,9 @@ public class ProjectController {
 		return "calendar";
 	}
 	
-	@RequestMapping("/watchservice.do")
+@RequestMapping("/watchservice.do")
 	public String watchservice(Model model) {
-		System.out.println("watchservice.do");
+
 		MemberVO vo = new MemberVO();
 		vo.setId("a");
 		vo.setPw("a");
