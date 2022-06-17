@@ -27,7 +27,16 @@
 	display: none;
 	z-index: 1;
 }
-
+.modal1 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	top: 0;
+	left: 0;
+	display: none;
+	z-index: 1;
+}
 .modal_content {
 	width: 654px;
 	height: 655px;
@@ -665,20 +674,20 @@ h1 {
 	
 <!-- 알림창1 -->
 
-	<div class="modal1">
+	<div id="noticemodal" class="modal1">
 
 		<div class="modal_content" title="클릭하면 창이 닫힙니다." style="left: 643px;width: 654px;height: 655px;background: #fff;border-radius: 10px;position: relative;top: 50%;left: 32%;margin-top: -655px;margin-left: -200px;text-align: center;box-sizing: border-box;padding: 74px 0;line-height: 23px;cursor: pointer;">
 			<div id="box1"
 				style="height: 130.5%; width: 687px; margin-top: 700px; background: #F5F5F5; border: 10px solid #F5F5F5; position: relative; z-index: 2; margin: 610px 1px 34px 132px;">
-				<h3 style="font-size: 111px; color: black; margin-top: 6rem; ">위
+				<h3 id="modaltitle" style="font-size: 111px; color: black; margin-top: 6rem; ">위
 					험!</h3>
 
 				<div class="modalbox"
 					style="margin-top: 154px; font-size: 31px; width: 50%; float: left; height: 39%;">
 					<div class="modallist" style="margin-bottom: 50px;width:678px;font-size:44px;color:black;">
-						<h3 style="margin-bottom: 50px;">지금 심박수가 위험상태입니다.</h3>
+						<h3 id="modaltext" style="margin-bottom: 50px;">지금 심박수가 위험상태입니다.</h3>
 						<br>
-						<h3>휴식을 취해주세요!</h3>
+						<h3 id="modaltext2">휴식을 취해주세요!</h3>
 					</div>
 
 				</div>
@@ -699,15 +708,9 @@ h1 {
 	
 
 $(function(){ 
-	// 모달창 보이기
-	  $("#stopbtn").click(function(){
-	    $(".modal1").fadeIn();
-
-	   
-	  });
 		// 모달창 숨기기
 	  $("#modalclose").click(function(){
-	    $(".modal1").fadeOut();
+	    $("#noticemodal").fadeOut();
 
 	  });
 	  

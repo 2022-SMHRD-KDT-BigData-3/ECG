@@ -90,10 +90,10 @@ public class ProjectController {
 
 	@GetMapping("/diaryinsert.do")
 	public String diaryinsert(DiaryVO vo) {
-	
+		System.out.println("들어옴");
 		projectMapper.diaryinsert(vo);
-
-		return "index2";
+		System.out.println("실행됨");
+		return "watchservice.do";
 	}
 	
 @GetMapping("/diaryslect.do")
