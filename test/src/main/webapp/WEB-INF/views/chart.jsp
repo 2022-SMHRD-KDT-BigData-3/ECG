@@ -42,7 +42,7 @@
 				<h2>부정맥 위험도</h2>
 				<div class="dropdown">
 					<button onclick="dp_menu()" class="button">
-						<i class='bx bx-log-out'></i>
+						<i class='bx bx-home'></i>
 					</button>
 					<div style="display: none;" id="drop-content">
 						<div class="menuList">
@@ -53,8 +53,16 @@
 			</label>
 
 			<div id="simple-line-chart" class="ct-chart ct-golden-section"></div>
+		<div class="calendar-footer">
+			<div class="toggle">
+				<span>Dark Mode</span>
+				<div class="dark-mode-switch">
+					<div class="dark-mode-switch-ident"></div>
+				</div>
+			</div>
+		</div>
 			<footer id="footer">
-				<div class="box" style="background: white;">
+				<div class="box">
 					<h3>
 						지난 일주일동안 운동을
 						<%=3%>번 하셨어요
@@ -66,15 +74,15 @@
 					</h3>
 				</div>
 			</footer>
-			<div class="btn-group" role="group"
-				aria-label="Basic outlined example">
-				<button type="button" class="btn btn-outline-secondary" id="btnLeft">
-					<a hreaf="#">CHART</a>
-				</button>
-				<button type="button" class="btn btn-outline-secondary" id="btnRight">
-					<a hreaf="#">DIARY</a>
-				</button>
-			</div>
+		<div class="btn-group" role="group"
+			aria-label="Basic outlined example">
+			<button type="button" class="btn btn-outline-secondary" id="btnLeft">
+				<a hreaf="#">CHART</a>
+			</button>
+			<button type="button" class="btn btn-outline-secondary" id="btnRight">
+				<a hreaf="#">DIARY</a>
+			</button>
+		</div>
 		</article>
 	</div>
 
