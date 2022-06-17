@@ -42,9 +42,9 @@
 				<h2>부정맥 위험도</h2>
 				<div class="dropdown">
 					<button class="button">
-						<i class='bx bx-home'></i>
+						<i class='bx bx-log-out'></i>
 					</button>
-					<div id="drop-content">
+					<div class="drop-content">
 						<div class="menuList">
 							<a href="logout.do">로그아웃</a>
 							<hr id="calHr">
@@ -116,13 +116,6 @@
 			plugins : [ Chartist.plugins.tooltip() ]
 		});
 	</script>
-	<script>
-	const btn = document.querySelector('.button');
-	const box = document.querySelector('.drop-content');
-	btn.addEventListener('click', () => {
-		  box.classList.toggle('act');
-		})
-	</script>
 	<script type="text/javascript">
 	let dark_mode_toggle = document.querySelector('.dark-mode-switch')
 
@@ -130,6 +123,13 @@
 	    document.querySelector('body').classList.toggle('light');
 	    document.querySelector('body').classList.toggle('dark');
 	}
+	</script>
+	<script>
+	const btn = document.querySelector('.button');
+	const box = document.querySelector('.drop-content');
+	btn.addEventListener('click', () => {
+		  box.classList.toggle('act');
+		})
 	</script>
 
 </body>
