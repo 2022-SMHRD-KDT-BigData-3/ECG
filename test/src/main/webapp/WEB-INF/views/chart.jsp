@@ -13,7 +13,8 @@
 <link rel="stylesheet" href="resources/assets/css/chartist.min.css">
 <link rel="stylesheet"
 	href="resources/assets/css/chartist-plugin-tooltip.css">
-<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'
+	rel='stylesheet'>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -29,8 +30,6 @@
 <body class="is-preload light">
 
 	<!-- Wrapper -->
-
-
 	<!-- Main -->
 	<div id="main">
 
@@ -48,74 +47,76 @@
 						<div class="menuList">
 							<a href="logout.do">로그아웃</a>
 							<hr id="calHr">
-							 <a href="editpagin.do">회원정보수정</a>
+							<a href="editpagin.do">회원정보수정</a>
 						</div>
 					</div>
 				</div>
 			</label>
 
 			<div id="simple-line-chart" class="ct-chart ct-golden-section"></div>
-		<div class="calendar-footer">
-			<div class="toggle">
-				<span>Dark Mode</span>
-				<div class="dark-mode-switch">
-					<div class="dark-mode-switch-ident"></div>
+			<div class="calendar-footer">
+				<div class="toggle">
+					<span>Dark Mode</span>
+					<div class="dark-mode-switch">
+						<div class="dark-mode-switch-ident"></div>
+					</div>
 				</div>
 			</div>
-		</div>
 			<footer id="footer">
-            <div class="box">
-               <h3>
-                  <c:choose>
-                        <c:when test="${dvo1.size() < dvo2.size()}" >
+				<div class="box">
+				<c:if test="${dvo1.size()>0}">
+					<h3>
+						<c:choose>
+							<c:when test="${dvo1.size() < dvo2.size()}">
                        지난 일주일에 비해 이번주 운동을 ${dvo2.size() - dvo1.size()} 회
                        덜 하셨습니다.
-                      </c:when> 
+                      </c:when>
 
-                      <c:when test="${dvo1.size() >= dvo2.size()}" >
+							<c:when test="${dvo1.size() >= dvo2.size()}">
                        지난 일주일에 비해 이번주 운동을 ${dvo1.size() - dvo2.size()} 회
                        더 하셨습니다. 
                       </c:when>
-                      
-                  </c:choose>                  
-               </h3>
-               <h3>
-                  <c:choose>
-                        <c:when test="${dvo1.get(0).getCal() < dvo2.get(0).getCal()}" >
+
+						</c:choose>
+					</h3>
+					<h3>
+						<c:choose>
+							<c:when test="${dvo1.get(0).getCal() < dvo2.get(0).getCal()}">
                        지난 일주일에 비해 이번주 칼로리 소모량이 ${dvo2.get(0).getCal() - dvo1.get(0).getCal()}
                      감소 하셨습니다.
-                      </c:when> 
+                      </c:when>
 
-                      <c:when test="${dvo2.get(0).getCal() < dvo1.get(0).getCal()}" >
+							<c:when test="${dvo1.get(0).getCal() >= dvo2.get(0).getCal()}">
                        지난 일주일에 비해 이번주 칼로리 소모량이 ${dvo1.get(0).getCal() - dvo2.get(0).getCal()}
                      증가 하셨습니다.
-                      </c:when>                      
-                  </c:choose>
-               </h3>
-               <h3>
-                  <c:choose>
-                        <c:when test="${dvo2.get(0).getDanger() < dvo1.get(0).getDanger()}" >
+                      </c:when>
+						</c:choose>
+					</h3>
+					<h3>
+						<c:choose>
+							<c:when
+								test="${dvo1.get(0).getDanger() > dvo2.get(0).getDanger()}">
                        지난 일주일에 비해 이번주 부정맥 위험도가
                      ${dvo1.get(0).getDanger() - dvo2.get(0).getDanger()} 증가 하셨습니다.
-                      </c:when> 
+                      </c:when>
 
-                      <c:when test="${dvo1.get(0).getDanger() < dvo2.get(0).getDanger()}" >
+							<c:when
+								test="${dvo1.get(0).getDanger() <= dvo2.get(0).getDanger()}">
                        지난 일주일에 비해 이번주 부정맥 위험도가
                      ${dvo2.get(0).getDanger() - dvo1.get(0).getDanger()} 감소 하셨습니다.
-                      </c:when>                      
-                  </c:choose>                  
-               </h3>
-            </div>
-         </footer>
-		<div class="btn-group" role="group"
-			aria-label="Basic outlined example">
-			<button type="button" class="btn btn-outline-secondary" id="btnLeft" onclick="chart()">
-			CHART
-			</button>
-			<button type="button" class="btn btn-outline-secondary" id="btnRight" onclick="diary()">
-			DIARY
-			</button>
-		</div>
+                      </c:when>
+						</c:choose>
+					</h3>
+					</c:if>
+				</div>
+			</footer>
+			<div class="btn-group" role="group"
+				aria-label="Basic outlined example">
+				<button type="button" class="btn btn-outline-secondary" id="btnLeft"
+					>CHART</button>
+				<button type="button" class="btn btn-outline-secondary"
+					id="btnRight" onclick="diary()">DIARY</button>
+			</div>
 		</article>
 	</div>
 
@@ -136,16 +137,31 @@
 	function chart() {
 		  location.href = "/chart.do";
 	}
-    new Chartist.Line('#simple-line-chart', {
-        labels : [ '${dvo[0].getCheckdate()}', '${dvo[1].getCheckdate()}', '${dvo[2].getCheckdate()}', '${dvo[3].getCheckdate()}', '${dvo[4].getCheckdate()}', '' ],
-        series : [ [ ${dvo[0].getDanger()}, ${dvo[1].getDanger()}, ${dvo[2].getDanger()}, ${dvo[3].getDanger()}, ${dvo[4].getDanger()}, ${dvo[5].getDanger()} ] ]
-     }, {
+    
+	if(${dvo.size() > 0}){
+	new Chartist.Line('#simple-line-chart', 
+   	{ 
+		labels : [ '${dvo[0].getCheckdate()}', '${dvo[1].getCheckdate()}', '${dvo[2].getCheckdate()}', '${dvo[3].getCheckdate()}', '${dvo[4].getCheckdate()}', '' ],
+    	series : [ [ ${dvo[0].getDanger()}, ${dvo[1].getDanger()}, ${dvo[2].getDanger()}, ${dvo[3].getDanger()}, ${dvo[4].getDanger()}, ${dvo[5].getDanger()} ] ] 
+	}, 
+	{
         fullWidth : true,
-        chartPadding : {
-           right : 40
-        },
+        chartPadding : 
+        {right : 40},
         plugins : [ Chartist.plugins.tooltip() ]
-     });
+     });}
+	else{
+		new Chartist.Line('#simple-line-chart', 
+	   	{ 
+			labels : [ '1', '', '', '', '', '' ],
+	    	series : [ [ , , , , ,  ] ] 
+		}, 
+		{
+	        fullWidth : true,
+	        chartPadding : 
+	        {right : 40},
+	        plugins : [ Chartist.plugins.tooltip() ]
+	     });}
 	</script>
 	<script type="text/javascript">
 	let dark_mode_toggle = document.querySelector('.dark-mode-switch')
@@ -160,7 +176,7 @@
 	const box = document.querySelector('.drop-content');
 	btn.addEventListener('click', () => {
 		  box.classList.toggle('act');
-		})
+		});
 	</script>
 
 </body>

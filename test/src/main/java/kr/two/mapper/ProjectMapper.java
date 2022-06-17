@@ -38,4 +38,13 @@ public interface ProjectMapper { // new BoardMapper();
 	
 	@Update("update member set nick= #{nick}, pw=#{pw}, age=#{age}, weight=#{weight}, height=#{height}")
 	public void updateservice(MemberVO vo);
+	
+	@Select("select * from diary where id=#{id} and checkdate between sysdate-7 and sysdate order by checkdate desc")
+	public List<DiaryVO> chartselect(MemberVO vo);
+	   
+	@Select("select * from diary where id=#{id} and checkdate between sysdate-14 and sysdate-7 order by checkdate desc")
+	public List<DiaryVO> chartselect2(MemberVO vo);
+	   
+	@Select("select * from diary where id=#{id} and (checkdate = (last_day(to_date(sysdate)))-29 or checkdate = (last_day(to_date(sysdate)))-22 or checkdate = (last_day(to_date(sysdate)))-15 or checkdate = (last_day(to_date(sysdate)))-8 or checkdate = (last_day(to_date(sysdate)))-1) order by checkdate ASC")
+	public List<DiaryVO> chartlist(MemberVO vo);
 }

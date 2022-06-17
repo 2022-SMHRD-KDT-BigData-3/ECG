@@ -113,7 +113,7 @@
 			<button type="button" class="btn btn-outline-secondary" id="btnLeft" onclick="chart()">
 				CHART
 				</button>
-			<button type="button" class="btn btn-outline-secondary" id="btnRight" onclick="diary()">
+			<button type="button" class="btn btn-outline-secondary" id="btnRight" >
 				DIARY
 			</button>
 		</div>

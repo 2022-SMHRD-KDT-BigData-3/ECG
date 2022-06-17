@@ -49,8 +49,9 @@
 
 								</div>
 								<ul class="actions special">
-									<li><input type="submit" value="확인" /></li>
+									<li><input type="submit" value="확인" /></li>	
 								</ul>
+								</form>
 							<article class="post featured">
 								<header class="major">
 								<label for="email">계정이 없으신가요?</label>
@@ -60,7 +61,7 @@
 									<li><a href="register.do" class="button large">회원가입</a></li>
 								</ul>
 							</article>
-							</form>
+					
 						</section>
 							</article>
 							

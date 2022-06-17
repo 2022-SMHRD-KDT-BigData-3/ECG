@@ -815,7 +815,7 @@ label {
 }
 #btnRight {
 	color: var(--color-txt);
-	background-color: var(--color-right);
+	background-color: var(--color-left);
 	border-color: transparent;
 	border-radius: 0;
 	font-size: 1.3rem;
@@ -830,7 +830,7 @@ label {
 #btnLeft {
 	border-color: transparent;
 	color:var(--color-txt);
-	background-color: var(--color-left);
+	background-color: var(--color-right);
 	border-radius: 0;
 	font-size: 1.3rem;
 }

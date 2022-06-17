@@ -148,6 +148,9 @@ insert into exercise values('사이드 플랭크',3,2);
 
 select * from diary;
 
+select * from diary where id='b' and (checkdate =(last_day(to_date(sysdate)))-29 or checkdate = (last_day(to_date(sysdate)))-22 or checkdate = (last_day(to_date(sysdate)))-15 or checkdate = (last_day(to_date(sysdate)))-8 or checkdate = (last_day(to_date(sysdate)))-1) order by checkdate ASC;
+
+select * from diary where id='b'
 
 delete from DIARY where id='a';
 select checkdate from DIARY where  '';
