@@ -41,12 +41,13 @@
 
 				<h2>부정맥 위험도</h2>
 				<div class="dropdown">
-					<button onclick="dp_menu()" class="button">
+					<button class="button">
 						<i class='bx bx-home'></i>
 					</button>
-					<div style="display: none;" id="drop-content">
+					<div id="drop-content">
 						<div class="menuList">
 							<a href="logout.do">로그아웃</a>
+							<hr id="calHr">
 							 <a href="editpagin.do">회원정보수정</a>
 						</div>
 					</div>
@@ -116,16 +117,11 @@
 		});
 	</script>
 	<script>
-		function dp_menu() {
-			let click = document.getElementById("drop-content");
-			if (click.style.display === "none") {
-				click.style.display = "block";
-
-			} else {
-				click.style.display = "none";
-
-			}
-		}
+	const btn = document.querySelector('.button');
+	const box = document.querySelector('.drop-content');
+	btn.addEventListener('click', () => {
+		  box.classList.toggle('act');
+		})
 	</script>
 	<script type="text/javascript">
 	let dark_mode_toggle = document.querySelector('.dark-mode-switch')
