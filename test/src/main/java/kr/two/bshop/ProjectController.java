@@ -139,4 +139,19 @@ public String editpaging() {
 public String chart() {
 	return "chart";
 }
+@PostMapping("/updateservice.do")
+public String updateservice(MemberVO vo, String pw1,HttpSession session) {
+	System.out.println("입력"+pw1);
+		if(vo.getPw().equals(pw1)) {
+			System.out.println("성공");
+			projectMapper.updateservice(vo);
+			vo = projectMapper.login(vo);
+			session.setAttribute("vo", vo);
+			return "chart";
+		
+		}else
+			System.out.println("실패");		
+	return "edit";
+	
+}
 }

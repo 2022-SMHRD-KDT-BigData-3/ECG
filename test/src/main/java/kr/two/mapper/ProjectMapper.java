@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import kr.two.entity.DiaryVO;
 import kr.two.entity.ExerVO;
@@ -34,4 +35,7 @@ public interface ProjectMapper { // new BoardMapper();
 	
 	@Insert("insert into diary values(#{id},to_char(sysdate,'yyyy.mm.dd'),#{extime},#{list},#{strong},#{danger},#{min},#{max},#{cal})")
 	public void diaryinsert(DiaryVO vo);
+	
+	@Update("update member set nick= #{nick}, pw=#{pw}, age=#{age}, weight=#{weight}, height=#{height}")
+	public void updateservice(MemberVO vo);
 }

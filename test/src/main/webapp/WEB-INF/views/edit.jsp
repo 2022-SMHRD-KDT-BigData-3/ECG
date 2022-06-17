@@ -38,23 +38,24 @@
 						<!-- Featured Post -->
 							<article class="post featured">
 						<section>
-							<form action="edit.do" method="post" >
+							<form action="updateservice.do" method="post" >
 								<div class="fields">
 									<div class="field">
 										<label for="name">수정할 닉네임을 입력하세요</label>
-										<input type="text" name="nick" id="name" value="${vo.nick}"/>
+										<input type="hidden" name="id" value="${vo.id}"/>
+										<input type="text" name="nick" id="nick" value="${vo.nick}"/>
 									</div>
 								</div>
 								<div class="fields">
 									<div class="field">
 										<label for="name">수정할 비밀번호를 입력하세요</label>
-										<input type="password" name="pw" id="name" />
+										<input type="password" name="pw" id="pw" />
 									</div>
 								</div>
 								<div class="fields">
 									<div class="field">
 										<label for="name">비밀번호 확인</label>
-										<input type="password" name="pw" id="name" />
+										<input type="password" name="pw1" id="pw1" />
 									</div>
 								</div>
 								<div class="fields">
@@ -66,13 +67,13 @@
 								<div class="fields">
 									<div class="field">
 										<label for="email">수정할 몸무게를 입력하세요</label>
-										<input type="number" name="weight" id="name" value="${vo.weight}"/>
+										<input type="number" name="weight" id="weight" value="${vo.weight}"/>
 									</div>
 								</div>
 								<div class="fields">
 									<div class="field">
 										<label for="email">수정할 키를 입력하세요</label>
-										<input type="number" name="height" id="name" value="${vo.height}"/>
+										<input type="number" name="height" id="height" value="${vo.height}"/>
 									</div>
 								</div>
 				
