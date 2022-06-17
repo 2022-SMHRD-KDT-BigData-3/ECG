@@ -151,7 +151,7 @@ public class ProjectController {
 		System.out.println("들어옴");
 		projectMapper.diaryinsert(vo);
 		System.out.println("실행됨");
-		return "watchservice.do";
+		return "watch1";
 	}
 	
 @GetMapping("/diaryslect.do")
@@ -164,7 +164,7 @@ public class ProjectController {
 	}
 	
 @RequestMapping("/watchservice.do")
-	public String watchservice(Model model) {
+	public String watchservice(HttpSession session) {
 
 		MemberVO vo = new MemberVO();
 		vo.setId("a");
@@ -174,7 +174,7 @@ public class ProjectController {
 		vo.setWeight(77);
 		vo.setAge(29);
 	
-		model.addAttribute("vo", vo);
+		session.setAttribute("vo", vo);
 		
 		return "watch1";
 
