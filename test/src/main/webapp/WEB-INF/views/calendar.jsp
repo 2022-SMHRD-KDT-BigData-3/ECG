@@ -26,7 +26,16 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
-
+<style type="text/css">
+@font-face {
+	font-family: 'EliceDigitalBaeum';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_elice@1.0/EliceDigitalBaeum.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+</style>
 </head>
 
 <body class="light">
@@ -42,12 +51,12 @@
 				<span id="year">2021</span>
 			</div>
 			<div class="dropdown">
-				<button onclick="dp_menu()" class="button">
+				<button class="button">
 					<i class='bx bx-log-out'></i>
 				</button>
-				<div style="display: none;" id="drop-content">
+				<div class="drop-content">
 					<div class="menuList">
-						<a hreaf='#'>로그아웃</a>
+						<a hreaf='#'>로그아웃</a> 
 						<hr id="calHr">
 						<a hreaf='#'>회원정보수정</a>
 					</div>
@@ -93,7 +102,7 @@
 						<td>${dvo.getList()}</td>
 					</tr>
 					<tr>
-						<td>운동 강도(판별)</td>
+						<td>운동 강도</td>
 						<td>${dvo.getStrong()}</td>
 					</tr>
 					<tr>
