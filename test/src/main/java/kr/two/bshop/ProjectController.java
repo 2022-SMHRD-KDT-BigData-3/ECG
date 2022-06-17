@@ -52,14 +52,14 @@ public class ProjectController {
 		vo = projectMapper.edit(vo);
 		model.addAttribute("vo", vo);
 		System.out.println("넘어감");
-		return "edit";
+		return "chart";
 	}
 	// 로그인 서비스
 	@PostMapping("/loginservice.do")
 	public String loginservice(Model model, MemberVO vo) {
 		vo = projectMapper.login(vo);
 		model.addAttribute("vo", vo);
-		return "calendar";
+		return "chart";
 	}
 	// 운동리스트 서비스
 	@RequestMapping("/listpick.do")
@@ -92,7 +92,7 @@ public class ProjectController {
 	
 		projectMapper.diaryinsert(vo);
 
-		return "watch1";
+		return "index2";
 	}
 	
 @GetMapping("/diaryslect.do")
@@ -120,5 +120,21 @@ public class ProjectController {
 		return "watch1";
 
 	}
-	
+@RequestMapping("/diary.do")
+public String diary() {
+
+	return "calendar";
+}
+@RequestMapping("/logout.do")
+public String logout() {
+
+	return "login";
+}
+@RequestMapping("/editpagin.do")
+public String editpaging(Model model, MemberVO vo) {
+	System.out.println("컨트럴로넘어옴");
+	model.addAttribute("vo", vo);
+	System.out.println("넘어감");
+	return "edit";
+}
 }

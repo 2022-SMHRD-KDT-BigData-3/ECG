@@ -26,16 +26,7 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
-<style type="text/css">
-@font-face {
-	font-family: 'EliceDigitalBaeum';
-	src:
-		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_elice@1.0/EliceDigitalBaeum.woff2')
-		format('woff2');
-	font-weight: normal;
-	font-style: normal;
-}
-</style>
+
 </head>
 
 <body class="light">

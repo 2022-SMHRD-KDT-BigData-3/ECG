@@ -46,7 +46,8 @@
 					</button>
 					<div style="display: none;" id="drop-content">
 						<div class="menuList">
-							<a hreaf='#'>로그아웃</a> <a hreaf='#'>회원정보수정</a>
+							<a hreaf='logout.do'>로그아웃</a>
+							 <a hreaf="editpagin?id=${vo.getId()}&age=${vo.getAge()}">회원정보수정</a>
 						</div>
 					</div>
 				</div>
@@ -80,7 +81,7 @@
 				<a hreaf="#">CHART</a>
 			</button>
 			<button type="button" class="btn btn-outline-secondary" id="btnRight">
-				<a hreaf="#">DIARY</a>
+				<a hreaf="diary.do">DIARY</a>
 			</button>
 		</div>
 		</article>
