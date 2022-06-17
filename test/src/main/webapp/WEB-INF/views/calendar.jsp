@@ -47,7 +47,9 @@
 				</button>
 				<div style="display: none;" id="drop-content">
 					<div class="menuList">
-						<a hreaf='#'>로그아웃</a> <a hreaf='#'>회원정보수정</a>
+						<a hreaf='#'>로그아웃</a>
+						<hr id="calHr">
+						<a hreaf='#'>회원정보수정</a>
 					</div>
 				</div>
 			</div>
@@ -118,16 +120,11 @@
 
 	<script src="resources/assets/js/calendar.js"></script>
 	<script>
-		function dp_menu() {
-			let click = document.getElementById("drop-content");
-			if (click.style.display === "none") {
-				click.style.display = "block";
-
-			} else {
-				click.style.display = "none";
-
-			}
-		}
+	const btn = document.querySelector('.button');
+	const box = document.querySelector('.drop-content');
+	btn.addEventListener('click', () => {
+		  box.classList.toggle('act');
+		})
 	</script>
 
 </body>
