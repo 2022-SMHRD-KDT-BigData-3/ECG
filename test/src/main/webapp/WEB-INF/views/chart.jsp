@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,8 +13,7 @@
 <link rel="stylesheet" href="resources/assets/css/chartist.min.css">
 <link rel="stylesheet"
 	href="resources/assets/css/chartist-plugin-tooltip.css">
-<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'
-	rel='stylesheet'>
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -64,22 +64,53 @@
 			</div>
 		</div>
 			<footer id="footer">
-				<div class="box">
-					<h3>
-						지난 일주일동안 운동을
-						<%=3%>번 하셨어요
-					</h3>
+            <div class="box">
+               <h3>
+                  <c:choose>
+                        <c:when test="${dvo1.size() < dvo2.size()}" >
+                       지난 일주일에 비해 이번주 운동을 ${dvo2.size() - dvo1.size()} 회
+                       덜 하셨습니다.
+                      </c:when> 
 
-					<h3>
-						지난달 보다
-						<%=10%>% 감소하셨네요
-					</h3>
-				</div>
-			</footer>
+                      <c:when test="${dvo1.size() >= dvo2.size()}" >
+                       지난 일주일에 비해 이번주 운동을 ${dvo1.size() - dvo2.size()} 회
+                       더 하셨습니다. 
+                      </c:when>
+                      
+                  </c:choose>                  
+               </h3>
+               <h3>
+                  <c:choose>
+                        <c:when test="${dvo1.get(0).getCal() < dvo2.get(0).getCal()}" >
+                       지난 일주일에 비해 이번주 칼로리 소모량이 ${dvo2.get(0).getCal() - dvo1.get(0).getCal()}
+                     감소 하셨습니다.
+                      </c:when> 
+
+                      <c:when test="${dvo2.get(0).getCal() < dvo1.get(0).getCal()}" >
+                       지난 일주일에 비해 이번주 칼로리 소모량이 ${dvo1.get(0).getCal() - dvo2.get(0).getCal()}
+                     증가 하셨습니다.
+                      </c:when>                      
+                  </c:choose>
+               </h3>
+               <h3>
+                  <c:choose>
+                        <c:when test="${dvo2.get(0).getDanger() < dvo1.get(0).getDanger()}" >
+                       지난 일주일에 비해 이번주 부정맥 위험도가
+                     ${dvo1.get(0).getDanger() - dvo2.get(0).getDanger()} 증가 하셨습니다.
+                      </c:when> 
+
+                      <c:when test="${dvo1.get(0).getDanger() < dvo2.get(0).getDanger()}" >
+                       지난 일주일에 비해 이번주 부정맥 위험도가
+                     ${dvo2.get(0).getDanger() - dvo1.get(0).getDanger()} 감소 하셨습니다.
+                      </c:when>                      
+                  </c:choose>                  
+               </h3>
+            </div>
+         </footer>
 		<div class="btn-group" role="group"
 			aria-label="Basic outlined example">
 			<button type="button" class="btn btn-outline-secondary" id="btnLeft" onclick="chart()">
-				CHART
+			CHART
 			</button>
 			<button type="button" class="btn btn-outline-secondary" id="btnRight" onclick="diary()">
 			DIARY
@@ -105,16 +136,16 @@
 	function chart() {
 		  location.href = "/chart.do";
 	}
-		new Chartist.Line('#simple-line-chart', {
-			labels : [ '6/1', '6/8', '6/15', '6/22', '6/29', '' ],
-			series : [ [ 15, 10, 20, 15, 30, 10 ] ]
-		}, {
-			fullWidth : true,
-			chartPadding : {
-				right : 40
-			},
-			plugins : [ Chartist.plugins.tooltip() ]
-		});
+    new Chartist.Line('#simple-line-chart', {
+        labels : [ '${dvo[0].getCheckdate()}', '${dvo[1].getCheckdate()}', '${dvo[2].getCheckdate()}', '${dvo[3].getCheckdate()}', '${dvo[4].getCheckdate()}', '' ],
+        series : [ [ ${dvo[0].getDanger()}, ${dvo[1].getDanger()}, ${dvo[2].getDanger()}, ${dvo[3].getDanger()}, ${dvo[4].getDanger()}, ${dvo[5].getDanger()} ] ]
+     }, {
+        fullWidth : true,
+        chartPadding : {
+           right : 40
+        },
+        plugins : [ Chartist.plugins.tooltip() ]
+     });
 	</script>
 	<script type="text/javascript">
 	let dark_mode_toggle = document.querySelector('.dark-mode-switch')

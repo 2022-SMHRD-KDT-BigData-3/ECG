@@ -155,3 +155,65 @@ public String updateservice(MemberVO vo, String pw1,HttpSession session) {
 	
 }
 }
+
+@PostMapping("/loginservice.do")
+public String loginservice(Model model, MemberVO vo) {
+   
+   vo = projectMapper.login(vo);
+   String id = vo.getId();
+   
+   List<DiaryVO> cl = projectMapper.chartlist(id);
+   List<DiaryVO> cs = projectMapper.chartselect(id);
+   List<DiaryVO> cs2 = projectMapper.chartselect2(id);
+   
+   List<DiaryVO> dvo = new ArrayList<DiaryVO>();
+   
+   for (int i = 0; i < cl.size(); i++) {   
+         String date = cl.get(i).getCheckdate();
+         date = date.substring(5, 10);
+         cl.get(i).setCheckdate(date);
+         
+         dvo.add(cl.get(i));         
+   }
+   
+   List<DiaryVO> dvo1 = new ArrayList<DiaryVO>();
+   List<DiaryVO> dvo2 = new ArrayList<DiaryVO>();
+   
+   int cal1 = 0; int cal2 = 0;
+
+   for (int i = 0; i < cs.size(); i++) {   
+      if (i == 0) {
+         for (int j = 0; j < cs.size(); j++) {   
+            cal1 += cs.get(j).getCal();
+         }
+      }
+      cs.get(0).setCal(cal1);   
+      
+      String date = cs.get(i).getCheckdate();
+      date = date.substring(5, 10);
+      cs.get(i).setCheckdate(date);
+      
+      dvo1.add(cs.get(i));         
+   }
+   
+   for (int i = 0; i < cs2.size(); i++) {   
+      if (i == 0) {
+         for (int j = 0; j < cs2.size(); j++) {   
+            cal2 += cs2.get(j).getCal();
+         }
+      }
+      cs2.get(0).setCal(cal2);
+      
+      String date = cs2.get(i).getCheckdate();
+      date = date.substring(5, 10);
+      cs2.get(i).setCheckdate(date);
+      
+      dvo2.add(cs2.get(i));         
+   }
+         
+   model.addAttribute("vo", vo);      
+   model.addAttribute("dvo", dvo);   
+   model.addAttribute("dvo1", dvo1);
+   model.addAttribute("dvo2", dvo2);
+   return "chart";
+}
