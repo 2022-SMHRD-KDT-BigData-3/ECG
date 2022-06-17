@@ -62,6 +62,7 @@
   justify-content: center;
   align-items: center;
   height: 700px;
+  width: 700px;
 }
 
 .circle {
@@ -263,7 +264,7 @@ h1 {
    <input type="radio" name="slide" id="slide01" checked>
    <input type="radio" name="slide" id="slide02">
   
-   <div class="slide-wrap">
+   <div class="slide-wrap" style="width:700px;height:700px;">
       <ul class="slidelist" style = "width: 700px;" >
          <li>
             <a>

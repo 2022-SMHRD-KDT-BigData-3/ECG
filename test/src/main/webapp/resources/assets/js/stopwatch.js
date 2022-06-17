@@ -5,8 +5,8 @@ var stabilityHeart =0; // 안정시 심박수
 var maxHeart = 0;   // 사용자의 최대심박수
 var mhr = 0;   // 220-나이에 들어갈 최대심박수
 var cal=0;
-
-
+var check= false;	 // 휴식알림
+var dangercheck = false; // 위험알림 
 $(document).ready(function(){
   buttonEvt();
  
@@ -78,7 +78,30 @@ function buttonEvt(){
 	// 최대심박수가 현재심박수보다 작다면 최대심박수는 현재심박수이다.
 	if(maxHeart<=todayHeart){
 		maxHeart=todayHeart;
+		 
 	}
+	if(todayHeart>=(todayHeart+30)){
+	check=true;
+	}
+	if(check){
+	if(todayHeart<=stabilityHeart){
+	document.getElementById("modaltitle").innerHTML = "휴식!";
+		 document.getElementById("modaltext").innerHTML = "현재 심박수는" + stabilityHeart+"BPM 에 도달했습니다.";
+		 document.getElementById("modaltext2").innerHTML = "운동을 시작해주세요!";
+		  $("#noticemodal").fadeIn();
+		 
+	}}
+	if(maxHeart<=(maxHeart-50)){
+	dangercheck = ture;
+	}
+	if(dangercheck){
+		if(maxHeart>=mhr){
+		document.getElementById("modaltitle").innerHTML = "위험!";
+		document.getElementById("modaltext").innerHTML = "현재 심박수가" + maxHeart+"BPM 에 도달했습니다.";
+		 document.getElementById("modaltext2").innerHTML = "휴식을 취해주세요!";
+		 $("#noticemodal").fadeIn();
+		 maxHeart= 0;
+		}};
 		
         min = Math.floor(time/60);
         hour = Math.floor(min/60);

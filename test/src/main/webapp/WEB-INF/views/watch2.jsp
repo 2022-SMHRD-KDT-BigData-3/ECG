@@ -27,7 +27,16 @@
 	display: none;
 	z-index: 1;
 }
-
+.modal1 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	top: 0;
+	left: 0;
+	display: none;
+	z-index: 1;
+}
 .modal_content {
 	width: 654px;
 	height: 655px;
@@ -35,7 +44,7 @@
 	border-radius: 10px;
 	position: relative;
 	top: 50%;
-	left: 32%;
+	left: 640px;
 	margin-top: -100px;
 	margin-left: -200px;
 	text-align: center;
@@ -495,6 +504,11 @@ h1 {
 	transition: 0.3s ease-out;
 }
 
+.btn-5::before {
+	background-color: #F5F5F5;
+	transition: 0.3s ease-out;
+}
+
 .btn-1 span {
 	color: rgb(255, 255, 255);
 	border: 1px solid rgb(28, 31, 30);
@@ -579,8 +593,10 @@ h1 {
 	<!-- 종료 모달창 -->
 	<div class="modal">
 
+
 		<div style="height: 245px;">
 			<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+
 				<h2 style="font-size: 70px;">오늘 운동 내역은</h2>
 				<div class="modalbox"
 					style="margin-top: 110px; font-size: 31px; width: 50%; float: left; height: 39%;">
@@ -600,13 +616,14 @@ h1 {
 
 				<div id="modal"
 					style="margin-top: 110px; margin-bottom: 50px; font-size: 31px; width: 50%; float: left; height: 39%;">
-					<h3 id="time2" style="margin-bottom: 50px;">time</h3>
+
+					<h3 id="time2" name="time" style="margin-bottom: 50px;">time</h3>
+
 					<h3 id="cal4" style="margin-bottom: 50px;">kcal</h3>
 					<div style="margin-bottom: 50px;">
-
-
 						<h3 id="maxmin" style="margin-bottom: 50px;">BPM</h3>
 						<h3 id="exer" style="margin-bottom: 50px;">list</h3>
+
 							<h3 id="age" style="display: none">${vo.getAge()}</h3>
 				<form action="diaryinsert.do" method="get">
 						<input type="hidden" name="id" value="${vo.getId()}"> <input
@@ -638,7 +655,7 @@ h1 {
 	<script type="text/javascript">
 	
 
-$(function(){ 
+ $(function(){ 
 	// 모달창 보이기
 	  $("#stopbtn").click(function(){
 	    $(".modal").fadeIn();
@@ -651,24 +668,82 @@ $(function(){
 	    $(".textbox").css('display', 'block');
 	  });
 	  
+	}); 
+</script>
+
+	
+<!-- 알림창1 -->
+
+	<div id="noticemodal" class="modal1">
+
+		<div class="modal_content" title="클릭하면 창이 닫힙니다." style="left: 643px;width: 654px;height: 655px;background: #fff;border-radius: 10px;position: relative;top: 50%;left: 32%;margin-top: -655px;margin-left: -200px;text-align: center;box-sizing: border-box;padding: 74px 0;line-height: 23px;cursor: pointer;">
+			<div id="box1"
+				style="height: 130.5%; width: 687px; margin-top: 700px; background: #F5F5F5; border: 10px solid #F5F5F5; position: relative; z-index: 2; margin: 610px 1px 34px 132px;">
+				<h3 id="modaltitle" style="font-size: 111px; color: black; margin-top: 6rem; ">위
+					험!</h3>
+
+				<div class="modalbox"
+					style="margin-top: 154px; font-size: 31px; width: 50%; float: left; height: 39%;">
+					<div class="modallist" style="margin-bottom: 50px;width:678px;font-size:44px;color:black;">
+						<h3 id="modaltext" style="margin-bottom: 50px;">지금 심박수가 위험상태입니다.</h3>
+						<br>
+						<h3 id="modaltext2">휴식을 취해주세요!</h3>
+					</div>
+
+				</div>
+			
+			<button id="modalclose" class="btn btn-5 hover-filled-slide-down"
+				style="margin: 400px 1px 13px -322px;">
+				<div class="back">
+					<span style = "color: black; border: 1px solid; border-radius: 10px;">닫기</span>
+				</div>
+			</button>
+			</div>
+		</div>
+
+	</div>
+
+
+	<script type="text/javascript">
+	
+
+$(function(){ 
+		// 모달창 숨기기
+	  $("#modalclose").click(function(){
+	    $("#noticemodal").fadeOut();
+
+	  });
+	  
 	});
 </script>
+
+	
+
+
 	<!-- 슬라이드 생성 -->
 	<div class="section">
 		<input type="radio" name="slide" id="slide01" checked> <input
 			type="radio" name="slide" id="slide02"> <input type="radio"
 			name="slide" id="slide03"> <input type="radio" name="slide"
-			id="slide04">
+			id="slide04"><input type="radio" name="slide" id="slide05">
+		<input type="radio" name="slide" id="slide06"><input
+			type="radio" name="slide" id="slide07">
+
+		<!-- 알림창 -->
+
+
+
 
 		<!-- 메인페이지 -> 운동추천 받은 페이지 -->
-		<div class="slide-wrap">
+		<div class="slide-wrap"
+			style="width: 700px; height: 700px; margin-top: 1rem;">
 			<ul class="slidelist">
 				<li><a>
 						<table class='table'>
 							<div id="none">
 								<div class="wrap">
 
-									<label for="slide02" class="right"></label>
+									<label for="slide03" class="right"></label>
 									<div class="textbox">
 										<div id="box1">
 											<!-- jstl로 반복문 사용 -> mvo 출력 -->
@@ -705,13 +780,18 @@ $(function(){
 						</table>
 
 				</a></li>
+
+
+
+
+
 				<!-- 운동 중 페이지 1 -->
 				<li><a>
 						<table class='table'>
 							<div id="none">
 								<div class="wrap">
 
-									<label for="slide01" class="left" id="slidebtn"></label>
+									<label for="slide02" class="left" id="slidebtn"></label>
 									<div class="textbox">
 
 
@@ -740,7 +820,7 @@ $(function(){
 
 
 									</div>
-									<label for="slide03" class="right" style="display: none"></label>
+									<label for="slide04" class="right" style="display: none"></label>
 								</div>
 							</div>
 						</table>
@@ -757,7 +837,7 @@ $(function(){
 							<div id="none">
 								<div class="wrap">
 
-									<label for="slide02" class="left"></label>
+									<label for="slide03" class="left"></label>
 									<div class="textbox">
 										<div id="box3">
 											<h3 class="set"
@@ -784,7 +864,7 @@ $(function(){
 
 
 									</div>
-									<label for="slide04" class="right"></label>
+									<label for="slide05" class="right"></label>
 								</div>
 							</div>
 						</table>
@@ -795,13 +875,17 @@ $(function(){
 
 				<!-- 운동 중 페이지2 끝 -->
 
+
+
+
+
 				<!-- 운동 중 페이지 3 -->
 				<li><a>
 						<table class='table'>
 							<div id="none">
 								<div class="wrap">
 
-									<label for="slide03" class="left"></label>
+									<label for="slide04" class="left"></label>
 									<div class="textbox">
 										<div id="box3">
 											<h3 class="set"
@@ -828,6 +912,7 @@ $(function(){
 
 
 									</div>
+									<label for="slide06" class="right"></label>
 
 								</div>
 							</div>
