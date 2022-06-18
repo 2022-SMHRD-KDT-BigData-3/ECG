@@ -26,6 +26,8 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 
@@ -80,7 +82,7 @@
 				<tbody>
 					<tr>
 						<td id="idvo" style="display: none">${vo.id}</td>
-						<td>시간</td>
+						<td>시간 </td>
 						<td>${dvo.getExtime()}</td>
 
 					</tr>
@@ -121,11 +123,13 @@
 
 	<script src="resources/assets/js/calendar.js"></script>
 	<script>
+	
 	function diary() {
-		  location.href ="diary.do"; 
+		location.href ="diary.do"; 
 	}
-	function chart() {
-		  location.href = "chart.do";
+	
+	function chart() {		  		
+		location.href = "chart.do?id=${dvo.getId()}";
 	}
 	const btn = document.querySelector('.button');
 	const box = document.querySelector('.drop-content');

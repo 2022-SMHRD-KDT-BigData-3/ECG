@@ -10,6 +10,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import kr.two.entity.DiaryVO;
+import kr.two.entity.ECGVO;
 import kr.two.entity.ExerVO;
 import kr.two.entity.MemberVO;
             //BoardDAO  // BoardDAO dao = new BoardDAO();
@@ -47,4 +48,7 @@ public interface ProjectMapper { // new BoardMapper();
 	   
 	@Select("select * from diary where id=#{id} and (checkdate = (last_day(to_date(sysdate)))-29 or checkdate = (last_day(to_date(sysdate)))-22 or checkdate = (last_day(to_date(sysdate)))-15 or checkdate = (last_day(to_date(sysdate)))-8 or checkdate = (last_day(to_date(sysdate)))-1) order by checkdate ASC")
 	public List<DiaryVO> chartlist(MemberVO vo);
+	
+	@Select("select * from ecg where id=#{id} and rownum =1 order by ecg ASC")
+	public ECGVO ecgselect(MemberVO vo);
 }

@@ -24,8 +24,8 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
-
-
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body class="is-preload light">
 
@@ -127,15 +127,14 @@
 	<script src="resources/assets/js/chartist.min.js"></script>
 	<script src="resources/assets/js/chartist-plugin-tooltip.min.js"></script>
 
-
-
 	<!-- 날짜별 부정맥 위험도 -->
 	<script type="text/javascript">
-	function diary() {
-		  location.href ="diary.do"; 
+	
+	function diary() {			
+		location.href = "diary.do?id=${mvo.getId()}";	   
 	}
 	function chart() {
-		  location.href = "/chart.do";
+		location.href = "chart.do";
 	}
     
 	if(${dvo.size() > 0}){

@@ -63,6 +63,8 @@ generateCalendar = (month, year) => {
     }
 }
 
+
+
 let month_list = calendar.querySelector('.month-list')
 
 month_names.forEach((e, index) => {
@@ -120,6 +122,6 @@ function diary_select(checkdate) {
     console.log("확인"+checkdate);
     let id = document.getElementById('idvo').innerText;
     console.log("id값 :"+id);
-    location.href="diaryslect.do?id="+id+"&checkdate="+checkdate; 
+    location.href="diaryselect.do?id="+id+"&checkdate="+checkdate; 
  }
  
