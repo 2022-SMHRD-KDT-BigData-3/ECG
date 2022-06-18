@@ -355,7 +355,7 @@ function getData(){
 			
 			a_tags.eq(0).attr("href","listpick.do?Choose=1&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}&weight="+${vo.getWeight()});
 			a_tags.eq(1).attr("href","listpick.do?Choose=2&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}&weight="+${vo.getWeight()});
-			a_tags.eq(2).attr("href","listpick.do?Choose=2&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}&weight="+${vo.getWeight()});
+			a_tags.eq(2).attr("href","listpick.do?Choose=3&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}&weight="+${vo.getWeight()});
 			console.log("확인");
 			var h3_tag = $("#danger");
 		}		

@@ -116,6 +116,7 @@ insert into exercise values('트위스트 런지',2,2);
 insert into exercise values('사이드 런지',2,2);
 insert into exercise values('힙 쓰러스트',2,2);
 insert into exercise values('힙 익스텐션',2,2);
+
 -- 전신 인서트
 insert into exercise values('암워킹',3,1); 
 insert into exercise values('버피 테스트',3,1) ;
