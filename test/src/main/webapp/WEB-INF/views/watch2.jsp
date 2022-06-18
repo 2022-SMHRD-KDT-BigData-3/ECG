@@ -34,7 +34,7 @@
 	background: rgba(0, 0, 0, 0.8);
 	top: 0;
 	left: 0;
-	display: none;
+	/* display: none; */
 	z-index: 1;
 }
 .modal_content {
@@ -45,8 +45,8 @@
 	position: relative;
 	top: 50%;
 	left: 640px;
-	margin-top: -100px;
-	margin-left: -200px;
+	margin-top: -90px;
+	margin-left: -6px;
 	text-align: center;
 	box-sizing: border-box;
 	padding: 74px 0;
@@ -324,37 +324,47 @@ body {
 
 #box3 {
 	/* margin-left: 150px; */
-	border: 10px solid #dddddd;
-	background: #dddddd;
+	/* border: 10px solid #dddddd;
+	background: #dddddd; */
 	width: 684px;
 	border-radius: 10px;
-	height: 150px;
+	/* height: 150px; */
 	/* line-height: 110px; */
 	margin-bottom: 1rem;
 }
 
 #box4 {
 	/* margin-left: 150px; */
-	border: 10px solid #dddddd;
-	background: #dddddd;
+	/* border: 10px solid #dddddd;
+	background: #dddddd; */
 	width: 684px;
 	border-radius: 10px;
-	height: 150px;
+	/* height: 150px; */
 	/* line-height: 110px; */
 	margin-bottom: 1rem;
 }
 
 #box5 {
 	/* margin-left: 150px; */
-	border: 10px solid #dddddd;
-	background: #dddddd;
+	/* border: 10px solid #dddddd;
+	background: #dddddd; */
 	width: 684px;
 	border-radius: 10px;
-	height: 150px;
+	/* height: 150px; */
 	/* line-height: 110px; */
 	margin-bottom: 1rem;
 }
 
+#box6 {
+	/* margin-left: 150px; */
+	/* border: 10px solid #dddddd;
+	background: #dddddd; */
+	width: 684px;
+	border-radius: 10px;
+	/* height: 150px; */
+	/* line-height: 110px; */
+	margin-bottom: 1rem;
+}
 /* watch2 List box 끝*/
 
 /* 글씨 위치 */
@@ -477,6 +487,7 @@ h1 {
 	margin: 86px 25px 5px 33px;
 	min-width: 495px;
 	right: 4.9rem;
+	border-radius: 10px;
 }
 
 .btn span {
@@ -497,6 +508,7 @@ h1 {
 .back {
 	background-color: white;
 	width: 130%;
+	border-radius: 10px;
 }
 
 .btn-1::before {
@@ -513,6 +525,7 @@ h1 {
 	color: rgb(255, 255, 255);
 	border: 1px solid rgb(28, 31, 30);
 	transition: 0.2s 0.1s;
+	border-radius: 10px;
 }
 
 .btn-1 span:hover {
@@ -527,6 +540,7 @@ h1 {
 	right: 0;
 	height: 100%;
 	width: 130%;
+	border-radius: 10px;
 }
 
 .btn.hover-filled-slide-down:hover::before {
@@ -676,16 +690,16 @@ h1 {
 
 	<div id="noticemodal" class="modal1">
 
-		<div class="modal_content" title="클릭하면 창이 닫힙니다." style="left: 643px;width: 654px;height: 655px;background: #fff;border-radius: 10px;position: relative;top: 50%;left: 32%;margin-top: -655px;margin-left: -200px;text-align: center;box-sizing: border-box;padding: 74px 0;line-height: 23px;cursor: pointer;">
+		<!-- <div class="modal_content" title="클릭하면 창이 닫힙니다." style="left: 643px;width: 654px;height: 655px;background: #fff;border-radius: 10px;position: relative;top: 50%;left: 32%;margin-top: -655px;margin-left: -200px;text-align: center;box-sizing: border-box;padding: 74px 0;line-height: 23px;cursor: pointer;"> -->
 			<div id="box1"
-				style="height: 130.5%; width: 687px; margin-top: 700px; background: #F5F5F5; border: 10px solid #F5F5F5; position: relative; z-index: 2; margin: 610px 1px 34px 132px;">
-				<h3 id="modaltitle" style="font-size: 111px; color: black; margin-top: 6rem; ">위
+				style="height: 70%; width: 687px; margin-top: 700px; background: #F5F5F5; border: 10px solid #F5F5F5; position: relative; z-index: 2; margin: 27px 1px 39px 616px;text-align:center;">
+				<h3 id="modaltitle" style="font-size: 111px; color: black; margin-top: 0rem; ">위
 					험!</h3>
 
 				<div class="modalbox"
-					style="margin-top: 154px; font-size: 31px; width: 50%; float: left; height: 39%;">
-					<div class="modallist" style="margin-bottom: 50px;width:678px;font-size:44px;color:black;">
-						<h3 id="modaltext" style="margin-bottom: 50px;">지금 심박수가 위험상태입니다.</h3>
+					style="margin-top: 62px; font-size: 31px; width: 50%; float: left; height: 39%;">
+					<div class="modallist" style="margin-bottom: 33px;width:678px;font-size:44px;color:black;">
+						<h3 id="modaltext" style="margin-bottom: -32px;">지금 심박수가 위험상태입니다.</h3>
 						<br>
 						<h3 id="modaltext2">휴식을 취해주세요!</h3>
 					</div>
@@ -693,7 +707,7 @@ h1 {
 				</div>
 			
 			<button id="modalclose" class="btn btn-5 hover-filled-slide-down"
-				style="margin: 400px 1px 13px -322px;">
+				style="margin: 339px 1px 13px -325px;">
 				<div class="back">
 					<span style = "color: black; border: 1px solid; border-radius: 10px;">닫기</span>
 				</div>
@@ -800,11 +814,14 @@ $(function(){
 												style="border-radius: 10px; font-size: 62px; line-height: center;">${mvo.get(0)}</h3>
 										</div>
 										<div id="box4">
-											<h3 class="set" style="border-radius: 10px">5세트 - 10회</h3>
+											<h3 class="set" style="border-radius: 10px;height: 110px;">5세트 - 10회</h3>
+										</div>
+										<div id="box6">
+											<h3 class="set" id="todayHeart1" style="border-radius: 10px;height: 110px;">현재심박수 </h3>
 										</div>
 										<div id="box5">
 											<h3 id="cal1" class="beat"
-												style="border-radius: 10px, font-size: 56px;">칼로리</h3>
+												style="border-radius: 10px, font-size: 56px;height: 110px;border-radius:10px;">칼로리</h3>
 
 										</div>
 									</div>
@@ -840,15 +857,17 @@ $(function(){
 									<label for="slide03" class="left"></label>
 									<div class="textbox">
 										<div id="box3">
-											<h3 class="set"
-												style="border-radius: 10px; font-size: 62px; line-height: center;">${mvo.get(1)}</h3>
+											<h3 class="set" style="border-radius:10px;height:117px;">${mvo.get(1)}</h3>
 										</div>
 										<div id="box4">
-											<h3 class="set" style="border-radius: 10px">5세트 - 10회</h3>
+											<h3 class="set" style="border-radius: 10px;height: 110px;">5세트 - 10회</h3>
+										</div>
+										<div id="box6">
+											<h3 class="set" id="todayHeart2" style="border-radius: 10px;height: 110px;">현재심박수 </h3>
 										</div>
 										<div id="box5">
 											<h3 id="cal2" class="beat"
-												style="border-radius: 10px, font-size: 56px;">칼로리</h3>
+												style="border-radius: 10px, font-size: 56px;height: 110px;border-radius:10px;">칼로리</h3>
 
 										</div>
 									</div>
@@ -892,11 +911,15 @@ $(function(){
 												style="border-radius: 10px; font-size: 62px; line-height: center;">${mvo.get(2)}</h3>
 										</div>
 										<div id="box4">
-											<h3 class="set" style="border-radius: 10px;">5세트 - 10회</h3>
+											<h3 class="set" style="border-radius: 10px;height: 110px;">5세트 - 10회</h3>
+										</div>
+										<div id="box6">
+											<h3 class="set" id="todayHeart3" style="border-radius: 10px;height: 110px;">현재심박수 </h3>
+											
 										</div>
 										<div id="box5">
 											<h3 id="cal3" class="beat"
-												style="border-radius: 10px, font-size: 56px;">칼로리</h3>
+												style="border-radius: 10px, font-size: 56px;height: 110px;border-radius:10px;">칼로리</h3>
 
 										</div>
 									</div>

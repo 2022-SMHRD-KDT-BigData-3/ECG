@@ -31,7 +31,7 @@
    .section .slidelist label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
    .section .slidelist .left {left:30px;background:url('./img/left.png') center center / 100% no-repeat;}
    .section .slidelist .right {right:30px;background:url('./img/right.png') center center / 100% no-repeat;}
-   .section .slidelist .textbox {position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
+   .section .slidelist .textbox {position:absolute;z-index:1;top:67%;left:50%;transform:translate(-50%,-50%);line-height:1.6;text-align:center;}
    
    .section .slidelist .textbox h3 {font-size:68px;color:#fff;opacity:0;transform:translateY(30px);transition:all .5s;}
 
@@ -73,7 +73,7 @@
   max-width: 250px;
   max-height: 250px;
   position: relative;
-  margin-bottom: 9rem;
+  margin-bottom: -3rem;
 }
 .circle:before {
   border: 4px solid white;
@@ -264,12 +264,16 @@ h1 {
    <input type="radio" name="slide" id="slide01" checked>
    <input type="radio" name="slide" id="slide02">
   
-   <div class="slide-wrap" style="width:700px;height:700px;">
+   <div class="slide-wrap" style="width:700px;height:700px;margin-top:1rem;">
       <ul class="slidelist" style = "width: 700px;" >
          <li>
             <a>
                   <div>
+                  <div class="textbox">
+                  <h3 style = "margin-bottom:180%;">미키님의<br>부정맥 위험도</h3>
+                  </div>
                       <div class="wrap">
+                      
                        <div class="circle"></div>
                      </div>
                   </div>
@@ -332,7 +336,7 @@ $(document).ready(()=>{
 function getData(){
 	// 통신 code
 	document.getElementById("danger").innerHTML = "<MARQUEE direction='up' height='60' truespeed='1'> 1%<br>2%<br>3%<br>" +
-	"4%<br>5%<br>6%<br>7%<br>8%<br>9%<br> </MARQUEE>";
+	"4%<br>5%<br>6%<br>7%<br>8%<br>9%<br> </MARQUEE>"; 
 
 	$.ajax({
 		url : "http://localhost:9000/flask",
