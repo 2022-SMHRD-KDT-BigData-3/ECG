@@ -264,7 +264,7 @@ h1 {
    <input type="radio" name="slide" id="slide01" checked>
    <input type="radio" name="slide" id="slide02">
   
-   <div class="slide-wrap" style="width:700px;height:700px;">
+   <div class="slide-wrap" style="width:700px;height:700px;margin-top:1rem;">
       <ul class="slidelist" style = "width: 700px;" >
          <li>
             <a>
@@ -336,7 +336,7 @@ $(document).ready(()=>{
 function getData(){
 	// 통신 code
 	document.getElementById("danger").innerHTML = "<MARQUEE direction='up' height='60' truespeed='1'> 1%<br>2%<br>3%<br>" +
-	"4%<br>5%<br>6%<br>7%<br>8%<br>9%<br> </MARQUEE>";
+	"4%<br>5%<br>6%<br>7%<br>8%<br>9%<br> </MARQUEE>"; 
 
 	$.ajax({
 		url : "http://localhost:9000/flask",
