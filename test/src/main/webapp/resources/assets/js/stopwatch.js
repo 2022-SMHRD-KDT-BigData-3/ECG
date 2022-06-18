@@ -126,10 +126,15 @@ function buttonEvt(){
         cal = numb.toFixed(2);
   		var strong = maxHeart/mhr*100
         var age = document.getElementById('age').innerText;
+        
  		document.getElementById("time").innerText = th + ":" + tm + ":" + ts;
+ 		
         document.getElementById("cal1").innerHTML = "소모칼로리 : "+cal+"kcal" ;
         document.getElementById("cal2").innerHTML = "소모칼로리 : "+cal+"kcal" ;
         document.getElementById("cal3").innerHTML = "소모칼로리 : "+cal+"kcal" ;
+        document.getElementById("todayHeart1").innerHTML = "현재심박수 : "+todayHeart ;
+        document.getElementById("todayHeart2").innerHTML = "현재심박수 : "+todayHeart ;
+        document.getElementById("todayHeart3").innerHTML = "현재심박수 : "+todayHeart ;
         document.getElementById("strong").value = strong;
         
   
