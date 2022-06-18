@@ -83,10 +83,8 @@
 			<table class="alt">
 				<tbody>
 					<tr>
-						<td id="idvo" style="display: none">${vo.id}</td>
 						<td>시간 </td>
 						<td>${dvo.getExtime()}</td>
-
 					</tr>
 					<tr>
 						<td>최대 / 평균</td>
@@ -108,6 +106,9 @@
 					<tr>
 						<td>키/몸무게</td>
 						<td>${vo.height} / ${vo.weight}</td>
+					</tr>
+					<tr>
+						<td id="idvo" style="display: none">${vo.id}</td>
 					</tr>
 				</tbody>
 			</table>

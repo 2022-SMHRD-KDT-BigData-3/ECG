@@ -174,12 +174,12 @@ public class ProjectController {
 		
 		MemberVO vo = new MemberVO();
 		
-		vo.setId("a");
-		vo.setPw("a");
-		vo.setNick("김홍석");
+		vo.setId("dlwoals");
+		vo.setPw("dlwoals");
+		vo.setNick("이재민");
 		vo.setHeight(175);
-		vo.setWeight(77);
-		vo.setAge(29);
+		vo.setWeight(60);
+		vo.setAge(28);
 		
 		model.addAttribute("vo", vo);
 		
@@ -191,12 +191,12 @@ public class ProjectController {
 	public String getdata() {
 		MemberVO vo = new MemberVO();
 		
-		vo.setId("a");
-		vo.setPw("a");
-		vo.setNick("김홍석");
+		vo.setId("dlwoals");
+		vo.setPw("dlwoals");
+		vo.setNick("이재민");
 		vo.setHeight(175);
-		vo.setWeight(77);
-		vo.setAge(29);
+		vo.setWeight(60);
+		vo.setAge(28);
 		
 		ECGVO evo = projectMapper.ecgselect(vo);
 		

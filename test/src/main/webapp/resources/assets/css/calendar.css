@@ -323,6 +323,7 @@ html, body {
 	overflow:hidden;
 	width: 35%;
     height: 40%;
+    color: var(--color-txt)
 }
 
 @media screen and (max-width: 420px) {
