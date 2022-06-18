@@ -315,9 +315,14 @@ html, body {
 .calendar-footer {
 	padding: 0.7rem;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
 	align-items: center;
 	width: 100%;
+}
+.date {
+	overflow:hidden;
+	width: 35%;
+    height: 40%;
 }
 
 @media screen and (max-width: 420px) {

@@ -31,8 +31,14 @@ public interface ProjectMapper { // new BoardMapper();
 	@Select("select e_name from (select * from exercise order by dbms_random.value) where e_kind=#{chocie} and e_number=#{i}")
 	public List<String> exerlist(@Param("chocie")int chocie,@Param("i")int i);
 	
+	@Select("select * from member where id =#{id}")
+	public MemberVO login2(MemberVO vo);
+	
 	@Select("select * from diary where id=#{id} and checkdate=#{checkdate} and rownum =1 order by 1 desc")
 	public DiaryVO diaryselect(@Param("id")String id,@Param("checkdate")String checkdate);
+	
+	@Select("select * from diary where id=#{id} and checkdate=to_char(sysdate,'yyyy.mm.dd') and rownum=1 order by checkdate desc")
+	public DiaryVO diaryselect2(@Param("id")String id);
 	
 	@Insert("insert into diary values(#{id},to_char(sysdate,'yyyy.mm.dd'),#{extime},#{list},#{strong},#{danger},#{min},#{max},#{cal})")
 	public void diaryinsert(DiaryVO vo);

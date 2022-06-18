@@ -30,7 +30,6 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
-
 <body class="light">
 	<div class="calendar">
 		<div class="calendar-header">
@@ -68,7 +67,10 @@
 			</div>
 			<div class="calendar-days" style="place-items: center;"></div>
 		</div>
-		<div class="calendar-footer">
+		<div class="calendar-footer" style="justify-content: space-between;">
+			<div class="date" style="overflow:hidden;" style="text-align:left">
+				<span>${dvo.getCheckdate()}</span>
+			</div>
 			<div class="toggle">
 				<span>Dark Mode</span>
 				<div class="dark-mode-switch">
@@ -129,7 +131,7 @@
 	}
 	
 	function chart() {		  		
-		location.href = "chart.do?id=${dvo.getId()}";
+		location.href = "chart.do?id=${vo.getId()}";
 	}
 	const btn = document.querySelector('.button');
 	const box = document.querySelector('.drop-content');

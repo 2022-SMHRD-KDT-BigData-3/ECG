@@ -145,7 +145,7 @@ insert into exercise values('슈퍼맨 플랭크',3,2);
 insert into exercise values('엘보우 플랭크',3,2);
 insert into exercise values('사이드 플랭크',3,2);
 
-
+select * from diary where id='a' and checkdate=to_char(sysdate,'yyyy.mm.dd') and rownum=1 order by checkdate desc;
 select * from diary;
 
 select * from diary where id='a' and (checkdate =(last_day(to_date(sysdate)))-29 or checkdate = (last_day(to_date(sysdate)))-22 or checkdate = (last_day(to_date(sysdate)))-15 or checkdate = (last_day(to_date(sysdate)))-8 or checkdate = (last_day(to_date(sysdate)))-1) order by checkdate ASC;

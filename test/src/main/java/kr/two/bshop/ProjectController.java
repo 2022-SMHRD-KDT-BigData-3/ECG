@@ -139,6 +139,7 @@ public class ProjectController {
 			mvo.add(data.get(i));
 		}
 		MemberVO vo = new MemberVO();
+	
 		vo.setAge(age);
 		vo.setWeight(weight);
 		vo.setId(id);
@@ -154,7 +155,8 @@ public class ProjectController {
 		System.out.println("들어옴");
 		projectMapper.diaryinsert(vo);
 		System.out.println("실행됨");
-		return "watch1";
+
+		return "redirect:/watchservice.do";
 	}
 
 	@GetMapping("/diaryselect.do")
@@ -202,15 +204,20 @@ public class ProjectController {
 	}
 
 	@RequestMapping("/diary.do")
-	public String diary(Model model, String id) {
+	public String diary(Model model, String id, int height, int weight) {
 		System.out.println("test" + id);
-
+		System.out.println(height);
+		System.out.println(weight);
+		
 		MemberVO vo = new MemberVO();
-
 		vo.setId(id);
-
+		
+		DiaryVO dvo = projectMapper.diaryselect2(id);
+		vo = projectMapper.login2(vo);
+		model.addAttribute("dvo", dvo);
 		model.addAttribute("mvo", vo);
-
+		
+		System.out.println(vo);
 		return "calendar";
 	}
 
@@ -229,12 +236,12 @@ public class ProjectController {
 
 	@RequestMapping("/chart.do")
 	public String chart(String id, Model model, HttpSession session) {
-		System.out.println("test" + id);
 
-		MemberVO vo = new MemberVO();
-
+		MemberVO vo  = new MemberVO();		
 		vo.setId(id);
-
+		vo = projectMapper.login2(vo);
+		
+		System.out.println(vo);
 		List<DiaryVO> cl = projectMapper.chartlist(vo);
 
 		List<DiaryVO> cs = projectMapper.chartselect(vo);

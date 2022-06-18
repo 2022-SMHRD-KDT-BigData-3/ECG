@@ -55,25 +55,28 @@
 
 			<div id="simple-line-chart" class="ct-chart ct-golden-section"></div>
 			<div class="calendar-footer">
-				<div class="toggle">
-					<span>Dark Mode</span>
-					<div class="dark-mode-switch">
-						<div class="dark-mode-switch-ident"></div>
-					</div>
+			<div class="date">
+				<span></span>
+			</div>
+			<div class="toggle">
+				<span>Dark Mode</span>
+				<div class="dark-mode-switch">
+					<div class="dark-mode-switch-ident"></div>
 				</div>
 			</div>
+		</div>
 			<footer id="footer">
 				<div class="box">
 				<c:if test="${dvo1.size()>0}">
 					<h3>
 						<c:choose>
 							<c:when test="${dvo1.size() < dvo2.size()}">
-                       지난 일주일에 비해 이번주 운동을 ${dvo2.size() - dvo1.size()} 회
+                       지난 일주일에 비해 <br><br> 이번주 운동을 <br> ${dvo2.size() - dvo1.size()} 회
                        덜 하셨습니다.
                       </c:when>
 
 							<c:when test="${dvo1.size() >= dvo2.size()}">
-                       지난 일주일에 비해 이번주 운동을 ${dvo1.size() - dvo2.size()} 회
+                       지난 일주일에 비해 <br><br> 이번주 운동을 <br> ${dvo1.size() - dvo2.size()} 회
                        더 하셨습니다. 
                       </c:when>
 
@@ -82,12 +85,12 @@
 					<h3>
 						<c:choose>
 							<c:when test="${dvo1.get(0).getCal() < dvo2.get(0).getCal()}">
-                       지난 일주일에 비해 이번주 칼로리 소모량이 ${dvo2.get(0).getCal() - dvo1.get(0).getCal()}
+                        이번주 칼로리 소모량이 <br> ${dvo2.get(0).getCal() - dvo1.get(0).getCal()}
                      감소 하셨습니다.
                       </c:when>
 
 							<c:when test="${dvo1.get(0).getCal() >= dvo2.get(0).getCal()}">
-                       지난 일주일에 비해 이번주 칼로리 소모량이 ${dvo1.get(0).getCal() - dvo2.get(0).getCal()}
+                         이번주 칼로리 소모량이 <br> ${dvo1.get(0).getCal() - dvo2.get(0).getCal()}
                      증가 하셨습니다.
                       </c:when>
 						</c:choose>
@@ -96,13 +99,13 @@
 						<c:choose>
 							<c:when
 								test="${dvo1.get(0).getDanger() > dvo2.get(0).getDanger()}">
-                       지난 일주일에 비해 이번주 부정맥 위험도가
+                        이번주 부정맥 위험도가 <br>
                      ${dvo1.get(0).getDanger() - dvo2.get(0).getDanger()} 증가 하셨습니다.
                       </c:when>
 
 							<c:when
 								test="${dvo1.get(0).getDanger() <= dvo2.get(0).getDanger()}">
-                       지난 일주일에 비해 이번주 부정맥 위험도가
+                        이번주 부정맥 위험도가 <br>
                      ${dvo2.get(0).getDanger() - dvo1.get(0).getDanger()} 감소 하셨습니다.
                       </c:when>
 						</c:choose>
@@ -131,7 +134,7 @@
 	<script type="text/javascript">
 	
 	function diary() {			
-		location.href = "diary.do?id=${mvo.getId()}";	   
+		location.href = "diary.do?id=${mvo.getId()}&height=${mvo.getHeight()}&weight=${mvo.getWeight()}";	   
 	}
 	function chart() {
 		location.href = "chart.do";
