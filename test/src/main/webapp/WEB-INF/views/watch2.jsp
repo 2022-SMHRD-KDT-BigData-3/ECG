@@ -324,37 +324,47 @@ body {
 
 #box3 {
 	/* margin-left: 150px; */
-	border: 10px solid #dddddd;
-	background: #dddddd;
+	/* border: 10px solid #dddddd;
+	background: #dddddd; */
 	width: 684px;
 	border-radius: 10px;
-	height: 150px;
+	/* height: 150px; */
 	/* line-height: 110px; */
 	margin-bottom: 1rem;
 }
 
 #box4 {
 	/* margin-left: 150px; */
-	border: 10px solid #dddddd;
-	background: #dddddd;
+	/* border: 10px solid #dddddd;
+	background: #dddddd; */
 	width: 684px;
 	border-radius: 10px;
-	height: 150px;
+	/* height: 150px; */
 	/* line-height: 110px; */
 	margin-bottom: 1rem;
 }
 
 #box5 {
 	/* margin-left: 150px; */
-	border: 10px solid #dddddd;
-	background: #dddddd;
+	/* border: 10px solid #dddddd;
+	background: #dddddd; */
 	width: 684px;
 	border-radius: 10px;
-	height: 150px;
+	/* height: 150px; */
 	/* line-height: 110px; */
 	margin-bottom: 1rem;
 }
 
+#box6 {
+	/* margin-left: 150px; */
+	/* border: 10px solid #dddddd;
+	background: #dddddd; */
+	width: 684px;
+	border-radius: 10px;
+	/* height: 150px; */
+	/* line-height: 110px; */
+	margin-bottom: 1rem;
+}
 /* watch2 List box 끝*/
 
 /* 글씨 위치 */
@@ -800,11 +810,14 @@ $(function(){
 												style="border-radius: 10px; font-size: 62px; line-height: center;">${mvo.get(0)}</h3>
 										</div>
 										<div id="box4">
-											<h3 class="set" style="border-radius: 10px">5세트 - 10회</h3>
+											<h3 class="set" style="border-radius: 10px;height: 110px;">5세트 - 10회</h3>
+										</div>
+										<div id="box6">
+											<h3 class="set" id="todayHeart1" style="border-radius: 10px;height: 110px;">현재심박수 </h3>
 										</div>
 										<div id="box5">
 											<h3 id="cal1" class="beat"
-												style="border-radius: 10px, font-size: 56px;">칼로리</h3>
+												style="border-radius: 10px, font-size: 56px;height: 110px;border-radius:10px;">칼로리</h3>
 
 										</div>
 									</div>
@@ -840,15 +853,17 @@ $(function(){
 									<label for="slide03" class="left"></label>
 									<div class="textbox">
 										<div id="box3">
-											<h3 class="set"
-												style="border-radius: 10px; font-size: 62px; line-height: center;">${mvo.get(1)}</h3>
+											<h3 class="set" style="border-radius:10px;">${mvo.get(1)}</h3>
 										</div>
 										<div id="box4">
-											<h3 class="set" style="border-radius: 10px">5세트 - 10회</h3>
+											<h3 class="set" style="border-radius: 10px;height: 110px;">5세트 - 10회</h3>
+										</div>
+										<div id="box6">
+											<h3 class="set" id="todayHeart2" style="border-radius: 10px;height: 110px;">현재심박수 </h3>
 										</div>
 										<div id="box5">
 											<h3 id="cal2" class="beat"
-												style="border-radius: 10px, font-size: 56px;">칼로리</h3>
+												style="border-radius: 10px, font-size: 56px;height: 110px;border-radius:10px;">칼로리</h3>
 
 										</div>
 									</div>
@@ -892,11 +907,15 @@ $(function(){
 												style="border-radius: 10px; font-size: 62px; line-height: center;">${mvo.get(2)}</h3>
 										</div>
 										<div id="box4">
-											<h3 class="set" style="border-radius: 10px;">5세트 - 10회</h3>
+											<h3 class="set" style="border-radius: 10px;height: 110px;">5세트 - 10회</h3>
+										</div>
+										<div id="box6">
+											<h3 class="set" id="todayHeart3" style="border-radius: 10px;height: 110px;">현재심박수 </h3>
+											
 										</div>
 										<div id="box5">
 											<h3 id="cal3" class="beat"
-												style="border-radius: 10px, font-size: 56px;">칼로리</h3>
+												style="border-radius: 10px, font-size: 56px;height: 110px;border-radius:10px;">칼로리</h3>
 
 										</div>
 									</div>
