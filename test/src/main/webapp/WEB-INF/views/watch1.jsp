@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 <title>watch1</title>
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script   src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style type="text/css">
 
 
@@ -16,7 +16,7 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_elice@1.0/EliceDigitalBaeum.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
-	}
+   }
     
 
    * {margin:0;padding:0;}
@@ -264,13 +264,13 @@ h1 {
    <input type="radio" name="slide" id="slide01" checked>
    <input type="radio" name="slide" id="slide02">
   
-   <div class="slide-wrap" style="width:700px;height:700px;">
+   <div class="slide-wrap" style="width:700px;height:700px;margin-top:1rem;">
       <ul class="slidelist" style = "width: 700px;" >
          <li>
             <a>
                   <div>
                   <div class="textbox">
-                  <h3 style = "margin-bottom:180%;">미키님의<br>부정맥 위험도</h3>
+                  <h3 style = "margin-bottom:180%;">${vo.getNick()}님의<br>부정맥 위험도</h3>
                   </div>
                       <div class="wrap">
                       
@@ -279,7 +279,7 @@ h1 {
                   </div>
                <label for="slide02" class="right"></label>
                <div class="textbox">
-                  <h3 id="danger">50%</h3>
+                  <h3 id="danger"></h3>
                </div>
             </a>
          </li>
@@ -337,34 +337,40 @@ function getData(){
 	// 통신 code
 	document.getElementById("danger").innerHTML = "<MARQUEE direction='up' height='60' truespeed='1'> 1%<br>2%<br>3%<br>" +
 	"4%<br>5%<br>6%<br>7%<br>8%<br>9%<br> </MARQUEE>";
-
+	
 	$.ajax({
-		url : "http://localhost:9000/flask",
-		type : "GET",		
+		url : "http://localhost:8081/controller/getdata.do",
+		type : "GET",
 		success : function(data) {
 			console.log(data);
-			var result = data*100;			
-			
-			document.getElementById("danger").innerHTML = result+"%";
-			
-			if(result >= 70)
-				document.getElementById("danger").style.color="red";
-			else if(result >= 30)
-				document.getElementById("danger").style.color="orange";
-			else
-				document.getElementById("danger").style.color="green";
-						
-			var a_tags = $("a.a_link");
-			console.log("length : "+a_tags.length)
-			
-			a_tags.eq(0).attr("href","listpick.do?Choose=1&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}&weight="+${vo.getWeight()});
-			a_tags.eq(1).attr("href","listpick.do?Choose=2&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}&weight="+${vo.getWeight()});
-			a_tags.eq(2).attr("href","listpick.do?Choose=2&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}&weight="+${vo.getWeight()});
-			console.log("확인");
-			var h3_tag = $("#danger");
-		}		
+			$.ajax({
+				url : "http://localhost:8900/flask",
+				type : "POST",
+				data : data,
+				success : function(data) {
+					console.log(data);
+					var result = data*100;			
+					
+					document.getElementById("danger").innerHTML = result+"%";
+					
+					if(result >= 70)
+						document.getElementById("danger").style.color="red";
+					else if(result >= 30)
+						document.getElementById("danger").style.color="orange";
+					else
+						document.getElementById("danger").style.color="green";
+								
+					var a_tags = $("a.a_link");
+					console.log("length : "+a_tags.length)
+					
+					a_tags.eq(0).attr("href","listpick.do?Choose=1&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}&weight="+${vo.getWeight()});
+					a_tags.eq(1).attr("href","listpick.do?Choose=2&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}&weight="+${vo.getWeight()});
+					a_tags.eq(2).attr("href","listpick.do?Choose=2&danger="+result+"&age="+${vo.getAge()}+"&id=${vo.getId()}&weight="+${vo.getWeight()});
+					var h3_tag = $("#danger");
+				}		
+			});
+		}
 	});
-	
 }
 </script>
 </body>

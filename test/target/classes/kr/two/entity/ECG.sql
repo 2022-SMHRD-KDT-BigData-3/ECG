@@ -54,7 +54,7 @@ ecg varchar2(1000),
 constraint ecg_id_fk foreign key(id) references member(id)
 );
 insert into ECG 
-values('a','0.928,0.866,0.3,0,0.232,0.318,0.275,0.263,0.27,0.269,0.276,0.272,0.272,0.267,0.27,0.272,0.267,0.27,0.275,0.275,0.273,0.272,0.275,0.28,0.275,0.276,0.283,0.287,0.281,0.284,0.292,0.301,0.301,0.309,0.323,0.327,0.326,0.33,0.344,0.346,0.343,0.344,0.349,0.336,0.316,0.296,0.284,0.27,0.253,0.246,0.244,0.241,0.235,0.23,0.233,0.238,0.232,0.238,0.247,0.252,0.252,0.253,0.26,0.263,0.255,0.258,0.258,0.263,0.252,0.252,0.253,0.258,0.247,0.244,0.25,0.252,0.249,0.243,0.249,0.252,0.246,0.252,0.266,0.275,0.276,0.287,0.3,0.293,0.287,0.286,0.289,0.28,0.26,0.244,0.247,0.244,0.243,0.24,0.243,0.243,0.238,0.241,0.249,0.255,0.258,0.266,0.309,0.469,0.791,1,0.613,0.0246,0.0707,0.278,0.306,0.28,0.272,0.275,0.283,0.28,0.278,0.278,0.283,0.287,0.283,0.281,0.289,0.292,0.287,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0');
+values('dlwoals','0.928,0.866,0.3,0,0.232,0.318,0.275,0.263,0.27,0.269,0.276,0.272,0.272,0.267,0.27,0.272,0.267,0.27,0.275,0.275,0.273,0.272,0.275,0.28,0.275,0.276,0.283,0.287,0.281,0.284,0.292,0.301,0.301,0.309,0.323,0.327,0.326,0.33,0.344,0.346,0.343,0.344,0.349,0.336,0.316,0.296,0.284,0.27,0.253,0.246,0.244,0.241,0.235,0.23,0.233,0.238,0.232,0.238,0.247,0.252,0.252,0.253,0.26,0.263,0.255,0.258,0.258,0.263,0.252,0.252,0.253,0.258,0.247,0.244,0.25,0.252,0.249,0.243,0.249,0.252,0.246,0.252,0.266,0.275,0.276,0.287,0.3,0.293,0.287,0.286,0.289,0.28,0.26,0.244,0.247,0.244,0.243,0.24,0.243,0.243,0.238,0.241,0.249,0.255,0.258,0.266,0.309,0.469,0.791,1,0.613,0.0246,0.0707,0.278,0.306,0.28,0.272,0.275,0.283,0.28,0.278,0.278,0.283,0.287,0.283,0.281,0.289,0.292,0.287,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0');
 
 -- 운동정보 테이블
 create table exercise(
@@ -110,6 +110,7 @@ insert into exercise values('백 런지',2,2);
 insert into exercise values('라잉 레그 컬',2,2);
 insert into exercise values('데드리프트',2,2);
 insert into exercise values('스티프 데드리프트',2,2);
+<<<<<<< HEAD
 
 -- 하체 앞 뒤 운동 인서트
 insert into exercise values('카프레이즈',2,3);
@@ -120,6 +121,14 @@ insert into exercise values('힙 쓰러스트',2,3);
 insert into exercise values('힙 익스텐션',2,3);
 
 -- 전신 인서트1
+=======
+insert into exercise values('트위스트 런지',2,2);
+insert into exercise values('사이드 런지',2,2);
+insert into exercise values('힙 쓰러스트',2,2);
+insert into exercise values('힙 익스텐션',2,2);
+
+-- 전신 인서트
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/ECG.git
 insert into exercise values('암워킹',3,1); 
 insert into exercise values('버피 테스트',3,1) ;
 insert into exercise values('맨몸 점프 스쿼트',3,1) ;
@@ -154,18 +163,18 @@ insert into exercise values('사이드 플랭크',3,3);
 delete FROM exercise;
 
 
-
+select * from diary where id='a' and checkdate=to_char(sysdate,'yyyy.mm.dd') and rownum=1 order by checkdate desc;
 select * from diary;
 
 select * from diary where id='a' and (checkdate =(last_day(to_date(sysdate)))-29 or checkdate = (last_day(to_date(sysdate)))-22 or checkdate = (last_day(to_date(sysdate)))-15 or checkdate = (last_day(to_date(sysdate)))-8 or checkdate = (last_day(to_date(sysdate)))-1) order by checkdate ASC;
 
-select * from diary where id='b'
+select * from diary
 
 delete from DIARY where id='a';
 select checkdate from DIARY where  '';
 select * from diary where id='a'and checkdate='20220615' and rownum =1 order by 1 desc ;
 delete DIARY 
-insert into DIARY values('a',to_char(sysdate,'yyyy.mm.dd'),'00:50:05','sss',3,8,23,8,30);
+insert into DIARY values('dlwoals','20220617','00:50:05','케이블 스윙, 케이블 사이드, 인클라인 덤벨프레스',1,35,151,0,180);
 select * from diary;
 select to_char(sysdate,'yyyy.mm.dd') 
-insert into diary values('a',to_char(sysdate,'yyyy.mm.dd'),'00:00:00','케이블 스윙, 케이블 사이드, 인클라인 덤벨프레스',51,0,151,0,0.81);
+insert into diary values('dlwoals',to_char(sysdate,'yyyy.mm.dd'),'00:00:00','케이블 스윙, 케이블 사이드, 인클라인 덤벨프레스',51,0,151,0,0.81);
