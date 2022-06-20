@@ -35,7 +35,7 @@
 						<!-- Featured Post -->
 							<article class="post featured">
 						<section>
-							<form method="post" action="loginservice.do">
+							<form method="post" action="loginservice.do" style="margin: 0 0 20% 0;">
 								<div class="fields" id="loginfields">
 									<div class="field" id="loginId">
 										<label for="name">ID를 입력하세요</label>
@@ -57,7 +57,7 @@
 								<label for="email">계정이 없으신가요?</label>
 									<span class="date"></span>
 								</header>
-								<ul class="actions special">
+								<ul class="actions special" style="margin: 0 0 0 0;">
 									<li><a href="register.do" class="button large">회원가입</a></li>
 								</ul>
 							</article>

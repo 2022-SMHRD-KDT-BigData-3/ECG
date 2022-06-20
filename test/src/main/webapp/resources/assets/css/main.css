@@ -100,7 +100,7 @@ input, select, textarea {
 	}
 
 	body {
-		background-color: #1e252d;
+		background-color: #fff;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -2241,7 +2241,7 @@ input, select, textarea {
 /* Form */
 
 	form {
-		margin: 0 0 2rem 0;
+		margin: 0 0 0 0;
 	}
 
 		form > :last-child {
@@ -2861,7 +2861,7 @@ input, select, textarea {
 
 	ul {
 		list-style: disc;
-		margin: 0 0 5rem 0;
+		margin: 0 0 10% 0;
 		padding-left: 1rem;
 	}
 
@@ -3238,6 +3238,7 @@ input, select, textarea {
 		position: relative;
 		z-index: 1;
 		overflow: hidden;
+		height: 100%;
 	}
 
 		#wrapper > .bg {
@@ -3246,7 +3247,7 @@ input, select, textarea {
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: #212931;
+			background-color: #fff;
 			background-size: auto,								auto,														100% auto;
 			background-position: center,								center,														top center;
 			background-repeat: repeat,								no-repeat,													no-repeat;
@@ -3270,7 +3271,7 @@ input, select, textarea {
 			-webkit-transition-delay: 0.75s;
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
-			background: #1e252d;
+			background: #fff;
 			content: '';
 			display: block;
 			height: 100%;
@@ -3772,6 +3773,7 @@ input, select, textarea {
 		position: relative;
 		margin: 0 auto;
 		width: calc(100% - 4rem);
+		height: 100%;
 		max-width: 72rem;
 		z-index: 2;
 	}
@@ -3819,7 +3821,7 @@ input, select, textarea {
 			@media screen and (max-width: 736px) {
 
 				#main > .post {
-					padding: 2rem 2rem 3.65rem 2rem ;
+					padding: 2rem 2rem 8% 2rem ;
 				}
 
 					#main > .post header.major > .date {
@@ -3953,7 +3955,7 @@ input, select, textarea {
 
 			#main {
 				width: 100%;
-				height: 55.5rem;
+				height: 100%;
 			}
 
 		}
@@ -4709,7 +4711,7 @@ input, select, textarea {
 	
 #loginLogo{
 	width: 76%;
-    padding: 0rem 0rem 0rem 5rem;
+    padding: 0rem 0rem 0rem 22%;
     height: 27%;
 	
 }
@@ -4728,16 +4730,14 @@ input, select, textarea {
 }
 @media screen and (max-width: 360px){
 	#logoRegister{
-	width: 7rem;
-    height: 6rem;
+	width: 25%;
     padding: 1px;
-    margin: -1% 0% -5% -2%;
+    margin: -4% 0% -7% -2%;
 	}
 	#logoEdit{
-	width: 7rem;
-    height: 6rem;
+	width: 25%;
     padding: 1px;
-    margin: -1% 0% -5% -2%;
+    margin: -4% 0% -7% -2%;
 	}
 }
 
