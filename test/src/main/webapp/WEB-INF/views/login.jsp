@@ -44,7 +44,7 @@
 								
 									<div class="field" id="loginPw">
 										<label for="email">PassWord를 입력하세요</label>
-										<input type="text" name="pw" id="password" />
+										<input type="password" name="pw" id="password" />
 									</div>
 
 								</div>
