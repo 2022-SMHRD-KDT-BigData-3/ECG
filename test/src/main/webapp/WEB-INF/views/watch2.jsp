@@ -34,7 +34,7 @@
 	background: rgba(0, 0, 0, 0.8);
 	top: 0;
 	left: 0;
-	/* display: none; */
+	display: none;
 	z-index: 1;
 }
 .modal_content {

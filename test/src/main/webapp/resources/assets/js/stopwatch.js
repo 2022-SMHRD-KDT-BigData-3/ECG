@@ -1,6 +1,6 @@
 var time = 0;
 var starFlag = true;
-var todayHeart =0;  // 현재 심박수
+var todayHeart =60;  // 현재 심박수
 var stabilityHeart =0; // 안정시 심박수 
 var maxHeart = 0;   // 사용자의 최대심박수
 var mhr = 0;   // 220-나이에 들어갈 최대심박수
@@ -126,7 +126,7 @@ function buttonEvt(){
         cal = numb.toFixed(2);
   		var strong = maxHeart/mhr*100
         var age = document.getElementById('age').innerText;
-        
+        todayHeart+=2;
  		document.getElementById("time").innerText = th + ":" + tm + ":" + ts;
  		
         document.getElementById("cal1").innerHTML = "소모칼로리 : "+cal+"kcal" ;

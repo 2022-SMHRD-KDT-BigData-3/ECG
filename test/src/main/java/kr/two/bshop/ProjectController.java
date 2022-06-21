@@ -59,7 +59,7 @@ public class ProjectController {
 	// 로그인 서비스
 	@PostMapping("/loginservice.do")
 	public String loginservice(HttpSession session, MemberVO vo, Model model) {
-
+		
 		vo = projectMapper.login(vo);
 
 		List<DiaryVO> cl = projectMapper.chartlist(vo);
@@ -191,8 +191,8 @@ public class ProjectController {
 	public String getdata() {
 		MemberVO vo = new MemberVO();
 		
-		vo.setId("dlwoals");
-		vo.setPw("dlwoals");
+		vo.setId("a");
+		vo.setPw("a");
 		vo.setNick("이재민");
 		vo.setHeight(175);
 		vo.setWeight(60);
