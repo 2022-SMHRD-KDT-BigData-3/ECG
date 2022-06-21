@@ -94,30 +94,41 @@ insert into exercise values('버터 플라이',1,3);
 insert into exercise values('푸시업',1,3);
 insert into exercise values('딥스',1,3);
 insert into exercise values('인클라인 덤벨 프레스',1,3);
-insert into exercise values('펙 덱 플라이 머신',1,3_;
+insert into exercise values('펙 덱 플라이 머신',1,3);
 
---하체 앞 인서트
+--하체 앞 인서트 1
 insert into exercise values('레그 프레스',2,1);
 insert into exercise values('레그 익스텐션',2,1);
 insert into exercise values('와이드 스쿼트',2,1);
 insert into exercise values('내로우 스쿼트',2,1);
-insert into exercise values('스쿼트',2,1);
 insert into exercise values('힙 어덕션',2,1);
-insert into exercise values('카프레이즈',2,1);
-insert into exercise values('사이드 스쿼트',2,1);
- -- 하체 뒤 인서트
+insert into exercise values('스쿼트',2,1);
+ -- 하체 뒤 인서트 2
 insert into exercise values('레그 컬',2,2);
 insert into exercise values('런지',2,2);
 insert into exercise values('백 런지',2,2);
 insert into exercise values('라잉 레그 컬',2,2);
 insert into exercise values('데드리프트',2,2);
 insert into exercise values('스티프 데드리프트',2,2);
+<<<<<<< HEAD
+
+-- 하체 앞 뒤 운동 인서트
+insert into exercise values('카프레이즈',2,3);
+insert into exercise values('사이드 스쿼트',2,3);
+insert into exercise values('트위스트 런지',2,3);
+insert into exercise values('사이드 런지',2,3);
+insert into exercise values('힙 쓰러스트',2,3);
+insert into exercise values('힙 익스텐션',2,3);
+
+-- 전신 인서트1
+=======
 insert into exercise values('트위스트 런지',2,2);
 insert into exercise values('사이드 런지',2,2);
 insert into exercise values('힙 쓰러스트',2,2);
 insert into exercise values('힙 익스텐션',2,2);
 
 -- 전신 인서트
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-3/ECG.git
 insert into exercise values('암워킹',3,1); 
 insert into exercise values('버피 테스트',3,1) ;
 insert into exercise values('맨몸 점프 스쿼트',3,1) ;
@@ -127,12 +138,8 @@ insert into exercise values('크로스 마운틴 클라이머',3,1) ;
 insert into exercise values('니 푸쉬업 플로우',3,1) ;
 insert into exercise values('스위머',3,1) ;
 insert into exercise values('크로스 킥 힙 쓰러스트',3,1) ;
-insert into exercise values('슬램 스쿼트',3,1) ;
-insert into exercise values('크로스 레그레이즈',3,1);
-insert into exercise values('프론트 킥',3,1) ;
-insert into exercise values('숄더 탭스',3,1) ;
-insert into exercise values('점핑 잭',3,1) ;
- -- 코어 인서트
+
+ -- 코어 인서트2
 insert into exercise values('플랭크',3,2) ;
 insert into exercise values('크런치',3,2) ;
 insert into exercise values('레그레이즈',3,2); 
@@ -142,9 +149,19 @@ insert into exercise values('시티드 니업',3,2);
 insert into exercise values('벌드 독',3,2);
 insert into exercise values('대드버그',3,2);
 insert into exercise values('러시안 트위스트',3,2);
-insert into exercise values('슈퍼맨 플랭크',3,2);
-insert into exercise values('엘보우 플랭크',3,2);
-insert into exercise values('사이드 플랭크',3,2);
+
+-- 전신 코어 인서트3
+insert into exercise values('슬램 스쿼트',3,3) ;
+insert into exercise values('크로스 레그레이즈',3,3);
+insert into exercise values('프론트 킥',3,3) ;
+insert into exercise values('숄더 탭스',3,3) ;
+insert into exercise values('점핑 잭',3,3) ;
+insert into exercise values('슈퍼맨 플랭크',3,3);
+insert into exercise values('엘보우 플랭크',3,3);
+insert into exercise values('사이드 플랭크',3,3);
+
+delete FROM exercise;
+
 
 select * from diary where id='a' and checkdate=to_char(sysdate,'yyyy.mm.dd') and rownum=1 order by checkdate desc;
 select * from diary;
